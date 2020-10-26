@@ -36,11 +36,11 @@ server.on('request', function (request, response) {
     console.log(request.url);
 
     var trafficInfo = {    // 单条拥堵信息
-        "ID": "",
-        "Section": "",
+        // "ID": "",
         "wayID": "",
+        "Section": "",
         "Name": "",
-        "Timestamp": "",
+        // "Timestamp": "",
         "State": "",
         "Direction": "",
         "Reason": ""
@@ -49,7 +49,29 @@ server.on('request', function (request, response) {
     if (urls == '/') {
         fs.readFile("./index.html", function (error, html_data) {
             response.setHeader('Content-Type', 'text/html;charset=utf-8');
-            response.end(html_data);
+            var newhtmls = '';
+            newhtmls += html_data;
+            newhtmls += '<div style="float: right;">';
+            newhtmls += '<table border="1">';
+            newhtmls += '<tr><th>wayID</th><th>Name</th><th>Reason</th></tr>'
+
+            for (key in arrStack) {
+                if (arrStack[key] != undefined) {
+                    newhtmls += '<tr><td>';
+                    // newhtmls += arrStack[key].ID;
+                    // newhtmls += '</td><td>';
+                    newhtmls += arrStack[key].wayID;
+                    newhtmls += '</td><td>';
+                    newhtmls += arrStack[key].Name;
+                    newhtmls += '</td><td>';
+                    newhtmls += arrStack[key].Reason;
+                    newhtmls += '</td></tr>'
+                }
+            }
+            newhtmls += '</table>';
+            newhtmls += '</div>';
+            response.end(newhtmls);
+            // response.end(html_data);
         });
 
 
@@ -57,16 +79,16 @@ server.on('request', function (request, response) {
     else if (urls.indexOf('js_form_action') > 0) {
         let result = url.parse(urls, true);
         if (result.query.id != '') {
-            trafficInfo['ID'] = result.query.id;
-            trafficInfo['Section'] = result.query.section;
+            // trafficInfo['ID'] = result.query.id;
             trafficInfo['wayID'] = result.query.wayid;
+            trafficInfo['Section'] = result.query.section;
             trafficInfo['Name'] = result.query.name;
-            trafficInfo['Timestamp'] = result.query.timestamp;
+            // trafficInfo['Timestamp'] = result.query.timestamp;
             trafficInfo['State'] = result.query.state;
             trafficInfo['Direction'] = result.query.direction;
             trafficInfo['Reason'] = result.query.reason;
             // 添加拥堵信息
-            var addid = result.query.id;
+            var addid = result.query.wayid;
             arrStack[addid] = trafficInfo;
             // 打印信息数组对象
             // console.log(arrStack);
@@ -86,7 +108,8 @@ server.on('request', function (request, response) {
                 }
             }
             xw.endDocument();
-            fs.writeFile("./testInfo.xml", xw, function (err) {
+
+            fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
                 console.log("添加一条拥堵信息");
             })
             // +++++++++++++写xml文件下+++++++++++++++++++++
@@ -96,13 +119,13 @@ server.on('request', function (request, response) {
                 newhtmls += html_data;
                 newhtmls += '<div style="float: right;">';
                 newhtmls += '<table border="1">';
-                newhtmls += '<tr><th>ID</th><th>wayID</th><th>Name</th><th>Reason</th></tr>'
+                newhtmls += '<tr><th>wayID</th><th>Name</th><th>Reason</th></tr>'
 
                 for (key in arrStack) {
                     if (arrStack[key] != undefined) {
                         newhtmls += '<tr><td>';
-                        newhtmls += arrStack[key].ID;
-                        newhtmls += '</td><td>';
+                        // newhtmls += arrStack[key].ID;
+                        // newhtmls += '</td><td>';
                         newhtmls += arrStack[key].wayID;
                         newhtmls += '</td><td>';
                         newhtmls += arrStack[key].Name;
@@ -139,7 +162,7 @@ server.on('request', function (request, response) {
                 }
             }
             xw.endDocument();
-            fs.writeFile("./testInfo.xml", xw, function (err) {
+            fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
                 console.log("添加一条拥堵信息");
             })
             // +++++++++++++写xml文件下+++++++++++++++++++++
@@ -154,13 +177,13 @@ server.on('request', function (request, response) {
                 var newhtmls = '';
                 newhtmls += html_data;
                 newhtmls += '<table border="1">';
-                newhtmls += '<tr><th>ID</th><th>wayID</th><th>Name</th><th>Reason</th></tr>'
+                newhtmls += '<tr><th>wayID</th><th>Name</th><th>Reason</th></tr>'
 
                 for (key in arrStack) {
                     if (arrStack[key] != undefined) {
                         newhtmls += '<tr><td>';
-                        newhtmls += arrStack[key].ID;
-                        newhtmls += '</td><td>';
+                        // newhtmls += arrStack[key].ID;
+                        // newhtmls += '</td><td>';
                         newhtmls += arrStack[key].wayID;
                         newhtmls += '</td><td>';
                         newhtmls += arrStack[key].Name;
@@ -192,7 +215,17 @@ server.on('request', function (request, response) {
 // -----------------------------------
 //接收用户端的地址和端口，发送消息
 udp_server.on('message', function (msg, rinfo) {
-
+    // 时间戳
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    var strTime = year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second;
+    udp_server.send(strTime, 0, Buffer.byteLength(strTime), rinfo.port, rinfo.address);
+    
     for (key in arrStack) {
         if (arrStack[key] != undefined) {
             var strmsg = JSON.stringify(arrStack[key]);
