@@ -1,0 +1,396 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>无人车</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <style>
+        
+        #container {
+            height: 80%;
+            width: 80%;
+            /* margin-right: 0px; */
+        }
+
+        /* .amap-icon img {
+            width: 25px;
+            height: 34px;
+        } */
+
+        /* .input-card .btn {
+             width: 9rem; 
+             width: 25px; 
+        }
+
+        .input-card .btn:first-child {
+            margin-right: 1.3rem;
+        } 
+        */
+    </style>
+    <script type="text/javascript">
+        function formSubmit() {
+            document.getElementById("myForm").submit()
+        }
+    </script>
+    <script type="text/javascript">
+        function formSubmit2() {
+            document.getElementById("myForm2").submit()
+        }
+    </script>
+
+</head>
+
+<body>
+<div style="float: left; height: 100%; width: 80%;">
+    <div style="float: left; height: 300px;" >
+        <div>
+            <form id="myForm" action="js_form_action.asp" method="get">
+                ID: <input type="text" name="id" size="20"><br />
+                <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
+                <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
+                Section: <input type="text" name="section" size="20"><br />
+                wayID: <input type="text" name="wayid" size="20"><br />
+                Name: <input type="text" name="name" size="20"><br />
+                Timestamp: <input type="text" name="timestamp" size="20"><br />
+                State: <input type="text" name="state" size="20"><br />
+                Direction: <input type="text" name="direction" size="20"><br />
+                Reason: <input type="text" name="reason" size="20"><br />
+                <br>
+
+                <input type="button" onclick="formSubmit();" value="添加拥堵信息"> <br>
+            </form>
+        </div>
+
+
+
+        <div>
+            <form id='myForm2' action="js_form2_action.php" method="get">
+                ID: <input type="text" name="delId" size="20"><br /><br>
+
+                <input type="button" onclick="formSubmit2()" value="删除拥堵信息"> <br>
+            </form>
+        </div>
+    </div>
+    <br />
+
+
+    <div id="container" style="float: right;"></div>
+</div>
+    <!-- <div class="input-card">
+        <h4>添加或删除拥堵信息</h4>
+        <div class="input-item">
+            <input id="add" type="button" class="btn" value="添加拥堵" />
+            <input id="delete" type="button" class="btn" value="删除拥堵" />
+        </div>
+    </div> -->
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=d100aa3090ed93eb91ef822633442dea"></script>
+
+        <!-- <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+              if(this.readyState == 4){
+                console.log(xhr.responseText);
+              }
+            }
+            xhr.open('GET','file_list', true);
+            xhr.send();
+        </script>   -->
+
+    <script type="text/javascript">
+        // 创建地图实例
+            var map = new AMap.Map("container", {
+                zoom: 17,
+                zooms: [16, 20],
+                center: [120.782382, 31.589128],
+                resizeEnable: true,
+                // expandZoomRange:true,
+                rotation: 32
+            });
+            
+            // var bounds = map.getBounds();
+            // alert(typeof(bounds));
+            var bounds = new AMap.Bounds([120.771966, 31.566868], [120.793333, 31.608579]);
+            // // { 120.763872, 31.575779; 120.800892, 31.602476}
+            map.setLimitBounds(bounds);
+
+
+        // var path2 = [
+        // [120.7770047, 31.589985],        
+        // [120.7774517, 31.5894116]
+
+        //     ];
+
+        var canvasDir = document.createElement('canvas')
+        var width = 24;
+        canvasDir.width = width;
+        canvasDir.height = width;
+        var context = canvasDir.getContext('2d');
+        context.strokeStyle = 'white';
+        context.lineJoin = 'round';
+        context.lineWidth = 8;
+        context.moveTo(-4, width - 4);
+        context.lineTo(width / 2, 6);
+        context.lineTo(width + 4, width - 4);
+        context.stroke();
+
+
+        map.setFitView();
+        function createXhr() {
+            if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+            } else {
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        var xhr = createXhr();
+        xhr.open("post", "map.xml", true);
+        
+        // polylineList = [];
+        wayIdList = new Array();
+        xhr.onreadystatechange = function () {
+            var index = 0;
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // alert(a);
+                var xmlDoc = xhr.responseXML;
+                // console.log(xmlDoc);
+
+                // <way id=...><nd ref=.../></way>
+                var wayList = xmlDoc.getElementsByTagName("way");
+                // 所有的<node>
+                var nodeList = xmlDoc.getElementsByTagName("node");
+                var pathList = new Array();
+
+                for (var i = 0; i < wayList.length; i++) {
+                    // <way>中的id
+                    wayIdList.push(wayList[i].getAttribute("id"));
+                    var subList = wayList[i].children;
+                    var nodeIdList = new Array();
+                    var pointList = new Array();
+                    var startNodeId = subList[0].getAttribute("ref");
+                    // alert(subList[0]);
+                    for (var j = 1; j < subList.length; j++) {
+                        var ref = subList[j].getAttribute("ref");
+                        if (ref == null) {
+                            var endNodeId = subList[j - 1].getAttribute("ref");
+                            nodeIdList.push(startNodeId);
+                            nodeIdList.push(endNodeId);
+                            break;
+                        }
+                        // var ndList = subList[j].childNodes;
+                        // var nodeIdList = new Array();
+                        // for (var k = 0; k < ndList.length; k++) {
+                        //     nodeIdList.push(ndList[k].getAttribute("ref"));
+                        // }
+                    }
+                    
+                    for (var l = 0; l < nodeIdList.length; l++) {
+                        for (var m = 0; m < nodeList.length; m++) {
+                            if (nodeList[m].getAttribute("action") != "delete" && nodeList[m].getAttribute("id") == nodeIdList[l]) {
+                                // pointList -> ((x1,y1),(x2,y2))
+                                pointList.push([nodeList[m].getAttribute("lon"), nodeList[m].getAttribute("lat")]);
+                                break;
+                            }
+                        }
+                    }
+                    // }
+                    // for (var i = 0; i < pointList.length - 1; i++) {
+                    var onePath = [];
+                    onePath.push(pointList[0]);
+                    onePath.push(pointList[1]);
+                    pathList.push(onePath);
+                    // }
+                }
+                // console.log(pathList[0]);
+                for (var i = 0; i < pathList.length; i++) {
+                    var msgInJSON = {
+                        path: pathList[i],
+                        strokeColor: 'green',
+                        extData: [wayIdList[i], 0]
+                    }
+                    // var polyline = {
+                    //     path: pathList[i],
+                    //     showDir: true,
+                    //     dirImg: canvasDir,
+                    //     borderWeight: 2, // 线条宽度，默认为 1
+                    //     strokeColor: 'green', // 线条颜色
+                    //     lineJoin: 'round', // 折线拐点连接处样式
+                    //     strokeWeight: 8,         // 线宽
+                    //     extData: [wayIdList[i], 0] // [wayId,是否拥堵] 0-畅通；1-拥堵
+                    // };
+                    // // console.log(pathList[i]);
+                    // var polyline = new AMap.Polyline(polyline);
+
+                    var str = JSON.stringify(msgInJSON);
+                    sessionStorage.setItem(i, str);
+                    
+                    // polylineList.push(polyline);
+                    // alert(polylineList[0].getExtData()== wayIdList[i]);
+                    AMap.convertFrom(pathList[i], 'gps', function (status, result) {
+                        if (result.info === 'ok') {
+                            var path2 = result.locations;
+                            var polyline = new AMap.Polyline({
+                                map:map,
+                                path: path2,
+                                showDir: true,
+                                dirImg: canvasDir,
+                                borderWeight: 2, // 线条宽度，默认为 1
+                                strokeColor: 'green', // 线条颜色
+                                lineJoin: 'round', // 折线拐点连接处样式
+                                strokeWeight: 8,           // 线宽
+                                extData: [wayIdList[i], 0]
+                            });
+                        }
+                    });
+                }
+            }
+        }
+
+        xhr.send(null);
+
+        var xhr2 = createXhr();
+        xhr2.open("post", "testInfo.xml", true);
+        
+        // xhr2.onreadystatechange = function () {
+        // if (xhr2.readyState == 1 || xhr2.readyState == 2) {
+        //         var xmlDoc = xhr2.responseXML;
+        //         console.log(xmlDoc);
+            
+        window.onload = function () {
+    
+            var xmlDoc = xhr2.responseXML;
+            var carInfo=[];
+            var userWayIdList = xmlDoc.getElementsByTagName("way");
+            for(var i = 0;i<userWayIdList.length;i++){
+                carInfo.push(userWayIdList[i].getAttribute("id"));
+            }
+                // for (var i = 0; i < carInfo.length; i++) {
+                //     var wayId = carInfo[i];
+                // var data = sessionStorage.getItem(i)
+                    for (var j = 0; j < 201; j++) {
+                        var data = sessionStorage.getItem(j);
+                        var polyline = new AMap.Polyline({
+                            path: JSON.parse(data).path,
+                            showDir: true,
+                            dirImg: canvasDir,
+                            borderWeight: 2, // 线条宽度，默认为 1
+                            strokeColor: JSON.parse(data).strokeColor, // 线条颜色
+                            lineJoin: 'round', // 折线拐点连接处样式
+                            strokeWeight: 8,           // 线宽
+                            extData: JSON.parse(data).extData
+                        });
+                        //当前是绿色路段
+                        if (polyline.getExtData()[1] == 0) {
+                            for (var i = 0; i < carInfo.length; i++) {
+                                var wayId = carInfo[i];
+                                if (polyline.getExtData()[0] == wayId) {
+                                    // polylineList[j].getExtData()[1] = 1;
+                                    // var newPath = polylineList[j].getPath();
+                                    // if (carInfo[i].Direction == 0) {
+                                    //     var temp = newPath[0];
+                                    //     newPath[0] = newPath[1];
+                                    //     newPath[1] = temp;
+                                    // }
+                                    // polyline.setMap(null);
+                                    map.remove(polyline);
+                                    var newPolyline;
+                                    var startPoint = new AMap.LngLat(polyline.getPath()[0].R, polyline.getPath()[0].Q)
+                                    var endPoint = new AMap.LngLat(polyline.getPath()[1].R, polyline.getPath()[1].Q)
+                                    var path = [startPoint,endPoint];
+                                    AMap.convertFrom(path, 'gps', function (status, result) {
+                                        if (result.info === 'ok') {
+                                            var path2 = result.locations;
+                                            newPolyline = new AMap.Polyline({
+                                                path: path2,
+                                                showDir: true,
+                                                dirImg: canvasDir,
+                                                borderWeight: 2, // 线条宽度，默认为 1
+                                                strokeColor: 'red', // 线条颜色
+                                                lineJoin: 'round', // 折线拐点连接处样式
+                                                strokeWeight: 8,           // 线宽
+                                                extData: [wayIdList[j], 1]
+                                            });
+
+                                            var msgInJSON = {
+                                                path: path2,
+                                                strokeColor: 'red',
+                                                extData: [wayIdList[j], 1]
+                                            }
+                                            var str = JSON.stringify(msgInJSON);
+                                            sessionStorage.setItem(j, str);
+
+                                            map.add(newPolyline);
+                                        }
+
+                                    });
+                                }
+                            }
+                        }
+                        //当前是红色路段
+                        else{
+                            var i = 0;
+                            for (; i < carInfo.length; i++) {
+                                var wayId = carInfo[i];
+                                if (polyline.getExtData()[0] == wayId) {
+                                    break;
+                                }
+                            }
+                            if(i == carInfo.length){
+                                // polylineList[j].getExtData()[1] = 0;
+                                // var newPath = polylineList[j].getPath();
+                                // if (carInfo[i].Direction == 0) {
+                                //     var temp = newPath[0];
+                                //     newPath[0] = newPath[1];
+                                //     newPath[1] = temp;
+                                // }
+                                map.remove(polyline);
+                                
+                               var newPolyline;
+                                var startPoint = new AMap.LngLat(polyline.getPath()[0].R, polyline.getPath()[0].Q)
+                                var endPoint = new AMap.LngLat(polyline.getPath()[1].R, polyline.getPath()[1].Q)
+                                var path = [startPoint, endPoint];
+                                AMap.convertFrom(path, 'gps', function (status, result) {
+                                    if (result.info === 'ok') {
+                                        var path2 = result.locations;
+                                        newPolyline = new AMap.Polyline({
+                                            path: path2,
+                                            showDir: true,
+                                            dirImg: canvasDir,
+                                            borderWeight: 2, // 线条宽度，默认为 1
+                                            strokeColor: 'green', // 线条颜色
+                                            lineJoin: 'round', // 折线拐点连接处样式
+                                            strokeWeight: 8,           // 线宽
+                                            extData: [wayIdList[j], 0]
+                                        });
+                                        
+                                        var msgInJSON = {
+                                            path: path2,
+                                            strokeColor: 'green',
+                                            extData: [wayIdList[j], 0]
+                                        }
+                                        var str = JSON.stringify(msgInJSON);
+                                        sessionStorage.setItem(j, str);
+
+                                        map.add(newPolyline);
+                                    }
+
+                                });
+                            }
+                        }
+                    }
+                // }
+            // };
+    //         }
+    // }
+    // xhr2.send(null);}
+                }
+
+
+                xhr2.send(null);
+
+    </script>
+</body>
+
+</html>
