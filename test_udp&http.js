@@ -109,7 +109,7 @@ server.on('request', function (request, response) {
             }
             xw.endDocument();
 
-            fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
+            fs.writeFile("./userInfo.xml", xw.toString(), function (err) {
                 console.log("添加一条拥堵信息");
             })
             // +++++++++++++写xml文件下+++++++++++++++++++++
@@ -162,7 +162,7 @@ server.on('request', function (request, response) {
                 }
             }
             xw.endDocument();
-            fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
+            fs.writeFile("./userInfo.xml", xw.toString(), function (err) {
                 console.log("添加一条拥堵信息");
             })
             // +++++++++++++写xml文件下+++++++++++++++++++++
