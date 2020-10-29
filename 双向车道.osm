@@ -910,6 +910,36 @@
     <tag k='stopline' v='stop' />
     <tag k='width:lanes' v='4.6|4.5' />
   </way>
+  <way id='62687010301' version='2' action='modify' visible='true'>
+    <nd ref='-172714' />
+    <nd ref='-172702' />
+    <nd ref='-172716' />
+    <nd ref='-172732' />
+    <nd ref='-172768' />
+    <tag k='centerline:color' v='yellow' />
+    <tag k='centerline:type' v='solid;dash' />
+    <tag k='highway' v='tertiary' />
+    <tag k='lanes:backward' v='1' />
+    <tag k='lanes:forward' v='1' />
+    <tag k='name' v='福茂路南1段' />
+    <tag k='stopline' v='stop' />
+    <tag k='width:lanes' v='4.6|4.5' />
+  </way>
+  <way id='62687010300' version='2' action='modify' visible='true'>
+    <nd ref='5917900924' />
+    <nd ref='-172580' />
+    <nd ref='-172554' />
+    <nd ref='-172538' />
+    <nd ref='-172556' />
+    <tag k='centerline:color' v='yellow' />
+    <tag k='centerline:type' v='solid;dash' />
+    <tag k='highway' v='tertiary' />
+    <tag k='lanes:backward' v='1' />
+    <tag k='lanes:forward' v='1' />
+    <tag k='name' v='福茂路南1段' />
+    <tag k='stopline' v='stop' />
+    <tag k='width:lanes' v='4.6|4.5' />
+  </way>
   <way id='739484' action='delete' visible='true' version='11'>
     <tag k='highway' v='tertiary_link' />
     <tag k='lanes' v='1' />
@@ -2356,10 +2386,6 @@
     <tag k='width:lanes' v='4.6|4.5' />
   </way>
   <way id='62687009800' action='modify' visible='true' version='2'>
-    <nd ref='5917900924' />
-    <nd ref='-172580' />
-    <nd ref='-172554' />
-    <nd ref='-172538' />
     <nd ref='-172556' />
     <nd ref='-172558' />
     <nd ref='-172560' />
@@ -2382,10 +2408,6 @@
     <nd ref='-172718' />
     <nd ref='-172720' />
     <nd ref='-172714' />
-    <nd ref='-172702' />
-    <nd ref='-172716' />
-    <nd ref='-172732' />
-    <nd ref='-172768' />
     <tag k='centerline:color' v='yellow' />
     <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
@@ -2480,26 +2502,6 @@
     <tag k='lanes:forward' v='1' />
     <tag k='name' v='福茂路南段' />
     <tag k='section' v='4' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
-  </way>
-  <way id='62687010300' action='delete' visible='true' version='2'>
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='section' v='1' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
-  </way>
-  <way id='62687010301' action='delete' visible='true' version='2'>
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='section' v='1' />
     <tag k='stopline' v='stop' />
     <tag k='width:lanes' v='4.6|4.5' />
   </way>
