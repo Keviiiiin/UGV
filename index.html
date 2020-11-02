@@ -249,96 +249,22 @@
             var carInfo=[];
             var userWayIdList = xmlDoc.getElementsByTagName("way");
             for(var i = 0;i<userWayIdList.length;i++){
-                // 把堵车路段的wayId（不含方向）放入carInfo中
-                if(userWayIdList[i].getAttribute("state") == "1"){
-                    carInfo.push(userWayIdList[i].getAttribute("id") + "0" + userWayIdList[i].getAttribute("dir"));
-                }
-            }
-            if(carInfo.length != 0){
                 for (var j = 0; j < 73; j++) {
                     var data = sessionStorage.getItem(j);
-                    var polyline = new AMap.Polyline({
-                        path: JSON.parse(data).path,
-                        showDir: true,
-                        dirImg: canvasDir,
-                        borderWeight: 2, // 线条宽度，默认为 1
-                        strokeColor: JSON.parse(data).strokeColor, // 线条颜色
-                        lineJoin: 'round', // 折线拐点连接处样式
-                        strokeWeight: 8,           // 线宽
-                        extData: JSON.parse(data).extData
-                    });
-                    //当前是绿色路段
-                    if (polyline.getExtData()[1] == 0) {
-                        for (var i = 0; i < carInfo.length; i++) {
-                            var wayId = carInfo[i];
-                            if (polyline.getExtData()[0] == wayId) {
-                                // polylineList[j].getExtData()[1] = 1;
-                                // var newPath = polylineList[j].getPath();
-                                // if (carInfo[i].Direction == 0) {
-                                //     var temp = newPath[0];
-                                //     newPath[0] = newPath[1];
-                                //     newPath[1] = temp;
-                                // }
-                                map.remove(polyline);
-
-                                var newPolyline;
-                                var startPoint = new AMap.LngLat(polyline.getPath()[0].R, polyline.getPath()[0].Q)
-                                var endPoint = new AMap.LngLat(polyline.getPath()[1].R, polyline.getPath()[1].Q)
-                                var path = [startPoint,endPoint];
-                                AMap.convertFrom(path, 'gps', function (status, result) {
-
-                                    if (result.info === 'ok') {
-                                        var path2 = result.locations;
-                                        newPolyline = new AMap.Polyline({
-                                            path: path2,
-                                            showDir: true,
-                                            dirImg: canvasDir,
-                                            borderWeight: 2, // 线条宽度，默认为 1
-                                            strokeColor: 'red', // 线条颜色
-                                            lineJoin: 'round', // 折线拐点连接处样式
-                                            strokeWeight: 8,           // 线宽
-                                            extData: [wayIdList[j], 1]
-                                        });
-
-                                        var msgInJSON = {
-                                            path: path2,
-                                            strokeColor: 'red',
-                                            extData: [wayIdList[j], 1]
-                                        }
-                                        var str = JSON.stringify(msgInJSON);
-                                        sessionStorage.setItem(j, str);
-
-                                        map.add(newPolyline);
-                                    }
-
-                                });
-                            }
-                        }
-                    }
-                    //当前是红色路段
-                    else{
-                        var i = 0;
-                        for (; i < carInfo.length; i++) {
-                            var wayId = carInfo[i];
-                            if (polyline.getExtData()[0] == wayId) {
-                                break;
-                            }
-                        }
-                        //如果carInfo中没有这条路了
-                        if(i == carInfo.length){
-                            // polylineList[j].getExtData()[1] = 0;
-                            // var newPath = polylineList[j].getPath();
-                            // if (carInfo[i].Direction == 0) {
-                            //     var temp = newPath[0];
-                            //     newPath[0] = newPath[1];
-                            //     newPath[1] = temp;
-                            // }
-                            map.remove(polyline);
+                    ses = JSON.parse(data);
+                    var userWayId = userWayIdList[i].getAttribute("id") + "0" + userWayIdList[i].getAttribute("dir");
+                    if(ses.extData[0] == userWayId){
+                        var state = userWayIdList[i].getAttribute("state");
+                        if(ses.extData[1] != state){
+                            if(state == "1")    var color = "yellow";
+                            else if(state == "2")   var color = "red";
                             
-                            var newPolyline;
-                            var startPoint = new AMap.LngLat(polyline.getPath()[0].R, polyline.getPath()[0].Q)
-                            var endPoint = new AMap.LngLat(polyline.getPath()[1].R, polyline.getPath()[1].Q)
+                            var startPoint = new AMap.LngLat(ses.path[0][0], ses.path[0][1]);
+                            var endPoint = new AMap.LngLat(ses.path[1][0], ses.path[1][1]);
                             var path = [startPoint, endPoint];
+                            
+                            var st = state;
+                            
                             AMap.convertFrom(path, 'gps', function (status, result) {
                                 if (result.info === 'ok') {
                                     var path2 = result.locations;
@@ -347,22 +273,21 @@
                                         showDir: true,
                                         dirImg: canvasDir,
                                         borderWeight: 2, // 线条宽度，默认为 1
-                                        strokeColor: 'green', // 线条颜色
+                                        strokeColor: color, // 线条颜色
                                         lineJoin: 'round', // 折线拐点连接处样式
                                         strokeWeight: 8,           // 线宽
-                                        extData: [wayIdList[j], 0]
                                     });
-                                    
                                     var msgInJSON = {
                                         path: path2,
-                                        strokeColor: 'green',
-                                        extData: [wayIdList[j], 0]
+                                        strokeColor: color,
+                                        extData: [ses.extData[0],st]
                                     }
                                     var str = JSON.stringify(msgInJSON);
                                     sessionStorage.setItem(j, str);
 
                                     map.add(newPolyline);
                                 }
+
                             });
                         }
                     }
