@@ -74,7 +74,8 @@
             center: [120.782382, 31.589128],
             resizeEnable: true,
             // expandZoomRange:true,
-            rotation: 32
+            rotation: 32,
+            features: 'road'
         });
 
         var bounds = new AMap.Bounds([120.771966, 31.566868], [120.793333, 31.608579]);
@@ -140,7 +141,7 @@
                         // index++;
                         // <way>中的id
                         var wayId = wayList[i].getAttribute("id");
-                        wayIdList.push(wayId);
+                        
                         // <way>的子标签
                         var subList = wayList[i].children;
                         var pointList = new Array();
@@ -150,6 +151,7 @@
                         {
                             // 如果是这些8条弯道
                             specialPath.push(wayId);
+                            // console.log(specialPath);
                             var nodeIdList = new Array();
                             for (var j = 1; j < subList.length; j++) {
                                 var ref = subList[j].getAttribute("ref");
@@ -178,8 +180,9 @@
                             }
                             pathMap.set(wayId,pathArray);
                         }
-
+                        
                         else{
+                            wayIdList.push(wayId);
                             var nodeIdList = new Array();
                             var startNodeId = subList[0].getAttribute("ref");
                             for (var j = 1; j < subList.length; j++) {
@@ -205,12 +208,14 @@
                             onePath.push(pointList[1]);
                             pathList.push(onePath);
                         }
+                        // console.log(pathMap);
                     }
 
                 }
                 // console.log(pathList.length);
                 // console.log(index);
                 for (var i = 0; i < pathList.length; i++) {
+                    // console.log(wayIdList[i],pathList[i]);
                     AMap.convertFrom(pathList[i], 'gps', function (status, result) {
                         if (result.info === 'ok') {
                             var path2 = result.locations;
@@ -224,7 +229,7 @@
                             };
                             var str = JSON.stringify(msgInJSON);
                             sessionStorage.setItem(wayIdList[i], str);
-                            // console.log(i);
+                            // console.log(wayIdList[i]);
                             i++;
                         
                             var polyline = new AMap.Polyline({
@@ -244,10 +249,12 @@
                 
                 for(var k = 0;k<specialPath.length;k++){                
                     var specialArray = pathMap.get(specialPath[k]);
-                        // console.log(specialArray);
+                    // if(specialArray.length == 3)
+                        // console.log(specialPath[k]);
                     for(var j = 0;j<specialArray.length;j++){
                         var x = 10000;
                         var s = specialPath[k];
+                        // console.log(s);
                         AMap.convertFrom(specialArray[j], 'gps', function (status, result) {
                             if (result.info === 'ok') {
                                 var path2 = result.locations;
@@ -258,8 +265,9 @@
                                     };
                                     var str = JSON.stringify(msgInJSON);
                                     sessionStorage.setItem(x, str);
+                                    // console.log(x);
                                     x++;
-                                // console.log(specialPath[i]);
+                                // console.log(s);
                                 
 
                                 var polyline = new AMap.Polyline({
@@ -304,37 +312,38 @@
                 var userWayId = userWayIdList[i].getAttribute("id") + "0" + userWayIdList[i].getAttribute("dir");
                 // console.log(userWayId);
                 var special = new Array(2);
-                if (userWayId == "62687005700"){
-                    special[0] = 10000;
-                    special[1] = 6;
-                }
-                else if(userWayId == "62687005701"){
-                    special[0]=10006;
-                    special[1]=6;
-                }
-                else if (userWayId == "62687008900") {
-                    special[0]=10012;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008901") {
-                    special[0]=10014;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008300") {
-                    special[0]=10016;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008301") {
-                    special[0]=10018;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008200") {
-                    special[0]=10020;
+                
+                if (userWayId == "62687008200") {
+                    special[0]=10000;
                     special[1]=2;
                 }
                 else if (userWayId == "62687008201") {
-                    special[0]=10022;
+                    special[0]=10002;
                     special[1]=2;
+                }
+                else if (userWayId == "62687008300") {
+                    special[0]=10004;
+                    special[1]=2;
+                }
+                else if (userWayId == "62687008301") {
+                    special[0]=10006;
+                    special[1]=2;
+                }
+                else if (userWayId == "62687008900") {
+                    special[0]=10008;
+                    special[1]=2;
+                }
+                else if (userWayId == "62687008901") {
+                    special[0]=10010;
+                    special[1]=2;
+                }
+                else if (userWayId == "62687005700") {
+                    special[0] = 10012;
+                    special[1] = 6;
+                }
+                else if (userWayId == "62687005701") {
+                    special[0] = 10018;
+                    special[1] = 6;
                 }
                 // else{
                 //     special[0] = null;
@@ -349,6 +358,8 @@
 
                     for(var j = 0;j<special[1];userWayId++,j++){
                         ses = JSON.parse(sessionStorage.getItem(userWayId));
+                        // if (ses == null)
+                        //     console.log(userWayId);
                         // console.log(ses);
                         var newPolyline = new AMap.Polyline({
                             path: ses.path,
@@ -359,7 +370,8 @@
                             lineJoin: 'round', // 折线拐点连接处样式
                             strokeWeight: 8,           // 线宽
                         });
-
+                        // if (color == "red")
+                        //     console.log(path);
                         var msgInJSON = {
                             path: ses.path,
                             strokeColor: color,
@@ -377,12 +389,15 @@
 
                     // console.log(ses);
 
-                    // if(data == null)
-                    //     console.log(userWayId);
+                    if(data == null)
+                        console.log(userWayId);
                     var path = ses.path;
 
+                    // if(color == "yellow")
+                    // console.log(userWayId,path);
 
                     var newPolyline = new AMap.Polyline({
+                        map:map,
                         path: path,
                         showDir: true,
                         dirImg: canvasDir,
@@ -400,7 +415,7 @@
                     var str = JSON.stringify(msgInJSON);
                     sessionStorage.setItem(userWayId, str);
 
-                    map.add(newPolyline);
+                    // map.add(newPolyline);
                 }
                 
             }
