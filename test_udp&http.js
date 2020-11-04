@@ -21,7 +21,7 @@ udp_server.on('listening', function () {
 
 // +++++++++++++++++全部路段拥堵信息+++++++++++++++++++
 arrStack = {
-    // 内部道路
+    // 内部道路 12条
     // 1
     "6268700800": { "wayID": "626870080", "Name": "消防通道", "Direction": "0", "State": "0" },
     "6268700801": { "wayID": "626870080", "Name": "消防通道", "Direction": "1", "State": "0" },
@@ -32,28 +32,31 @@ arrStack = {
     "6268700830": { "wayID": "626870083", "Name": "小区环路", "Direction": "0", "State": "0" },
     "6268700831": { "wayID": "626870083", "Name": "小区环路", "Direction": "1", "State": "0" },
     // 4
-    "6268700850": { "wayID": "626870085", "Name": "停车场入口", "Direction": "0", "State": "0" },
-    "6268700851": { "wayID": "626870085", "Name": "停车场入口", "Direction": "1", "State": "0" },
+    "6268700840": { "wayID": "626870084", "Name": "小区环路", "Direction": "0", "State": "0" },
+    "6268700841": { "wayID": "626870084", "Name": "小区环路", "Direction": "1", "State": "0" },
     // 5
+    "6268700850": { "wayID": "626870085", "Name": "地下停车场入口", "Direction": "0", "State": "0" },
+    "6268700851": { "wayID": "626870085", "Name": "地下停车场入口", "Direction": "1", "State": "0" },
+    // 6
     "6268700810": { "wayID": "626870081", "Name": "小区环路", "Direction": "0", "State": "0" },
     "6268700811": { "wayID": "626870081", "Name": "小区环路", "Direction": "1", "State": "0" },
-    // 6
+    // 7
     "6268700870": { "wayID": "626870087", "Name": "小区环路", "Direction": "0", "State": "0" },
     "6268700871": { "wayID": "626870087", "Name": "小区环路", "Direction": "1", "State": "0" },
-    // 7
-    "6268700860": { "wayID": "626870086", "Name": "出口", "Direction": "0", "State": "0" },
     // 8
-    "6268700880": { "wayID": "626870088", "Name": "入口", "Direction": "0", "State": "0" },
+    "6268700860": { "wayID": "626870086", "Name": "内部道路出口", "Direction": "0", "State": "0" },
     // 9
+    "6268700880": { "wayID": "626870088", "Name": "内部道路入口", "Direction": "0", "State": "0" },
+    // 10
     "6268700890": { "wayID": "626870089", "Name": "小区环路", "Direction": "0", "State": "0" },
     "6268700891": { "wayID": "626870089", "Name": "小区环路", "Direction": "1", "State": "0" },
-    // 10
+    // 11
     "6268700910": { "wayID": "626870091", "Name": "小区环路", "Direction": "0", "State": "0" },
     "6268700911": { "wayID": "626870091", "Name": "小区环路", "Direction": "1", "State": "0" },
-    // 11
+    // 12
     "6268700920": { "wayID": "626870092", "Name": "内部道路", "Direction": "0", "State": "0" },
     "6268700921": { "wayID": "626870092", "Name": "内部道路", "Direction": "1", "State": "0" },
-    // 云深路
+    // 云深路 4条
     // 1
     "6268700610": { "wayID": "626870061", "Name": "云深路", "Direction": "0", "State": "0" },
     "6268700611": { "wayID": "626870061", "Name": "云深路", "Direction": "1", "State": "0" },
@@ -69,7 +72,7 @@ arrStack = {
     // 4
     "6268700570": { "wayID": "626870057", "Name": "云深路", "Direction": "0", "State": "0" },
     "6268700571": { "wayID": "626870057", "Name": "云深路", "Direction": "1", "State": "0" },
-    //  五渠路
+    //  五渠路 3条
     // 1
     "6268700380": { "wayID": "626870038", "Name": "五渠路", "Direction": "0", "State": "0" },
     "6268700381": { "wayID": "626870038", "Name": "五渠路", "Direction": "1", "State": "0" },
@@ -79,7 +82,7 @@ arrStack = {
     // 3
     "6268700400": { "wayID": "626870040", "Name": "五渠路", "Direction": "0", "State": "0" },
     "6268700401": { "wayID": "626870040", "Name": "五渠路", "Direction": "1", "State": "0" },
-    // 渔乐路
+    // 渔乐路 3条
     // 1
     "6268700430": { "wayID": "626870043", "Name": "渔乐路", "Direction": "0", "State": "0" },
     "6268700431": { "wayID": "626870043", "Name": "渔乐路", "Direction": "1", "State": "0" },
@@ -89,10 +92,10 @@ arrStack = {
     // 3
     "6268700520": { "wayID": "626870052", "Name": "渔乐路", "Direction": "0", "State": "0" },
     "6268700521": { "wayID": "626870052", "Name": "渔乐路", "Direction": "1", "State": "0" },
-    // 黄浦江路
+    // 黄浦江路 1条
     // 1
     "6268701070": { "wayID": "626870107", "Name": "黄浦江路", "Direction": "0", "State": "0" },
-    // 福茂路
+    // 福茂路 4条
     // 1
     "6268700540": { "wayID": "626870054", "Name": "福茂路", "Direction": "0", "State": "0" },
     "6268700541": { "wayID": "626870054", "Name": "福茂路", "Direction": "1", "State": "0" },
@@ -105,7 +108,7 @@ arrStack = {
     // 4
     "6268701020": { "wayID": "626870102", "Name": "福茂路", "Direction": "0", "State": "0" },
     "6268701021": { "wayID": "626870102", "Name": "福茂路", "Direction": "1", "State": "0" },
-    // 福盛路
+    // 福盛路 3条
     // 1
     "6268700320": { "wayID": "626870032", "Name": "福盛路", "Direction": "0", "State": "0" },
     "6268700321": { "wayID": "626870032", "Name": "福盛路", "Direction": "1", "State": "0" },
@@ -115,7 +118,7 @@ arrStack = {
     // 3
     "6268700270": { "wayID": "626870027", "Name": "福盛路", "Direction": "0", "State": "0" },
     "6268700271": { "wayID": "626870027", "Name": "福盛路", "Direction": "1", "State": "0" },
-    // 福兴路
+    // 福兴路 3条
     // 1
     "6268700250": { "wayID": "626870025", "Name": "福兴路", "Direction": "0", "State": "0" },
     "6268700251": { "wayID": "626870025", "Name": "福兴路", "Direction": "1", "State": "0" },
@@ -125,7 +128,7 @@ arrStack = {
     // 3
     "6268700210": { "wayID": "626870021", "Name": "福兴路", "Direction": "0", "State": "0" },
     "6268700211": { "wayID": "626870021", "Name": "福兴路", "Direction": "1", "State": "0" },
-    // 湖山路
+    // 湖山路 4条
     // 1
     "6268701160": { "wayID": "626870116", "Name": "湖山路", "Direction": "0", "State": "0" },
     // 2
@@ -282,64 +285,6 @@ server.on('request', function (request, response) {
             });
         }
     }
-    // else if (urls.indexOf('js_form2_action') > 0) {
-    //     let result2 = url.parse(urls, true);
-
-    //     if (result2.query.delId != '') {
-    //         var delid = result2.query.delId;
-    //         arrStack[delid] = undefined;
-
-    //         // +++++++++++++写xml文件上+++++++++++++++++++++
-    //         var xw = new XMLWriter;
-    //         xw.startDocument('1.0', 'UTF-8');
-    //         xw.startElement('car');
-
-    //         for (key in arrStack) {
-    //             if (arrStack[key] != undefined) {
-    //                 var strWayID = arrStack[key].wayID;
-    //                 xw.startElement('way');
-    //                 xw.writeAttribute('id', strWayID);
-    //                 xw.endAttribute();
-    //                 xw.endElement();
-    //             }
-    //         }
-    //         xw.endDocument();
-    //         fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
-    //             console.log("添加一条拥堵信息");
-    //         })
-    //         // +++++++++++++写xml文件下+++++++++++++++++++++
-
-
-
-    //         // 打印信息数组对象
-    //         console.log(arrStack);
-
-    //         fs.readFile("./index.html", function (error, html_data) {
-    //             response.setHeader('Content-Type', 'text/html;charset=utf-8');
-    //             var newhtmls = '';
-    //             newhtmls += html_data;
-    //             newhtmls += '<table border="1">';
-    //             newhtmls += '<tr><th>wayID</th><th>Name</th><th>Reason</th></tr>'
-
-    //             for (key in arrStack) {
-    //                 if (arrStack[key] != undefined) {
-    //                     newhtmls += '<tr><td>';
-    //                     // newhtmls += arrStack[key].ID;
-    //                     // newhtmls += '</td><td>';
-    //                     newhtmls += arrStack[key].wayID;
-    //                     newhtmls += '</td><td>';
-    //                     newhtmls += arrStack[key].Name;
-    //                     newhtmls += '</td><td>';
-    //                     newhtmls += arrStack[key].Reason;
-    //                     newhtmls += '</td></tr>'
-    //                 }
-    //             }
-    //             newhtmls += '</table>';
-    //             response.end(newhtmls);
-    //         });
-    //     }
-    // }
-
     else {
         fs.readFile('.' + urls, function (error, data) {
             response.end(data);
@@ -351,68 +296,67 @@ server.on('request', function (request, response) {
 // -----------------------------------
 //接收用户端的地址和端口，发送消息
 udp_server.on('message', function (msg, rinfo) {
+    // 总共
+    const allBuffer = Buffer.alloc(388);
     // 1.报文头 'FC'
     var strFC = 'FC';
-    udp_server.send(strFC, 0, Buffer.byteLength(strFC), rinfo.port, rinfo.address);
+    allBuffer.write(strFC, 0);
 
     // 2.时间戳 yyyymmddhhmmss
     var moment = require('moment');
     var now = moment().toDate();
     now = moment().format('YYYYMMDDHHmmss');
-    console.log(now);
-    console.log(typeof now);
-    var numNow = Number(now);
-    console.log(typeof numNow);
-    console.log(numNow);
-    udp_server.send(JSON.stringify(numNow), 0, Buffer.byteLength(numNow.toString()), rinfo.port, rinfo.address);
+    allBuffer.write(now, 2);
 
     // 3.保留‘$’
     var str3 = '$';
-    udp_server.send(str3, 0, Buffer.byteLength(str3), rinfo.port, rinfo.address);
+    allBuffer.write(str3, 16);
 
-    // 4.路段数量
-    var countInfo = "67";
-    var countInfoNum = Number(countInfo);
-    udp_server.send(JSON.stringify(countInfoNum), 0, Buffer.byteLength(countInfoNum.toString()), rinfo.port, rinfo.address);
+    // 4.路段数量-37
+    allBuffer.writeUInt8(37, 17);
 
-    // 5.各路段（总共67条）
+    // 5.各路段
+    var count = 0;
     for (key in arrStack) {
-        // var strmsg = "";
-        // if (arrStack[key] != undefined) {
-        // strmsg += JSON.stringify(arrStack[key].wayID);
-        var strmsg = arrStack[key].wayID;
-        var strmsgNum = Number(strmsg);
-        // strmsg += "  ";
-        // strmsg += JSON.stringify(arrStack[key].Name);
-        // strmsg += "  ";
-
-        // strmsg += JSON.stringify(arrStack[key].Direction);
-        // strmsg += "  ";
-        udp_server.send(JSON.stringify(strmsgNum), 0, Buffer.byteLength(strmsgNum.toString()), rinfo.port, rinfo.address);
-        var stateInfo = (arrStack[key].State);
-        if (stateInfo == '0')
-        {
+        var wayid = arrStack[key].wayID;
+        wayid = Number(wayid);
+        var stateInfo = arrStack[key].State;
+        var direc = arrStack[key].Direction;
+        if (stateInfo == '0') {
             stateInfo = 'G';
         }
-        else if (stateInfo == '1')
-        {
+        else if (stateInfo == '1') {
             stateInfo = 'Y';
         }
-        else if (stateInfo == '2')
-        {
+        else {
             stateInfo = 'R';
         }
-        else
-        {
-            stateInfo = 'B';
+
+        if (wayid == 626870086 || wayid == 626870088 ||
+            wayid == 626870107 || wayid == 626870116 ||
+            wayid == 626870117 || wayid == 626870120 ||
+            wayid == 626870122) {
+
+            allBuffer.writeBigInt64BE(BigInt(wayid), 18 + 10 * count);
+            stateInfo += 'B';
+            allBuffer.write(stateInfo, 18 + 10 * count + 8);
+            count++;
+            continue;
         }
-        udp_server.send(stateInfo, 0, Buffer.byteLength(stateInfo), rinfo.port, rinfo.address);
-    }
-    console.log('udp server received data: ${strmsg} from ${' + rinfo.address + '}:${' + rinfo.port + '}')
+        if (direc == '0') {
+            allBuffer.writeBigInt64BE(BigInt(wayid), 18 + 10 * count);
+            allBuffer.write(stateInfo, 18 + 10 * count + 8);
+        } else {
+            allBuffer.write(stateInfo, 18 + 10 * count + 9);
+            count++;
+        }
+    } // for
+    
+    // 发送388字节的udp报文
+    udp_server.send(allBuffer, 0, Buffer.byteLength(allBuffer), rinfo.port, rinfo.address);
 })
 //错误处理
 udp_server.on('error', function (err) {
     console.log('some error on udp server.')
     udp_server.close();
 })
-// --------------------------

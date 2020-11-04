@@ -121,12 +121,21 @@
                 // var pathArray = new Array();
                 var pathMap = new Map();
                 var wayIdList = new Array();
-                for(var i = 0;i<27;i++){
-                    //27个junction
+                for(var i = 0;i<8;i++){
+                    //8个junction
                     var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
                     AMap.convertFrom(point, 'gps', function (status, result) {
                         if (result.info === 'ok') {
                             var resLnglat = result.locations[0];
+
+                            // if(i>7) i = 0;
+                            // var pointInJSON = {
+                            //     position: resLnglat
+                            // };
+                            // var point = JSON.stringify(pointInJSON);
+                            // sessionStorage.setItem(i,point);
+                            // i++;
+
                             m2 = new AMap.Marker({
                                 position: resLnglat,
                             });
@@ -147,9 +156,9 @@
                         var pointList = new Array();
 
                         if(wayId == "62687005700" || wayId == "62687005701" || wayId == "62687008900" || wayId == "62687008901"
-                            || wayId == "62687008300" || wayId == "62687008301" || wayId == "62687008200" || wayId == "62687008201")
+                            || wayId == "62687008200" || wayId == "62687008201")
                         {
-                            // 如果是这些8条弯道
+                            // 如果是这些6条弯道
                             specialPath.push(wayId);
                             // console.log(specialPath);
                             var nodeIdList = new Array();
@@ -208,7 +217,7 @@
                             onePath.push(pointList[1]);
                             pathList.push(onePath);
                         }
-                        // console.log(pathMap);
+                        // console.log(wayIdList);
                     }
 
                 }
@@ -221,7 +230,7 @@
                             var path2 = result.locations;
 
                             //75条单一wayid
-                            if(i > 70) i = 0;
+                            if(i > 74) i = 0;
                             var msgInJSON = {
                                 path: path2,
                                 strokeColor: 'green',
@@ -229,7 +238,7 @@
                             };
                             var str = JSON.stringify(msgInJSON);
                             sessionStorage.setItem(wayIdList[i], str);
-                            // console.log(wayIdList[i]);
+                            // console.log(sessionStorage.length);
                             i++;
                         
                             var polyline = new AMap.Polyline({
@@ -304,6 +313,14 @@
         xhr2.send(null);
         
         window.onload = function () {
+            // for(var i = 0;i<8;i++){
+            //     // console.log(JSON.parse(sessionStorage.getItem(i)));
+            //     var m = new AMap.Marker({
+            //         position: JSON.parse(sessionStorage.getItem(i)).position
+            //     });
+            //     map.add(m);
+            // }
+            
             var xmlDoc = xhr2.responseXML;
             var userWayIdList = xmlDoc.getElementsByTagName("way");
             // console.log(userWayIdList);
@@ -313,45 +330,46 @@
                 // console.log(userWayId);
                 var special = new Array(2);
                 
-                if (userWayId == "62687008200") {
+                if (userWayId == "62687005700") {
                     special[0]=10000;
+                    special[1]=6;
+                }
+                else if (userWayId == "62687005701") {
+                    special[0]=10006;
+                    special[1]=6;
+                }
+                // else if (userWayId == "62687008300") {
+                //     special[0]=10004;
+                //     special[1]=2;
+                // }
+                // else if (userWayId == "62687008301") {
+                //     special[0]=10006;
+                //     special[1]=2;
+                // }
+                else if (userWayId == "62687008200") {
+                    special[0]=10012;
                     special[1]=2;
                 }
                 else if (userWayId == "62687008201") {
-                    special[0]=10002;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008300") {
-                    special[0]=10004;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687008301") {
-                    special[0]=10006;
+                    special[0]=10014;
                     special[1]=2;
                 }
                 else if (userWayId == "62687008900") {
-                    special[0]=10008;
-                    special[1]=2;
+                    special[0] = 10016;
+                    special[1] = 2;
                 }
                 else if (userWayId == "62687008901") {
-                    special[0]=10010;
-                    special[1]=2;
-                }
-                else if (userWayId == "62687005700") {
-                    special[0] = 10012;
-                    special[1] = 6;
-                }
-                else if (userWayId == "62687005701") {
                     special[0] = 10018;
-                    special[1] = 6;
+                    special[1] = 2;
                 }
                 // else{
                 //     special[0] = null;
                 // }
                 var state = userWayIdList[i].getAttribute("state");
-                if (state == "0") var color = "green";
-                else if (state == "1") var color = "yellow";
-                else if (state == "2") var color = "red";
+                var color = "";
+                if (state == "0") {color = "green";}
+                else if (state == "1") {color = "yellow";}
+                else if (state == "2") {color = "red";}
 
                 if(special[0] != null){
                     userWayId = special[0];
@@ -362,6 +380,7 @@
                         //     console.log(userWayId);
                         // console.log(ses);
                         var newPolyline = new AMap.Polyline({
+                            map:map,
                             path: ses.path,
                             showDir: true,
                             dirImg: canvasDir,
@@ -380,7 +399,7 @@
                         var str = JSON.stringify(msgInJSON);
                         sessionStorage.setItem(userWayId, str);
 
-                        map.add(newPolyline);
+                        // map.add(newPolyline);
                     }
                 }
                 else{
@@ -419,8 +438,10 @@
                 }
                 
             }
-        }
-    // }
+
+        // }
+        
+    }
     </script>
 </body>
 
