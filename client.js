@@ -56,14 +56,13 @@ udp_client.on('message', function (msg, rinfo) {
 // //定时向服务器发送消息
 // // console.log('-----------------');
 // setInterval(function(){
-    // const sendBuffer = Buffer.alloc(24);
-    const sendBuffer = Buffer.alloc(25);
+    const sendBuffer = Buffer.alloc(24);
     
 
 
 
     // 1.报文头 'FC'
-    var strFC = 'Fc';
+    var strFC = 'FC';
     sendBuffer.write(strFC, 0);
     // 2.格式化时间戳 yyyymmddhhmmss
     // var moment = require('moment');
@@ -75,17 +74,14 @@ udp_client.on('message', function (msg, rinfo) {
     var str3 = "  ";
     sendBuffer.write(str3, 16);
     // 4. 参赛车辆ID 1234567 
-    sendBuffer.writeUInt32BE(1234567, 18);
+    sendBuffer.writeUInt32BE(22, 18);
     // 5. 保留字
     var str4 = "  ";
     sendBuffer.write(str4, 22);
-    // 6  test
-    // var strTest = 't';
-    sendBuffer.write('t', 24);
 
 
-    // udp_client.send(sendBuffer, 0, sendBuffer.length, 51234, '59.110.71.188'); 
-    udp_client.send(sendBuffer, 0, sendBuffer.length, 51234, '127.0.0.1'); 
+    udp_client.send(sendBuffer, 0, sendBuffer.length, 51234, '59.110.71.188'); 
+    // udp_client.send(sendBuffer, 0, sendBuffer.length, 51234, '127.0.0.1'); 
 // },1000);
 // },60000);
 
