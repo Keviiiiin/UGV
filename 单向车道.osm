@@ -1,685 +1,548 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' generator='JOSM'>
   <bounds minlat='31.5850902' minlon='120.7709885' maxlat='31.5946938' maxlon='120.7877343' origin='CGImap 0.6.1 (1963 thorn-01.openstreetmap.org)' />
-  <node id='-143395' action='modify' visible='true' lat='31.59288608591' lon='120.77217530141'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口6' />
+  <node id='100002434' version='2' visible='true' lat='31.5934095277' lon='120.77185933663'>
+    <tag k='name' v='禁止驶入' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_5' />
   </node>
-  <node id='-143397' action='modify' visible='true' lat='31.59309081614' lon='120.77265554242' />
-  <node id='-143399' action='modify' visible='true' lat='31.59328753282' lon='120.77314232203'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口2' />
+  <node id='100002438' version='2' visible='true' lat='31.59283805388' lon='120.77222447519'>
+    <tag k='name' v='禁止右转' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_22' />
   </node>
-  <node id='-143401' action='modify' visible='true' lat='31.59127592098' lon='120.78303157747' />
-  <node id='-143403' action='modify' visible='true' lat='31.58933045849' lon='120.78034936846'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='黄浦江路-福盛路' />
+  <node id='100002461' version='2' visible='true' lat='31.59343981104' lon='120.77178572973'>
+    <tag k='name' v='禁止右转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_23' />
   </node>
-  <node id='-143405' action='modify' visible='true' lat='31.58825089778' lon='120.77839135587'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='黄浦江路-福兴路' />
+  <node id='100003073' version='2' visible='true' lat='31.5933058639' lon='120.77313100251'>
+    <tag k='name' v='禁止驶入' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_5' />
   </node>
-  <node id='-143407' action='modify' visible='true' lat='31.5905482' lon='120.7793716' />
-  <node id='-143413' action='modify' visible='true' lat='31.58878165389' lon='120.78600311355'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='羿家路-福茂路' />
+  <node id='100003077' version='2' visible='true' lat='31.59289244621' lon='120.77218965895'>
+    <tag k='name' v='禁止驶入' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_5' />
   </node>
-  <node id='-143417' action='modify' visible='true' lat='31.59160034889' lon='120.78263461322' />
-  <node id='-143419' action='modify' visible='true' lat='31.59081750466' lon='120.78361973483'>
+  <node id='100003080' version='2' visible='true' lat='31.59287713449' lon='120.77218409254'>
+    <tag k='name' v='禁止右转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_23' />
+  </node>
+  <node id='100003223' version='2' visible='true' lat='31.59359902435' lon='120.77227932991'>
     <tag k='amenity' v='parking' />
-    <tag k='name' v='上客位#2' />
-    <tag k='parking:color' v='blue' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:right' v='yes' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='-143421' action='modify' visible='true' lat='31.59051613624' lon='120.78400937585' />
-  <node id='-143423' action='modify' visible='true' lat='31.59029146495' lon='120.7842956995' />
-  <node id='-143425' action='modify' visible='true' lat='31.59000244158' lon='120.78461090698' />
-  <node id='-143427' action='modify' visible='true' lat='31.58736808995' lon='120.77674241813'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='黄浦江路-湖山路' />
-  </node>
-  <node id='-143435' action='modify' visible='true' lat='31.59366114648' lon='120.77102064013' />
-  <node id='-143437' action='modify' visible='true' lat='31.59262112394' lon='120.7729642006'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口4' />
-  </node>
-  <node id='-143439' action='modify' visible='true' lat='31.59265431855' lon='120.77386737118' />
-  <node id='-143441' action='modify' visible='true' lat='31.59356187888' lon='120.77596052746' />
-  <node id='-143443' action='modify' visible='true' lat='31.5919236911' lon='120.78226922862' />
-  <node id='-143445' action='modify' visible='true' lat='31.59215136309' lon='120.77805471872' />
-  <node id='-143447' action='modify' visible='true' lat='31.59151716913' lon='120.77858069671' />
-  <node id='-143449' action='modify' visible='true' lat='31.58993273123' lon='120.77986412062' />
-  <node id='-143451' action='modify' visible='true' lat='31.58893324915' lon='120.77968314061' />
-  <node id='-143453' action='modify' visible='true' lat='31.58857832689' lon='120.77901369651' />
-  <node id='-143455' action='modify' visible='true' lat='31.58848899389' lon='120.77560873554' />
-  <node id='-143457' action='modify' visible='true' lat='31.58785290336' lon='120.77625207937' />
-  <node id='-143459' action='modify' visible='true' lat='31.58955015692' lon='120.77452023869'>
+    <tag k='name' v='上下客停车点1' />
     <tag k='parking:right' v='yes' />
   </node>
-  <node id='-143461' action='modify' visible='true' lat='31.59144705623' lon='120.77264366751' />
-  <node id='-143463' action='modify' visible='true' lat='31.5909526354' lon='120.77312319582' />
-  <node id='-143465' action='modify' visible='true' lat='31.59238689911' lon='120.77181036558' />
-  <node id='-143467' action='modify' visible='true' lat='31.58949231128' lon='120.78518239866' />
-  <node id='-143469' action='modify' visible='true' lat='31.59114436071' lon='120.78395471276' />
-  <node id='-143471' action='modify' visible='true' lat='31.58994498167' lon='120.78162166282' />
-  <node id='-143473' action='modify' visible='true' lat='31.58980264333' lon='120.78132696811' />
-  <node id='-143475' action='modify' visible='true' lat='31.58813092782' lon='120.78474167991' />
-  <node id='-143477' action='modify' visible='true' lat='31.58770877368' lon='120.78392195106' />
-  <node id='-143479' action='modify' visible='true' lat='31.58759055795' lon='120.78738323688'>
+  <node id='100004352' version='2' visible='true' lat='31.58810554405' lon='120.78679300282'>
     <tag k='amenity' v='parking' />
-    <tag k='name' v='上客位#3' />
-    <tag k='parking:color' v='blue' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:right' v='yes' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='-143646' action='modify' visible='true' lat='31.59304114297' lon='120.77328939265' />
-  <node id='-143649' action='modify' visible='true' lat='31.5930431539' lon='120.77328587532'>
-    <tag k='entrance' v='yes' />
-  </node>
-  <node id='-143684' action='modify' visible='true' lat='31.59332154189' lon='120.77190707132'>
-    <tag k='amenity' v='parking' />
-    <tag k='name' v='下客位#2' />
-    <tag k='parking:color' v='white' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:left' v='yes' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='-143686' action='modify' visible='true' lat='31.59360188314' lon='120.77232294864'>
-    <tag k='amenity' v='parking' />
-    <tag k='name' v='下客位#3' />
-    <tag k='parking:color' v='white' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:left' v='yes' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='-143703' action='modify' visible='true' lat='31.59310920617' lon='120.78069668892'>
+    <tag k='name' v='上下客停车点6' />
     <tag k='parking:right' v='yes' />
   </node>
-  <node id='-143741' action='modify' visible='true' lat='31.59013889117' lon='120.77391648495'>
-    <tag k='parking:right' v='yes' />
+  <node id='738983' visible='true' version='11' lat='31.59167647166' lon='120.7756430068'>
+    <tag k='name' v='停车让行' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_1' />
   </node>
-  <node id='-143947' action='modify' visible='true' lat='31.58872722669' lon='120.7792945467'>
-    <tag k='amenity' v='parking' />
-    <tag k='name' v='上客位#1' />
-    <tag k='parking:color' v='blue' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:right' v='yes' />
-    <tag k='parking:type' v='parallel' />
+  <node id='100000140' visible='true' version='2' lat='31.59204142856' lon='120.77243493165'>
+    <tag k='name' v='禁止左转' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_22' />
   </node>
-  <node id='-144118' action='modify' visible='true' lat='31.59315619573' lon='120.77330323501' />
-  <node id='-144119' action='modify' visible='true' lat='31.59324395208' lon='120.77353218149' />
-  <node id='-144121' action='modify' visible='true' lat='31.59295839538' lon='120.77370062069' />
-  <node id='-144123' action='modify' visible='true' lat='31.59286367394' lon='120.77347494487' />
-  <node id='-144135' action='modify' visible='true' lat='31.5930677871' lon='120.77335117684' />
-  <node id='738982' visible='true' version='11' lat='31.59105189196' lon='120.77896657882'>
-    <tag k='name' v='减速让行' />
-    <tag k='traffic_sign:forward' v='GB_Prohibitory_2' />
-  </node>
-  <node id='738983' visible='true' version='11' lat='31.59158976628' lon='120.77570598501'>
+  <node id='100000144' visible='true' version='2' lat='31.59061907196' lon='120.77392050076'>
     <tag k='name' v='禁止左转' />
     <tag k='traffic_sign:forward' v='GB_Prohibitory_22' />
   </node>
-  <node id='738984' visible='true' version='11' lat='31.59096784643' lon='120.77904027765'>
-    <tag k='name' v='减速让行' />
-    <tag k='traffic_sign:backward' v='GB_Prohibitory_2' />
+  <node id='100000148' visible='true' version='2' lat='31.58916158309' lon='120.77536754337'>
+    <tag k='name' v='禁止左转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_22' />
   </node>
-  <node id='738986' action='delete' visible='true' version='11' lat='31.59295843898' lon='120.77457466275'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate|plate' />
+  <node id='100000154' visible='true' version='2' lat='31.59333947418' lon='120.77138002705'>
+    <tag k='name' v='禁止左转' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_22' />
   </node>
-  <node id='738988' action='delete' visible='true' version='11' lat='31.59297709252' lon='120.77461432281'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='arrow|arrow' />
+  <node id='100000283' visible='true' version='2' lat='31.58947813397' lon='120.78022987648'>
+    <tag k='name' v='禁止直行左转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_26' />
   </node>
-  <node id='738990' action='delete' visible='true' version='11' lat='31.5929565604' lon='120.77460241167'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate' />
+  <node id='100000285' visible='true' version='2' lat='31.58836813893' lon='120.77861419449'>
+    <tag k='name' v='禁止直行左转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_26' />
   </node>
-  <node id='738992' action='delete' visible='true' version='11' lat='31.5938190754' lon='120.77663628744'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='arrow|plate' />
+  <node id='100000464' visible='true' version='2' lat='31.5925142535' lon='120.77271626587' />
+  <node id='100000640' visible='true' version='2' lat='31.59323458309' lon='120.77128049881' />
+  <node id='100000645' visible='true' version='2' lat='31.59165450137' lon='120.77242707323' />
+  <node id='100000740' visible='true' version='2' lat='31.59377222946' lon='120.77972760558'>
+    <tag k='name' v='注意行人' />
+    <tag k='traffic_sign:forward' v='GB_Warning_10' />
   </node>
-  <node id='738994' action='delete' visible='true' version='11' lat='31.59382921858' lon='120.77658203442'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='arrow|plate' />
+  <node id='100000746' visible='true' version='2' lat='31.59252976087' lon='120.781476627'>
+    <tag k='name' v='注意行人' />
+    <tag k='traffic_sign:forward' v='GB_Warning_10' />
   </node>
-  <node id='738996' action='delete' visible='true' version='11' lat='31.59386077863' lon='120.77666010774'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='arrow|plate' />
+  <node id='100000920' visible='true' version='2' lat='31.59019287673' lon='120.77683563984'>
+    <tag k='name' v='禁止直行' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_24' />
   </node>
-  <node id='738998' action='delete' visible='true' version='11' lat='31.59256568162' lon='120.77778224496'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate|arrow' />
+  <node id='100000925' visible='true' version='2' lat='31.58990650529' lon='120.7768441045'>
+    <tag k='name' v='禁止右转' />
+    <tag k='traffic_sign:backward' v='GB_Prohibitory_23' />
   </node>
-  <node id='739000' action='delete' visible='true' version='11' lat='31.59257185516' lon='120.77770595623'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate|arrow' />
+  <node id='100000935' visible='true' version='2' lat='31.5900991474' lon='120.77722475519'>
+    <tag k='name' v='禁止左转' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_22' />
   </node>
-  <node id='739002' action='delete' visible='true' version='11' lat='31.59250903229' lon='120.77775807899'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate|arrow' />
+  <node id='100000966' visible='true' version='2' lat='31.5899200284' lon='120.77705536403'>
+    <tag k='name' v='禁止驶入' />
+    <tag k='traffic_sign:forward' v='GB_Prohibitory_5' />
   </node>
-  <node id='739570' action='delete' visible='true' version='11' lat='31.59251968359' lon='120.77769405615'>
-    <tag k='highway' v='traffic_signals' />
-    <tag k='traffic_signals:type' v='plate|arrow' />
+  <node id='100000974' visible='true' version='2' lat='31.59356745412' lon='120.78004549368'>
+    <tag k='name' v='注意行人' />
+    <tag k='traffic_sign:backward' v='GB_Warning_10' />
   </node>
-  <node id='5917900894' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.58881598449' lon='120.77793388682' />
-  <node id='5917900895' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5894116' lon='120.7774517' />
-  <node id='5917900896' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5905313' lon='120.7765605' />
-  <node id='5917900897' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.591004' lon='120.7761811' />
-  <node id='5917900899' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5920338' lon='120.7753568' />
-  <node id='5917900900' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5923648' lon='120.7750919' />
-  <node id='5917900901' timestamp='2018-09-25T13:52:08Z' uid='8712912' user='Zong Liang L' visible='true' version='3' changeset='62914694' lat='31.5896992' lon='120.780051' />
-  <node id='5917900904' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5929191' lon='120.7773986' />
-  <node id='5917900905' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59342182028' lon='120.7769673' />
-  <node id='5917900906' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59179046465' lon='120.77624875344' />
-  <node id='5917900907' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59217025216' lon='120.77700720133' />
-  <node id='5917900908' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5912156' lon='120.7750979' />
-  <node id='5917900909' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5915435' lon='120.775746'>
+  <node id='100000977' visible='true' version='2' lat='31.59230393927' lon='120.78177215576'>
+    <tag k='name' v='注意行人' />
+    <tag k='traffic_sign:backward' v='GB_Warning_10' />
+  </node>
+  <node id='100001960' visible='true' version='2' lat='31.59262182337' lon='120.77296920321'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区入口' />
+  </node>
+  <node id='100001962' visible='true' version='2' lat='31.59274411417' lon='120.77289560398' />
+  <node id='100001964' visible='true' version='2' lat='31.59275773556' lon='120.77287754698' />
+  <node id='100001966' visible='true' version='2' lat='31.59276126691' lon='120.77286168093' />
+  <node id='100001968' visible='true' version='2' lat='31.59276176216' lon='120.77283430036' />
+  <node id='100001970' visible='true' version='2' lat='31.59274792225' lon='120.77279316117'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='上下客停车点3' />
+    <tag k='parking:right' v='yes' />
+  </node>
+  <node id='100001972' visible='true' version='2' lat='31.59273820467' lon='120.77277196784' />
+  <node id='100001974' visible='true' version='2' lat='31.59272464202' lon='120.77274548752' />
+  <node id='100001976' visible='true' version='2' lat='31.59270823902' lon='120.77273096192' />
+  <node id='100001978' visible='true' version='2' lat='31.59269060734' lon='120.77272483392' />
+  <node id='100001980' visible='true' version='2' lat='31.59266927388' lon='120.77273186118' />
+  <node id='100001982' visible='true' version='2' lat='31.59255249036' lon='120.77280315471'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区出口' />
+  </node>
+  <node id='222222191' visible='true' version='2' lat='31.59293220445' lon='120.77343159729' />
+  <node id='222222199' visible='true' version='2' lat='31.59177679672' lon='120.78242962273' />
+  <node id='222222201' visible='true' version='2' lat='31.58978688018' lon='120.78485239772' />
+  <node id='222222203' visible='true' version='2' lat='31.58880817869' lon='120.78596401304'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='停车点G' />
+    <tag k='parking:left' v='yes' />
+  </node>
+  <node id='222222205' visible='true' version='2' lat='31.59298792933' lon='120.77332004293'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222207' visible='true' version='2' lat='31.59292241585' lon='120.77335737054'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222209' visible='true' version='2' lat='31.59308794424' lon='120.7732630574'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222211' visible='true' version='2' lat='31.59306787057' lon='120.77327449479'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222213' visible='true' version='2' lat='31.59302958623' lon='120.77329630808'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222215' visible='true' version='2' lat='31.59300976139' lon='120.77330760368'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222217' visible='true' version='2' lat='31.59296671801' lon='120.7733321285'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222219' visible='true' version='2' lat='31.59294663633' lon='120.77334357044'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='222222223' visible='true' version='2' lat='31.59294566142' lon='120.77374221395'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='停车点D' />
+    <tag k='parking:left' v='yes' />
+  </node>
+  <node id='222222379' visible='true' version='2' lat='31.59426166273' lon='120.77623622702' />
+  <node id='222222386' visible='true' version='2' lat='31.5880301035' lon='120.78140422774' />
+  <node id='222222406' visible='true' version='2' lat='31.58733441157' lon='120.77906964892' />
+  <node id='1111113395' visible='true' version='2' lat='31.59288608591' lon='120.77217530141'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区中路-园区西路' />
+  </node>
+  <node id='1111113397' visible='true' version='2' lat='31.59304340961' lon='120.77254423209'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='上下客停车点2' />
+    <tag k='parking:right' v='yes' />
+  </node>
+  <node id='1111113399' visible='true' version='2' lat='31.59328753282' lon='120.77314232203'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区中路-园区东路' />
+  </node>
+  <node id='1111113401' visible='true' version='2' lat='31.59127592098' lon='120.78303157747' />
+  <node id='1111113403' visible='true' version='2' lat='31.58933045849' lon='120.78034936846'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='黄浦江路-福盛路' />
+  </node>
+  <node id='1111113405' visible='true' version='2' lat='31.58825089778' lon='120.77839135587'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='黄浦江路-福兴路' />
+  </node>
+  <node id='1111113407' visible='true' version='2' lat='31.5905482' lon='120.7793716' />
+  <node id='1111113413' visible='true' version='2' lat='31.58878165389' lon='120.78600311355'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='羿家路-福茂路' />
+  </node>
+  <node id='1111113417' visible='true' version='2' lat='31.59160034889' lon='120.78263461322' />
+  <node id='1111113419' visible='true' version='2' lat='31.59081750466' lon='120.78361973483'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='上下客停车点5' />
+    <tag k='parking:right' v='yes' />
+  </node>
+  <node id='1111113421' visible='true' version='2' lat='31.59051613624' lon='120.78400937585' />
+  <node id='1111113423' visible='true' version='2' lat='31.59029146495' lon='120.7842956995' />
+  <node id='1111113425' visible='true' version='2' lat='31.59000244158' lon='120.78461090698' />
+  <node id='1111113427' visible='true' version='2' lat='31.58790647393' lon='120.77772371068' />
+  <node id='1111113435' visible='true' version='2' lat='31.59366114648' lon='120.77102064013' />
+  <node id='1111113439' visible='true' version='2' lat='31.59265431855' lon='120.77386737118' />
+  <node id='1111113441' visible='true' version='2' lat='31.59356187888' lon='120.77596052746' />
+  <node id='1111113443' visible='true' version='2' lat='31.5919236911' lon='120.78226922862' />
+  <node id='1111113445' visible='true' version='2' lat='31.59215136309' lon='120.77805471872' />
+  <node id='1111113447' visible='true' version='2' lat='31.59151716913' lon='120.77858069671' />
+  <node id='1111113449' visible='true' version='2' lat='31.58993273123' lon='120.77986412062' />
+  <node id='1111113451' visible='true' version='2' lat='31.58893324915' lon='120.77968314061' />
+  <node id='1111113453' visible='true' version='2' lat='31.58857832689' lon='120.77901369651' />
+  <node id='1111113457' visible='true' version='2' lat='31.58855655279' lon='120.77556664209' />
+  <node id='1111113461' visible='true' version='2' lat='31.59144705623' lon='120.77264366751' />
+  <node id='1111113463' visible='true' version='2' lat='31.5909526354' lon='120.77312319582' />
+  <node id='1111113465' visible='true' version='2' lat='31.59238689911' lon='120.77181036558' />
+  <node id='1111113467' visible='true' version='2' lat='31.58949231128' lon='120.78518239866' />
+  <node id='1111113469' visible='true' version='2' lat='31.59114436071' lon='120.78395471276' />
+  <node id='1111113471' visible='true' version='2' lat='31.58994498167' lon='120.78162166282' />
+  <node id='1111113473' visible='true' version='2' lat='31.58980264333' lon='120.78132696811' />
+  <node id='1111113475' visible='true' version='2' lat='31.58859245643' lon='120.78564290214' />
+  <node id='1111113477' visible='true' version='2' lat='31.58833024023' lon='120.78511285186' />
+  <node id='1111113479' visible='true' version='2' lat='31.58759055795' lon='120.78738323688' />
+  <node id='1111113646' visible='true' version='2' lat='31.59304114297' lon='120.77328939265' />
+  <node id='1111113649' visible='true' version='2' lat='31.59305085139' lon='120.77328419182'>
+    <tag k='entrance' v='yes' />
+  </node>
+  <node id='1111113684' visible='true' version='2' lat='31.59332154189' lon='120.77190707132'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='停车点A' />
+    <tag k='parking:left' v='yes' />
+  </node>
+  <node id='1111113703' visible='true' version='2' lat='31.59310920617' lon='120.78069668892'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='停车点F' />
+    <tag k='parking:right' v='yes' />
+  </node>
+  <node id='1111113947' visible='true' version='2' lat='31.5888320249' lon='120.77948494594'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='上下客停车点4' />
+    <tag k='parking:right' v='yes' />
+  </node>
+  <node id='1111114120' visible='true' version='2' lat='31.59311648231' lon='120.7733225284' />
+  <node id='1111114124' visible='true' version='2' lat='31.59290826831' lon='120.7733756661' />
+  <node id='1111114135' visible='true' version='2' lat='31.59309616336' lon='120.77326983954'>
+    <tag k='amenity' v='parking' />
+    <tag k='name' v='停车点C' />
+    <tag k='parking:left' v='yes' />
+  </node>
+  <node id='5917900894' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.58881598449' lon='120.77793388682' />
+  <node id='5917900895' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5894116' lon='120.7774517' />
+  <node id='5917900896' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5905313' lon='120.7765605' />
+  <node id='5917900897' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.591004' lon='120.7761811' />
+  <node id='5917900899' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5920338' lon='120.7753568' />
+  <node id='5917900900' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5923648' lon='120.7750919' />
+  <node id='5917900901' timestamp='2018-09-25T13:52:08Z' visible='true' version='3' lat='31.5896992' lon='120.780051' />
+  <node id='5917900904' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5929191' lon='120.7773986' />
+  <node id='5917900905' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59342182028' lon='120.7769673' />
+  <node id='5917900906' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59179046465' lon='120.77624875344' />
+  <node id='5917900907' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59217025216' lon='120.77700720133' />
+  <node id='5917900908' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5912156' lon='120.7750979' />
+  <node id='5917900909' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5915435' lon='120.775746'>
     <tag k='junction' v='yes' />
     <tag k='name' v='五渠路-福兴路' />
   </node>
-  <node id='5917900910' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5904604' lon='120.7736148'>
+  <node id='5917900910' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5904604' lon='120.7736148'>
     <tag k='junction' v='yes' />
     <tag k='name' v='五渠路-湖山路' />
   </node>
-  <node id='5917900911' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5908638' lon='120.774392' />
-  <node id='5917900912' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5932743' lon='120.7792188' />
-  <node id='5917900913' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.592926' lon='120.778524' />
-  <node id='5917900914' action='modify' timestamp='2018-09-25T13:52:08Z' uid='8712912' user='Zong Liang L' visible='true' version='3' changeset='62914694' lat='31.5925405' lon='120.7777329'>
+  <node id='5917900911' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5908638' lon='120.774392' />
+  <node id='5917900912' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5932743' lon='120.7792188' />
+  <node id='5917900913' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.592926' lon='120.778524' />
+  <node id='5917900914' timestamp='2018-09-25T13:52:08Z' visible='true' version='3' lat='31.5925405' lon='120.7777329'>
     <tag k='highway' v='traffic_signals' />
     <tag k='junction' v='yes' />
     <tag k='name' v='五渠路-福盛路' />
   </node>
-  <node id='5917900915' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5892955' lon='120.7756167' />
-  <node id='5917900916' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5890087' lon='120.7750831'>
+  <node id='5917900915' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5892955' lon='120.7756167' />
+  <node id='5917900916' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5890087' lon='120.7750831'>
     <tag k='junction' v='yes' />
     <tag k='name' v='渔乐路-湖山路' />
   </node>
-  <node id='5917900917' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5896367' lon='120.7762921' />
-  <node id='5917900918' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.589985' lon='120.7770047'>
+  <node id='5917900917' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5896367' lon='120.7762921' />
+  <node id='5917900918' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.589985' lon='120.7770047'>
     <tag k='junction' v='yes' />
     <tag k='name' v='渔乐路-福兴路' />
   </node>
-  <node id='5917900919' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5903646' lon='120.7777365' />
-  <node id='5917900921' timestamp='2018-09-25T13:52:08Z' uid='8712912' user='Zong Liang L' visible='true' version='3' changeset='62914694' lat='31.5905809' lon='120.7781619' />
-  <node id='5917900922' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5913914' lon='120.7797667' />
-  <node id='5917900923' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5919997' lon='120.7809681' />
-  <node id='5917900924' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5923726' lon='120.7816824'>
+  <node id='5917900919' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5903646' lon='120.7777365' />
+  <node id='5917900921' timestamp='2018-09-25T13:52:08Z' visible='true' version='3' lat='31.5905809' lon='120.7781619' />
+  <node id='5917900922' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5913914' lon='120.7797667' />
+  <node id='5917900923' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5919997' lon='120.7809681' />
+  <node id='5917900924' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5923726' lon='120.7816824'>
     <tag k='junction' v='yes' />
     <tag k='name' v='渔乐路-福茂路' />
   </node>
-  <node id='5917900925' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5927043' lon='120.7812481' />
-  <node id='5917900927' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5932647' lon='120.7804884' />
-  <node id='5917900928' timestamp='2018-09-20T12:25:08Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62760647' lat='31.5932062' lon='120.7805646' />
-  <node id='5917900929' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5942877' lon='120.7788326' />
-  <node id='5917900930' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5939552' lon='120.7794318' />
-  <node id='5917900931' action='modify' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5936531' lon='120.7799202'>
+  <node id='5917900925' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5927043' lon='120.7812481' />
+  <node id='5917900927' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5932647' lon='120.7804884' />
+  <node id='5917900928' timestamp='2018-09-20T12:25:08Z' visible='true' version='2' lat='31.5932062' lon='120.7805646' />
+  <node id='5917900929' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5942877' lon='120.7788326' />
+  <node id='5917900930' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5939552' lon='120.7794318' />
+  <node id='5917900931' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5936531' lon='120.7799202'>
     <tag k='junction' v='yes' />
     <tag k='name' v='五渠路-云深路-福茂路' />
   </node>
-  <node id='5917900932' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943405' lon='120.7787297' />
-  <node id='5917900933' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943597' lon='120.7786877' />
-  <node id='5917900934' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943825' lon='120.7786334' />
-  <node id='5917900935' timestamp='2018-09-20T08:46:09Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944162' lon='120.7785349' />
-  <node id='5917900936' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944522' lon='120.7783954' />
-  <node id='5917900937' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944665' lon='120.7782787' />
-  <node id='5917900938' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944685' lon='120.7781858' />
-  <node id='5917900939' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944602' lon='120.7780863' />
-  <node id='5917900940' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944502' lon='120.7780195' />
-  <node id='5917900941' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944388' lon='120.7779589' />
-  <node id='5917900942' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944189' lon='120.7778786' />
-  <node id='5917900943' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5944022' lon='120.7778232' />
-  <node id='5917900944' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943776' lon='120.7777533' />
-  <node id='5917900945' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943707' lon='120.7777335' />
-  <node id='5917900946' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943318' lon='120.777637' />
-  <node id='5917900947' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943577' lon='120.7777012' />
-  <node id='5917900948' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5943033' lon='120.7775716' />
-  <node id='5917900949' timestamp='2018-09-20T12:25:08Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62760647' lat='31.5942232' lon='120.7774044' />
-  <node id='5917900953' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5942142' lon='120.7773862' />
-  <node id='5917900955' action='modify' timestamp='2018-09-25T13:52:08Z' uid='8712912' user='Zong Liang L' visible='true' version='3' changeset='62914694' lat='31.5938425' lon='120.7766179'>
+  <node id='5917900932' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5943405' lon='120.7787297' />
+  <node id='5917900933' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5943597' lon='120.7786877' />
+  <node id='5917900934' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5943825' lon='120.7786334' />
+  <node id='5917900935' timestamp='2018-09-20T08:46:09Z' visible='true' version='1' lat='31.5944162' lon='120.7785349' />
+  <node id='5917900936' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944522' lon='120.7783954' />
+  <node id='5917900937' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944665' lon='120.7782787' />
+  <node id='5917900938' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944685' lon='120.7781858' />
+  <node id='5917900939' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944602' lon='120.7780863' />
+  <node id='5917900940' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944502' lon='120.7780195' />
+  <node id='5917900941' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944388' lon='120.7779589' />
+  <node id='5917900942' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944189' lon='120.7778786' />
+  <node id='5917900943' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5944022' lon='120.7778232' />
+  <node id='5917900944' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5943776' lon='120.7777533' />
+  <node id='5917900945' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5943707' lon='120.7777335' />
+  <node id='5917900946' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5943318' lon='120.777637' />
+  <node id='5917900947' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5943577' lon='120.7777012' />
+  <node id='5917900948' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5943033' lon='120.7775716' />
+  <node id='5917900949' timestamp='2018-09-20T12:25:08Z' visible='true' version='2' lat='31.5942232' lon='120.7774044' />
+  <node id='5917900953' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5942142' lon='120.7773862' />
+  <node id='5917900955' timestamp='2018-09-25T13:52:08Z' visible='true' version='3' lat='31.5938425' lon='120.7766179'>
     <tag k='highway' v='traffic_signals' />
     <tag k='junction' v='yes' />
     <tag k='name' v='云深路-福盛路' />
   </node>
-  <node id='5917900956' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5932008' lon='120.7751211' />
-  <node id='5917900957' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59226267684' lon='120.77295653516'>
+  <node id='5917900956' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5932008' lon='120.7751211' />
+  <node id='5917900957' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59230914673' lon='120.77304073257'>
     <tag k='junction' v='yes' />
-    <tag k='name' v='云深路-内部道路入口' />
+    <tag k='name' v='云深路-内部道路出入口' />
   </node>
-  <node id='5917900958' action='modify' timestamp='2018-09-26T06:04:25Z' uid='8712912' user='Zong Liang L' visible='true' version='4' changeset='62934912' lat='31.59296674017' lon='120.77459396882'>
+  <node id='5917900958' timestamp='2018-09-26T06:04:25Z' visible='true' version='4' lat='31.59296674017' lon='120.77459396882'>
     <tag k='highway' v='traffic_signals' />
     <tag k='junction' v='yes' />
     <tag k='name' v='云深路-福兴路' />
   </node>
-  <node id='5917900959' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59232742431' lon='120.77310711724'>
+  <node id='5917900961' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59327914389' lon='120.77125465074'>
     <tag k='junction' v='yes' />
-    <tag k='name' v='云深路-内部道路出口' />
+    <tag k='name' v='消防通道-湖山路' />
   </node>
-  <node id='5917900961' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59327914389' lon='120.77125465074'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部道路-湖山路' />
-  </node>
-  <node id='5917900962' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59192924016' lon='120.77218106882'>
+  <node id='5917900962' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59192924016' lon='120.77218106882'>
     <tag k='junction' v='yes' />
     <tag k='name' v='云深路-湖山路' />
   </node>
-  <node id='5917900963' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5910846' lon='120.7729914' />
-  <node id='5917900966' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59343914247' lon='120.77184401482'>
+  <node id='5917900963' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5910846' lon='120.7729914' />
+  <node id='5917900966' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59343914247' lon='120.77184401482'>
     <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口1' />
+    <tag k='name' v='园区北路-园区西路' />
   </node>
-  <node id='5917900967' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59295734114' lon='120.77210235236' />
-  <node id='5917900968' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.592793' lon='120.7722706'>
+  <node id='5917900967' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59295734114' lon='120.77210235236' />
+  <node id='5917900968' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.592793' lon='120.7722706'>
     <tag k='amenity' v='parking' />
-    <tag k='name' v='下客位#1' />
-    <tag k='parking:color' v='white' />
-    <tag k='parking:direction' v='backward' />
+    <tag k='name' v='停车点B' />
     <tag k='parking:left' v='yes' />
-    <tag k='parking:type' v='parallel' />
   </node>
-  <node id='5917900969' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5924137' lon='120.7724744' />
-  <node id='5917900970' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5928158' lon='120.7734239' />
-  <node id='5917900971' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59339657673' lon='120.77307723337' />
-  <node id='5917900972' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59355740693' lon='120.77307776784' />
-  <node id='5917900973' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59371360134' lon='120.77290023337' />
-  <node id='5917900974' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.59368421786' lon='120.77265866324' />
-  <node id='5917900975' action='modify' timestamp='2018-09-20T08:46:10Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62754840' lat='31.5933103124' lon='120.77130791657' />
-  <node id='5919887137' timestamp='2018-09-26T06:04:25Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62934912' lat='31.59157296242' lon='120.7757208661'>
-    <tag k='name' v='停车让行' />
-    <tag k='traffic_sign:forward' v='GB_Prohibitory_1' />
+  <node id='5917900969' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5924137' lon='120.7724744' />
+  <node id='5917900970' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5928158' lon='120.7734239'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区南路-园区东路' />
   </node>
-  <node id='5919887139' timestamp='2018-09-26T06:04:25Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62934912' lat='31.59152544347' lon='120.7757601655'>
+  <node id='5917900971' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59339657673' lon='120.77307723337' />
+  <node id='5917900972' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59355740693' lon='120.77307776784' />
+  <node id='5917900973' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59371360134' lon='120.77290023337' />
+  <node id='5917900974' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.59368421786' lon='120.77265866324' />
+  <node id='5917900975' timestamp='2018-09-20T08:46:10Z' visible='true' version='1' lat='31.5933103124' lon='120.77130791657' />
+  <node id='5919887139' timestamp='2018-09-26T06:04:25Z' visible='true' version='5' lat='31.59142875745' lon='120.77583998672'>
     <tag k='name' v='停车让行' />
     <tag k='traffic_sign:backward' v='GB_Prohibitory_1' />
   </node>
-  <node id='5919887142' timestamp='2018-09-26T06:04:25Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62934912' lat='31.589891' lon='120.777078'>
-    <tag k='highway' v='stop' />
+  <node id='5919887142' timestamp='2018-09-26T06:04:25Z' visible='true' version='5' lat='31.589891' lon='120.777078'>
     <tag k='name' v='停车让行' />
     <tag k='traffic_sign:backward' v='GB_Prohibitory_1' />
   </node>
-  <node id='5919887144' timestamp='2018-09-26T06:04:25Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62934912' lat='31.590073' lon='120.7769331'>
-    <tag k='highway' v='stop' />
+  <node id='5919887144' timestamp='2018-09-26T06:04:25Z' visible='true' version='5' lat='31.59016033058' lon='120.77686279874'>
     <tag k='name' v='停车让行' />
     <tag k='traffic_sign:forward' v='GB_Prohibitory_1' />
   </node>
-  <node id='5919887148' action='modify' timestamp='2018-09-26T05:52:39Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62934705' lat='31.59005729577' lon='120.7739930491' />
-  <node id='5919906149' action='modify' timestamp='2018-09-21T07:06:15Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62785912' lat='31.59312142669' lon='120.77297610179' />
-  <node id='5919906150' action='modify' timestamp='2018-09-21T07:06:15Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62785912' lat='31.59299873614' lon='120.77303692453' />
-  <node id='5919906151' action='modify' timestamp='2018-09-21T07:06:15Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62785912' lat='31.59284397539' lon='120.77266552397' />
-  <node id='5919906152' action='modify' timestamp='2018-09-21T07:06:15Z' uid='8712912' user='Zong Liang L' visible='true' version='1' changeset='62785912' lat='31.59297078708' lon='120.77259986328' />
-  <node id='5930487279' action='delete' timestamp='2018-09-26T03:05:35Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62932385' lat='31.58960104138' lon='120.77460635227'>
-    <tag k='amenity' v='taxi' />
-    <tag k='parking:additional' v='B' />
-    <tag k='parking:color' v='blue' />
-    <tag k='parking:direction' v='backward' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='5930487280' action='delete' timestamp='2018-09-26T03:05:35Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62932385' lat='31.59301829022' lon='120.78059631239'>
-    <tag k='amenity' v='taxi' />
-    <tag k='parking:additional' v='A' />
-    <tag k='parking:color' v='blue' />
-    <tag k='parking:direction' v='forward' />
-    <tag k='parking:type' v='parallel' />
-  </node>
-  <node id='5930511544' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59100902951' lon='120.77900108239'>
-    <tag k='junction' v='roundabout' />
-    <tag k='lanes' v='4' />
-    <tag k='maxspeed' v='40' />
-    <tag k='name' v='渔乐路-福盛路' />
-    <tag k='turn:lanes' v='through|through|right,through|right,through' />
-  </node>
-  <node id='5930511545' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59096877649' lon='120.77897267964' />
-  <node id='5930511546' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59096153469' lon='120.77899374539' />
-  <node id='5930511547' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5909629534' lon='120.77901640086' />
-  <node id='5930511548' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59100713096' lon='120.77900237034'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='渔乐路中段-福盛路南段' />
-  </node>
-  <node id='5930511549' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59098999711' lon='120.77904897344' />
-  <node id='5930511550' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59101041506' lon='120.779051022' />
-  <node id='5930511551' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59102929608' lon='120.77904167105' />
-  <node id='5930511552' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59100852461' lon='120.77900257194'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='渔乐路东段-福盛路南段' />
-  </node>
-  <node id='5930511553' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59104229462' lon='120.77902307274' />
-  <node id='5930511554' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59104641902' lon='120.77899950755' />
-  <node id='5930511555' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59100902951' lon='120.77900108239'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='渔乐路东段-福盛路中段' />
-  </node>
-  <node id='5930511556' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59102991383' lon='120.77896186499' />
-  <node id='5930511557' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.5910152334' lon='120.77895319581' />
-  <node id='5930511558' action='delete' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59099885149' lon='120.77895167462' />
-  <node id='5930511561' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59344087051' lon='120.77169336732' />
-  <node id='5930511562' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59338991718' lon='120.7715047612' />
-  <node id='5930511563' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59288850145' lon='120.77148124756' />
-  <node id='5930511564' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59354585033' lon='120.77209447859' />
-  <node id='5930511565' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59367029791' lon='120.77302086281' />
-  <node id='5930511566' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59255342105' lon='120.77280433024'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口5' />
-  </node>
-  <node id='5930511568' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59275482634' lon='120.7732799194'>
-    <tag k='junction' v='yes' />
-    <tag k='name' v='内部路口3' />
-  </node>
-  <node id='5930511569' action='modify' timestamp='2018-09-22T13:50:17Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62826454' lat='31.59302985862' lon='120.77311382813'>
+  <node id='5919887148' timestamp='2018-09-26T05:52:39Z' visible='true' version='2' lat='31.58998867881' lon='120.77406335036' />
+  <node id='5919906149' timestamp='2018-09-21T07:06:15Z' visible='true' version='1' lat='31.59309154617' lon='120.7730772138' />
+  <node id='5919906150' timestamp='2018-09-21T07:06:15Z' visible='true' version='1' lat='31.59302985862' lon='120.77311382813'>
     <tag k='entrance' v='yes' />
   </node>
-  <way id='-143859' action='modify' visible='true'>
-    <nd ref='-143405' />
-    <nd ref='-143427' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash|dash' />
-    <tag k='construction' v='tertiary' />
-    <tag k='highway' v='construction' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='黄浦江路' />
-    <tag k='oneway' v='yes' />
-    <tag k='width:lanes' v='3.1' />
-  </way>
-  <way id='-143860' action='modify' visible='true'>
-    <nd ref='5917900961' />
-    <nd ref='-143435' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='3' />
-    <tag k='name' v='湖山路北部延申道路' />
-    <tag k='oneway' v='yes' />
-    <tag k='section' v='0' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='3.62|3.62|3.62' />
-  </way>
-  <way id='-143861' action='modify' visible='true'>
-    <nd ref='-143469' />
-    <nd ref='-143471' />
-    <tag k='bridge' v='yes' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash|dash' />
-    <tag k='construction' v='tertiary' />
-    <tag k='highway' v='construction' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='layer' v='2' />
-    <tag k='name' v='黄浦江路' />
-    <tag k='oneway' v='yes' />
-    <tag k='tertiary' v='yellow' />
-    <tag k='width:lanes' v='3.1' />
-    <tag k='yes' v='黄浦江路' />
-  </way>
-  <way id='-143862' action='modify' visible='true'>
-    <nd ref='-143471' />
-    <nd ref='-143473' />
-    <nd ref='-143403' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash|dash' />
-    <tag k='construction' v='tertiary' />
-    <tag k='highway' v='construction' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='黄浦江路' />
-    <tag k='oneway' v='yes' />
-    <tag k='tertiary' v='yellow' />
-    <tag k='width:lanes' v='3.1' />
-    <tag k='yes' v='黄浦江路' />
-  </way>
-  <way id='-143863' action='modify' visible='true'>
-    <nd ref='-143413' />
-    <nd ref='-143475' />
-    <nd ref='-143477' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='羿家路' />
-    <tag k='section' v='4' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
-  </way>
-  <way id='-143864' action='modify' visible='true'>
-    <nd ref='5919906150' />
-    <nd ref='5930511569' />
-    <tag k='highway' v='service' />
-    <tag k='service' v='parking_aisle' />
-  </way>
-  <way id='626870103' version='2' action='modify' visible='true'>
-    <nd ref='5917900924' />
-    <nd ref='-143443' />
-    <nd ref='-143417' />
-    <nd ref='-143401' />
-    <nd ref='-143419' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='福茂路南1段' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
-  </way>
-  <way id='-144120' action='modify' visible='true'>
-    <nd ref='-144118' />
-    <nd ref='-144119' />
-    <nd ref='-144121' />
-    <nd ref='-144123' />
-    <nd ref='-144135' />
-    <nd ref='-144118' />
-    <tag k='amenity' v='parking' />
-    <tag k='building' v='yes' />
-    <tag k='highway' v='rest_area' />
-    <tag k='name' v='地面停车场' />
-  </way>
-  <way id='-144136' action='modify' visible='true'>
-    <nd ref='-143649' />
-    <nd ref='-144135' />
-    <tag k='highway' v='service' />
-    <tag k='service' v='parking_aisle' />
-  </way>
-  <way id='739490' action='delete' visible='true' version='11'>
-    <tag k='highway' v='tertiary' />
+  <node id='5919906151' timestamp='2018-09-21T07:06:15Z' visible='true' version='1' lat='31.59297017691' lon='120.77297587594' />
+  <node id='5919906152' timestamp='2018-09-21T07:06:15Z' visible='true' version='1' lat='31.59303441508' lon='120.7729403425' />
+  <node id='5930511544' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59100902951' lon='120.77900108239'>
     <tag k='junction' v='roundabout' />
-    <tag k='lanes' v='4' />
     <tag k='maxspeed' v='40' />
-    <tag k='turn:lanes' v='through|through|right,through|right,through' />
+    <tag k='name' v='渔乐路-福盛路' />
+  </node>
+  <node id='5930511561' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59344087051' lon='120.77169336732' />
+  <node id='5930511562' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59338991718' lon='120.7715047612' />
+  <node id='5930511563' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59288850145' lon='120.77148124756' />
+  <node id='5930511564' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.5935686242' lon='120.77214397002' />
+  <node id='5930511565' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59367029791' lon='120.77302086281' />
+  <node id='5930511568' timestamp='2018-09-22T13:50:17Z' visible='true' version='2' lat='31.59275482634' lon='120.7732799194'>
+    <tag k='junction' v='yes' />
+    <tag k='name' v='园区南路-地下停车场入口' />
+  </node>
+  <way id='626870090' visible='true' version='2'>
+    <nd ref='100001960' />
+    <nd ref='100001962' />
+    <nd ref='100001964' />
+    <nd ref='100001966' />
+    <nd ref='100001968' />
+    <nd ref='100001970' />
+    <nd ref='100001972' />
+    <nd ref='100001974' />
+    <nd ref='100001976' />
+    <nd ref='100001978' />
+    <nd ref='100001980' />
+    <nd ref='100001982' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='迎宾通道' />
+    <tag k='oneway' v='yes' />
   </way>
-  <way id='626870021' action='modify' timestamp='2018-09-26T06:35:36Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='222222380' visible='true' version='2'>
+    <nd ref='222222379' />
+    <nd ref='5917900955' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='福盛路' />
+  </way>
+  <way id='222222387' visible='true' version='2'>
+    <nd ref='1111113403' />
+    <nd ref='222222386' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='福盛路' />
+  </way>
+  <way id='222222407' visible='true' version='2'>
+    <nd ref='1111113405' />
+    <nd ref='222222406' />
+    <tag k='highway' v='tertiary' />
+    <tag k='name' v='福兴路' />
+  </way>
+  <way id='626870021' timestamp='2018-09-26T06:35:36Z' visible='true' version='6'>
     <nd ref='5917900918' />
+    <nd ref='100000966' />
     <nd ref='5919887142' />
     <nd ref='5917900895' />
     <nd ref='5917900894' />
-    <nd ref='-143405' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
+    <nd ref='1111113405' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='福兴路南段' />
-    <tag k='stopline' v='stopyield' />
-    <tag k='turn:lanes:backward' v='left|through,right' />
-    <tag k='width:lanes' v='3.1;3.0|3.0|3.2' />
+    <tag k='name' v='福兴路' />
+    <tag k='oneway' v='-1' />
   </way>
-  <way id='626870022' action='modify' timestamp='2018-09-26T06:35:36Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='626870022' timestamp='2018-09-26T06:35:36Z' visible='true' version='6'>
     <nd ref='5917900909' />
     <nd ref='5919887139' />
     <nd ref='5917900897' />
     <nd ref='5917900896' />
+    <nd ref='100000920' />
     <nd ref='5919887144' />
     <nd ref='5917900918' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1;2' />
-    <tag k='name' v='福兴路中段' />
-    <tag k='stopline' v='stopyield' />
-    <tag k='turn:lanes:backward' v='left|through,right' />
-    <tag k='turn:lanes:forward' v='left|through,right' />
-    <tag k='width:lanes' v='3.2|3.0|3.0;3.0|3.0|3.2;4.6|4.5' />
+    <tag k='name' v='福兴路' />
   </way>
-  <way id='626870025' action='modify' timestamp='2018-09-26T06:28:23Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935356'>
+  <way id='626870025' timestamp='2018-09-26T06:28:23Z' visible='true' version='5'>
     <nd ref='5917900958' />
     <nd ref='5917900900' />
     <nd ref='5917900899' />
     <nd ref='738983' />
-    <nd ref='5919887137' />
     <nd ref='5917900909' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1;2' />
-    <tag k='name' v='福兴路北段' />
-    <tag k='stopline' v='stop;stopyield' />
-    <tag k='turn:lanes:backward' v='left|right' />
-    <tag k='turn:lanes:forward' v='left|through|through,right' />
-    <tag k='width:lanes' v='3.2|3.0|3.0;3.0|3.0|3.2;4.5|4.6' />
+    <tag k='name' v='福兴路' />
   </way>
-  <way id='626870027' action='modify' timestamp='2018-09-26T06:35:36Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='626870027' timestamp='2018-09-26T06:35:36Z' visible='true' version='6'>
     <nd ref='5930511544' />
-    <nd ref='-143407' />
-    <nd ref='-143449' />
+    <nd ref='1111113407' />
+    <nd ref='1111113449' />
     <nd ref='5917900901' />
-    <nd ref='-143403' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid;dash|dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='3' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='福盛路南段' />
-    <tag k='section' v='0' />
-    <tag k='stopline' v='yield' />
-    <tag k='turn:lanes:backward' v='through,left|through|through' />
-    <tag k='width:lanes' v='3.1|3.5|3.8|3.8|3.5|3.1' />
+    <nd ref='100000283' />
+    <nd ref='1111113403' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='福盛路' />
   </way>
-  <way id='626870032' action='modify' timestamp='2018-09-26T06:35:37Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870032' timestamp='2018-09-26T06:35:37Z' visible='true' version='5'>
     <nd ref='5917900955' />
     <nd ref='5917900905' />
     <nd ref='5917900904' />
     <nd ref='5917900914' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid;dash|solid' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='3' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='福盛路北段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through|through,right' />
-    <tag k='turn:lanes:forward' v='left,through|through|through,right' />
-    <tag k='width:lanes' v='3.1|3.5|3.8|3.8|3.5|3.1' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='福盛路' />
   </way>
-  <way id='626870033' action='modify' timestamp='2018-09-26T06:35:37Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='626870033' timestamp='2018-09-26T06:35:37Z' visible='true' version='6'>
     <nd ref='5917900914' />
     <nd ref='5917900907' />
     <nd ref='5917900906' />
     <nd ref='5917900909' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;3' />
-    <tag k='lanes:forward' v='1;2' />
-    <tag k='name' v='五渠路中段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through|right' />
-    <tag k='turn:lanes:forward' v='left|through,right' />
-    <tag k='width:lanes' v='3.0|3.0|3.0|3.3;3.3|3.0|3.0;4.5|4.6' />
+    <tag k='name' v='五渠路' />
   </way>
-  <way id='626870038' action='modify' timestamp='2018-09-26T06:35:37Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870038' timestamp='2018-09-26T06:35:37Z' visible='true' version='5'>
     <nd ref='5917900909' />
     <nd ref='5917900908' />
     <nd ref='5917900911' />
+    <nd ref='100000144' />
     <nd ref='5917900910' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1;2' />
-    <tag k='name' v='五渠路西段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through,right' />
-    <tag k='width:lanes' v='3.3|3.0|2.9;3.0|3.0|3.2;4.7|4.5' />
+    <tag k='name' v='五渠路' />
   </way>
-  <way id='626870040' action='modify' timestamp='2018-09-26T06:35:38Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870040' timestamp='2018-09-26T06:35:38Z' visible='true' version='5'>
     <nd ref='5917900931' />
     <nd ref='5917900912' />
     <nd ref='5917900913' />
     <nd ref='5917900914' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1;2;3' />
-    <tag k='name' v='五渠路东段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:forward' v='left|through|right' />
-    <tag k='width:lanes' v='3.3|3.0|3.0|3.0;3.0|3.0|3.2;4.5|4.6' />
+    <tag k='name' v='五渠路' />
   </way>
-  <way id='626870043' action='modify' timestamp='2018-09-26T06:35:38Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='626870043' timestamp='2018-09-26T06:35:38Z' visible='true' version='6'>
     <nd ref='5917900918' />
+    <nd ref='100000925' />
     <nd ref='5917900917' />
     <nd ref='5917900915' />
+    <nd ref='100000148' />
     <nd ref='5917900916' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='渔乐路西段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through,right' />
-    <tag k='turn:lanes:forward' v='right' />
-    <tag k='width:lanes' v='3.0|3.0|3.2;4.6|4.5' />
+    <tag k='name' v='渔乐路' />
   </way>
-  <way id='626870050' action='modify' timestamp='2018-09-26T06:35:39Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
+  <way id='626870050' timestamp='2018-09-26T06:35:39Z' visible='true' version='6'>
     <nd ref='5930511544' />
     <nd ref='5917900921' />
     <nd ref='5917900919' />
+    <nd ref='100000935' />
     <nd ref='5917900918' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;3' />
-    <tag k='lanes:forward' v='1;2' />
-    <tag k='name' v='渔乐路中段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through|right' />
-    <tag k='turn:lanes:forward' v='left|through,right' />
-    <tag k='width:lanes' v='3.2|3.0|3.0;3.0|3.0|3.0|3.3;4.6|4.5' />
+    <tag k='name' v='渔乐路' />
   </way>
-  <way id='626870052' action='modify' timestamp='2018-09-26T06:35:39Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870052' timestamp='2018-09-26T06:35:39Z' visible='true' version='5'>
     <nd ref='5917900924' />
     <nd ref='5917900923' />
     <nd ref='5917900922' />
     <nd ref='5930511544' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1;3' />
-    <tag k='name' v='渔乐路东段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:forward' v='left|through|right' />
-    <tag k='width:lanes' v='3.0|3.0|3.3;3.3|3.0|3.0|3.0;4.6|4.5' />
+    <tag k='name' v='渔乐路' />
   </way>
-  <way id='626870054' action='modify' timestamp='2018-09-26T06:35:39Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870054' timestamp='2018-09-26T06:35:39Z' visible='true' version='5'>
     <nd ref='5917900931' />
+    <nd ref='100000974' />
     <nd ref='5917900927' />
     <nd ref='5917900928' />
-    <nd ref='-143703' />
+    <nd ref='1111113703' />
     <nd ref='5917900925' />
+    <nd ref='100000746' />
     <nd ref='5917900924' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='福茂路中段' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='3.0|3.0|3.1;4.6|4.5' />
+    <tag k='name' v='福茂路' />
   </way>
-  <way id='626870057' action='modify' timestamp='2018-09-26T06:35:40Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935500'>
+  <way id='626870057' timestamp='2018-09-26T06:35:40Z' visible='true' version='5'>
     <nd ref='5917900955' />
     <nd ref='5917900953' />
     <nd ref='5917900949' />
@@ -702,313 +565,228 @@
     <nd ref='5917900932' />
     <nd ref='5917900929' />
     <nd ref='5917900930' />
+    <nd ref='100000740' />
     <nd ref='5917900931' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1;2' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='云深路东段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|through,right' />
-    <tag k='width:lanes' v='3.0|3.0|3.0;4.6|4.5' />
+    <tag k='name' v='云深路' />
   </way>
-  <way id='626870058' action='modify' timestamp='2018-09-28T11:16:16Z' uid='8712912' user='Zong Liang L' visible='true' version='7' changeset='63005533'>
+  <way id='626870058' timestamp='2018-09-28T11:16:16Z' visible='true' version='7'>
     <nd ref='5917900958' />
     <nd ref='5917900956' />
-    <nd ref='-143441' />
+    <nd ref='1111113441' />
     <nd ref='5917900955' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='2' />
-    <tag k='lanes:forward' v='2' />
-    <tag k='name' v='云深路中段' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='through,left|through' />
-    <tag k='turn:lanes:forward' v='left|through,right' />
-    <tag k='width:lanes' v='3.5|3.8|3.8|3.5|3.5' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='云深路' />
   </way>
-  <way id='626870059' action='modify' timestamp='2018-09-26T06:28:23Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935356'>
-    <nd ref='5917900957' />
-    <nd ref='5917900959' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash|dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='3' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='云深路西段1' />
-    <tag k='width:lanes' v='3.0|3.5|3.8|3.8|3.5|3.0' />
-  </way>
-  <way id='626870061' action='modify' timestamp='2018-09-26T06:28:24Z' uid='8712912' user='Zong Liang L' visible='true' version='5' changeset='62935356'>
+  <way id='626870061' timestamp='2018-09-26T06:28:24Z' visible='true' version='5'>
     <nd ref='5917900962' />
+    <nd ref='100000140' />
     <nd ref='5917900957' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='3' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='云深路西段0' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:backward' v='left|left|right' />
-    <tag k='width:lanes' v='3.0|3.5|3.8|3.8|3.5|3.0' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='云深路' />
   </way>
-  <way id='626870080' action='modify' visible='true' version='11'>
+  <way id='626870080' visible='true' version='11'>
     <nd ref='5917900961' />
     <nd ref='5917900975' />
+    <nd ref='100000154' />
     <nd ref='5930511562' />
     <nd ref='5930511561' />
+    <nd ref='100002461' />
     <nd ref='5917900966' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路1' />
-    <tag k='section' v='0' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='消防通道' />
   </way>
-  <way id='626870081' action='modify' visible='true' version='2'>
+  <way id='626870081' visible='true' version='2'>
     <nd ref='5930511568' />
-    <nd ref='-143437' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路5' />
-    <tag k='section' v='4' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <nd ref='100001960' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区南路' />
   </way>
-  <way id='626870082' action='modify' visible='true' version='2'>
+  <way id='626870082' visible='true' version='2'>
     <nd ref='5917900966' />
     <nd ref='5930511564' />
-    <nd ref='-143686' />
+    <nd ref='100003223' />
     <nd ref='5917900974' />
     <nd ref='5917900973' />
     <nd ref='5930511565' />
     <nd ref='5917900972' />
     <nd ref='5917900971' />
-    <nd ref='-143399' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路2' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <nd ref='100003073' />
+    <nd ref='1111113399' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区北路' />
+    <tag k='oneway' v='yes' />
   </way>
-  <way id='626870083' action='modify' visible='true' version='2'>
-    <nd ref='-143399' />
-    <nd ref='-143646' />
+  <way id='626870083' visible='true' version='2'>
+    <nd ref='1111113399' />
+    <nd ref='222222209' />
+    <nd ref='222222211' />
+    <nd ref='1111113646' />
+    <nd ref='222222213' />
+    <nd ref='222222215' />
+    <nd ref='222222205' />
+    <nd ref='222222217' />
+    <nd ref='222222219' />
+    <nd ref='222222207' />
+    <nd ref='5917900970' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区东路' />
+  </way>
+  <way id='626870084' visible='true' version='2'>
     <nd ref='5917900970' />
     <nd ref='5930511568' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路3' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区南路' />
   </way>
-  <way id='626870085' action='modify' visible='true' version='11'>
+  <way id='626870085' visible='true' version='11'>
     <nd ref='5930511568' />
-    <nd ref='5930511569' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='1' />
-    <tag k='name' v='内部道路4' />
-    <tag k='section' v='5' />
+    <nd ref='5919906150' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='地下停车场入口' />
   </way>
-  <way id='626870086' action='modify' visible='true' version='2'>
-    <nd ref='-143437' />
-    <nd ref='5917900959' />
-    <tag k='highway' v='tertiary_link' />
-    <tag k='lanes' v='1' />
-    <tag k='name' v='内部道路7' />
-    <tag k='oneway' v='yes' />
-    <tag k='section' v='6' />
-    <tag k='turn:lanes:forward' v='right' />
-  </way>
-  <way id='626870087' action='modify' visible='true' version='2'>
-    <nd ref='-143437' />
-    <nd ref='5930511566' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路6' />
-    <tag k='section' v='7' />
-    <tag k='width:lanes' v='2.6|2.6' />
-  </way>
-  <way id='626870088' action='modify' visible='true' version='11'>
+  <way id='626870086' visible='true' version='2'>
     <nd ref='5917900957' />
-    <nd ref='5930511566' />
-    <tag k='highway' v='tertiary_link' />
-    <tag k='lanes' v='1' />
-    <tag k='name' v='内部道路8' />
+    <nd ref='100001960' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='内部道路入口' />
     <tag k='oneway' v='yes' />
-    <tag k='section' v='8' />
-    <tag k='turn:lanes:backward' v='right' />
   </way>
-  <way id='626870089' action='modify' visible='true' version='2'>
-    <nd ref='5930511566' />
+  <way id='626870087' visible='true' version='2'>
+    <nd ref='100001960' />
+    <nd ref='100001982' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区南路' />
+  </way>
+  <way id='626870088' visible='true' version='11'>
+    <nd ref='100001982' />
+    <nd ref='5917900957' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='内部道路出口' />
+    <tag k='oneway' v='yes' />
+  </way>
+  <way id='626870089' visible='true' version='2'>
+    <nd ref='100001982' />
+    <nd ref='100000464' />
     <nd ref='5917900969' />
     <nd ref='5917900968' />
-    <nd ref='-143395' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路9' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <nd ref='100002438' />
+    <nd ref='100003080' />
+    <nd ref='1111113395' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区西路' />
   </way>
-  <way id='626870091' action='modify' visible='true' version='2'>
-    <nd ref='-143395' />
+  <way id='626870091' visible='true' version='2'>
+    <nd ref='1111113395' />
     <nd ref='5917900967' />
-    <nd ref='-143684' />
+    <nd ref='1111113684' />
+    <nd ref='100002434' />
     <nd ref='5917900966' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路10' />
-    <tag k='section' v='11' />
-    <tag k='width:lanes' v='2.6|2.6' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区西路' />
+    <tag k='oneway' v='yes' />
   </way>
-  <way id='626870092' action='modify' visible='true' version='2'>
-    <nd ref='-143395' />
-    <nd ref='-143397' />
-    <nd ref='-143399' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='2' />
-    <tag k='name' v='内部道路11' />
-    <tag k='width:lanes' v='2.6|2.6' />
+  <way id='626870092' visible='true' version='2'>
+    <nd ref='1111113399' />
+    <nd ref='1111113397' />
+    <nd ref='100003077' />
+    <nd ref='1111113395' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区中路' />
+    <tag k='oneway' v='yes' />
   </way>
-  <way id='626870093' action='modify' visible='true' version='2'>
-    <nd ref='5917900959' />
-    <nd ref='-143439' />
+  <way id='626870093' visible='true' version='2'>
+    <nd ref='5917900957' />
+    <nd ref='1111113439' />
     <nd ref='5917900958' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='2' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='云深路西段2' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:forward' v='through|through,right|right' />
-    <tag k='width:lanes' v='3.5|3.8|3.8|3.5|3.5' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='云深路' />
   </way>
-  <way id='626870098' action='modify' visible='true' version='2'>
-    <nd ref='-143419' />
-    <nd ref='-143421' />
-    <nd ref='-143423' />
-    <nd ref='-143425' />
-    <nd ref='-143467' />
-    <nd ref='-143413' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid;dash' />
+  <way id='626870098' visible='true' version='2'>
+    <nd ref='1111113419' />
+    <nd ref='1111113421' />
+    <nd ref='1111113423' />
+    <nd ref='1111113425' />
+    <nd ref='222222201' />
+    <nd ref='1111113467' />
+    <nd ref='222222203' />
+    <nd ref='1111113413' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='福茂路南2段' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
+    <tag k='name' v='福茂路' />
   </way>
-  <way id='626870102' action='modify' visible='true' version='2'>
-    <nd ref='-143413' />
-    <nd ref='-143479' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash' />
+  <way id='626870102' visible='true' version='2'>
+    <nd ref='1111113413' />
+    <nd ref='100004352' />
+    <nd ref='1111113479' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='1' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='name' v='福茂路南3段' />
-    <tag k='section' v='4' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='4.6|4.5' />
+    <tag k='name' v='福茂路' />
   </way>
-  <way id='626870107' action='modify' visible='true' version='2'>
-    <nd ref='-143403' />
-    <nd ref='-143451' />
-    <nd ref='-143947' />
-    <nd ref='-143453' />
-    <nd ref='-143405' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='dash|dash' />
+  <way id='626870103' visible='true' version='2'>
+    <nd ref='5917900924' />
+    <nd ref='100000977' />
+    <nd ref='1111113443' />
+    <nd ref='222222199' />
+    <nd ref='1111113417' />
+    <nd ref='1111113401' />
+    <nd ref='1111113419' />
     <tag k='highway' v='tertiary' />
-    <tag k='lanes:forward' v='1' />
-    <tag k='layer' v='1' />
+    <tag k='name' v='福茂路' />
+  </way>
+  <way id='626870107' visible='true' version='2'>
+    <nd ref='1111113403' />
+    <nd ref='1111113451' />
+    <nd ref='1111113947' />
+    <nd ref='1111113453' />
+    <nd ref='100000285' />
+    <nd ref='1111113405' />
+    <tag k='highway' v='primary' />
     <tag k='name' v='黄浦江路' />
     <tag k='oneway' v='yes' />
-    <tag k='width:lanes' v='3.1' />
   </way>
-  <way id='626870110' action='modify' visible='true' version='2'>
+  <way id='626870110' visible='true' version='2'>
     <nd ref='5917900914' />
-    <nd ref='-143445' />
-    <nd ref='-143447' />
-    <nd ref='738982' />
+    <nd ref='1111113445' />
+    <nd ref='1111113447' />
     <nd ref='5930511544' />
-    <tag k='centerline:color' v='yellow' />
-    <tag k='centerline:type' v='solid|solid' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes:backward' v='3' />
-    <tag k='lanes:forward' v='3' />
-    <tag k='name' v='福盛路中段' />
-    <tag k='stopline' v='yield' />
-    <tag k='turn:lanes:backward' v='left|through|through,right' />
-    <tag k='turn:lanes:forward' v='through|through|through,right' />
-    <tag k='width:lanes' v='3.1|3.5|3.8|3.8|3.5|3.1' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='福盛路' />
   </way>
-  <way id='626870116' action='modify' visible='true' version='2'>
+  <way id='626870116' visible='true' version='2'>
     <nd ref='5917900962' />
-    <nd ref='-143465' />
+    <nd ref='1111113465' />
     <nd ref='5930511563' />
+    <nd ref='100000640' />
     <nd ref='5917900961' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='3' />
-    <tag k='name' v='湖山路北1段' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='湖山路' />
     <tag k='oneway' v='yes' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='3.62|3.62|3.62' />
   </way>
-  <way id='626870117' action='modify' visible='true' version='2'>
+  <way id='626870117' visible='true' version='2'>
     <nd ref='5917900910' />
-    <nd ref='-143463' />
+    <nd ref='1111113463' />
     <nd ref='5917900963' />
-    <nd ref='-143461' />
+    <nd ref='1111113461' />
+    <nd ref='100000645' />
     <nd ref='5917900962' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='3' />
-    <tag k='name' v='湖山路北2段' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='湖山路' />
     <tag k='oneway' v='yes' />
-    <tag k='stopline' v='stop' />
-    <tag k='turn:lanes:forward' v='left|left|through,right' />
-    <tag k='width:lanes' v='3.62|3.62|3.62' />
   </way>
-  <way id='626870120' action='modify' visible='true' version='2'>
+  <way id='626870120' visible='true' version='2'>
     <nd ref='5917900916' />
-    <nd ref='-143459' />
     <nd ref='5919887148' />
-    <nd ref='-143741' />
     <nd ref='5917900910' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='3' />
-    <tag k='name' v='湖山路中段' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='湖山路' />
     <tag k='oneway' v='yes' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='3.62|3.62|3.62' />
   </way>
-  <way id='626870122' action='modify' visible='true' version='2'>
-    <nd ref='-143427' />
-    <nd ref='-143457' />
-    <nd ref='-143455' />
+  <way id='626870122' visible='true' version='2'>
+    <nd ref='1111113457' />
     <nd ref='5917900916' />
-    <tag k='highway' v='tertiary' />
-    <tag k='lanes' v='3' />
-    <tag k='name' v='湖山路南段' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='湖山路' />
     <tag k='oneway' v='yes' />
-    <tag k='stopline' v='stop' />
-    <tag k='width:lanes' v='3.62|3.62|3.62' />
   </way>
-  <way id='627092208' action='modify' timestamp='2018-09-22T13:01:24Z' uid='8712912' user='Zong Liang L' visible='true' version='2' changeset='62825096'>
+  <way id='627092208' timestamp='2018-09-22T13:01:24Z' visible='true' version='2'>
     <nd ref='5919906149' />
     <nd ref='5919906150' />
     <nd ref='5919906151' />
@@ -1019,5 +797,60 @@
     <tag k='highway' v='rest_area' />
     <tag k='name' v='地下车库停车场' />
     <tag k='parking' v='underground' />
+  </way>
+  <way id='1111114227' visible='true' version='2'>
+    <nd ref='1111113405' />
+    <nd ref='1111113427' />
+    <tag k='highway' v='primary' />
+    <tag k='lanes:forward' v='1' />
+    <tag k='name' v='黄浦江路' />
+    <tag k='oneway' v='yes' />
+  </way>
+  <way id='1111114228' visible='true' version='2'>
+    <nd ref='5917900961' />
+    <nd ref='1111113435' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='湖山路' />
+    <tag k='oneway' v='yes' />
+  </way>
+  <way id='1111114229' visible='true' version='2'>
+    <nd ref='1111113469' />
+    <nd ref='1111113471' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='黄浦江路' />
+    <tag k='oneway' v='yes' />
+  </way>
+  <way id='1111114230' visible='true' version='2'>
+    <nd ref='1111113471' />
+    <nd ref='1111113473' />
+    <nd ref='1111113403' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='黄浦江路' />
+    <tag k='oneway' v='yes' />
+  </way>
+  <way id='1111114231' visible='true' version='2'>
+    <nd ref='1111113413' />
+    <nd ref='1111113475' />
+    <nd ref='1111113477' />
+    <tag k='highway' v='tertiary' />
+    <tag k='name' v='羿家路' />
+  </way>
+  <way id='1111114233' visible='true' version='2'>
+    <nd ref='1111114124' />
+    <nd ref='1111114135' />
+    <nd ref='1111114120' />
+    <nd ref='222222191' />
+    <nd ref='1111114124' />
+    <tag k='amenity' v='parking' />
+    <tag k='building' v='yes' />
+    <tag k='highway' v='rest_area' />
+    <tag k='name' v='地面停车场' />
+  </way>
+  <way id='2222224227' visible='true' version='2'>
+    <nd ref='5917900970' />
+    <nd ref='222222223' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='园区南路' />
   </way>
 </osm>
