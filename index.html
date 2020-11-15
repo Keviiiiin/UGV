@@ -6,6 +6,9 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <title>无人车</title>
     <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <style>
         #container {
             height: 80%;
@@ -29,34 +32,102 @@
 
     function changeProvince() {
 
-        var slecctS = document.querySelectorAll(".select");
+        var slecctS = document.querySelectorAll(".form-control");
 
         var countrys = new Array();
 
-        countrys["0"] = ["--请选择道路--"];
+        countrys["0"] = ["--请选择道路序号--"];
 
-        countrys["消防通道"] = ["626870080"];
+        countrys["62687008000"] = ["消防通道"];
+        countrys["62687008001"] = ["消防通道"];
+        countrys["62687008200"] = ["园区北路"];
+        countrys["62687008201"] = ["园区北路"];
+        countrys["62687008300"] = ["园区东路"];
+        countrys["62687008301"] = ["园区东路"];
+        countrys["62687008400"] = ["园区南路"];
+        countrys["62687008401"] = ["园区南路"];
+        countrys["62687008500"] = ["地下停车场入口"];
+        countrys["62687008501"] = ["地下停车场入口"];
+        countrys["62687008100"] = ["园区南路"];
+        countrys["62687008101"] = ["园区南路"];
+        countrys["62687008700"] = ["园区南路"];
+        countrys["62687008701"] = ["园区南路"];
+        countrys["62687008600"] = ["内部道路出口"];
+        countrys["62687008800"] = ["内部道路入口"];
+        countrys["62687008900"] = ["园区西路"];
+        countrys["62687008901"] = ["园区西路"];
+        countrys["62687009100"] = ["园区西路"];
+        countrys["62687009101"] = ["园区西路"];
+        countrys["62687009200"] = ["园区中路"];
+        countrys["62687009201"] = ["园区中路"];
+        countrys["62687006100"] = ["云深路"];
+        countrys["62687006101"] = ["云深路"];
+        countrys["62687009300"] = ["云深路"];
+        countrys["62687009300"] = ["云深路"];
+        countrys["62687005800"] = ["云深路"];
+        countrys["62687005801"] = ["云深路"];
+        countrys["62687005700"] = ["云深路"];
+        countrys["62687005701"] = ["云深路"];
+        countrys["62687003800"] = ["五渠路"];
+        countrys["62687003801"] = ["五渠路"];
+        countrys["62687003300"] = ["五渠路"];
+        countrys["62687003301"] = ["五渠路"];
+        countrys["62687004000"] = ["五渠路"];
+        countrys["62687004001"] = ["五渠路"];
+        countrys["62687004300"] = ["渔乐路"];
+        countrys["62687004301"] = ["渔乐路"];
+        countrys["62687005000"] = ["渔乐路"];
+        countrys["62687005001"] = ["渔乐路"];
+        countrys["62687005200"] = ["渔乐路"];
+        countrys["62687005201"] = ["渔乐路"];
+        countrys["62687010700"] = ["黄浦江路"];
+        countrys["62687005400"] = ["福茂路"];
+        countrys["62687005401"] = ["福茂路"];
+        countrys["62687010300"] = ["福茂路"];
+        countrys["62687010301"] = ["福茂路"];
+        countrys["62687009800"] = ["福茂路"];
+        countrys["62687009801"] = ["福茂路"];
+        countrys["62687010200"] = ["福茂路"];
+        countrys["62687010201"] = ["福茂路"];
+        countrys["62687003200"] = ["福盛路"];
+        countrys["62687003201"] = ["福盛路"];
+        countrys["62687011000"] = ["福盛路"];
+        countrys["62687011001"] = ["福盛路"];
+        countrys["62687002700"] = ["福盛路"];
+        countrys["62687002701"] = ["福盛路"];
+        countrys["62687002500"] = ["福兴路"];
+        countrys["62687002501"] = ["福兴路"];
+        countrys["62687002200"] = ["福兴路"];
+        countrys["62687002201"] = ["福兴路"];
+        countrys["62687002100"] = ["福兴路"];
+        countrys["62687002101"] = ["福兴路"];
+        countrys["62687011600"] = ["湖山路"];
+        countrys["62687011700"] = ["湖山路"];
+        countrys["62687012000"] = ["湖山路"];
+        countrys["62687012200"] = ["湖山路"];
 
+
+
+
+
+        // countrys["园区东路"] = ["626870083"];
+        // countrys["园区南路"] = ["626870081", "626870084","626870087"];
+        // countrys["园区西路"] = ["626870089", "626870091"];
+        // countrys["园区北路"] = ["626870082"];
+        // countrys["园区中路"] = ["626870092"];
+
+        // countrys["地下停车场入口"] = ["626870085"];
+        // countrys["内部道路出口"] = ["626870086"];
+        // countrys["内部道路入口"] = ["626870088"];
         
-
-        countrys["园区东路"] = ["626870083"];
-        countrys["园区南路"] = ["626870081", "626870084","626870087"];
-        countrys["园区西路"] = ["626870089", "626870091"];
-        countrys["园区北路"] = ["626870082"];
-        countrys["园区中路"] = ["626870092"];
-
-        countrys["地下停车场入口"] = ["626870085"];
-        countrys["内部道路出口"] = ["626870086"];
-        countrys["内部道路入口"] = ["626870088"];
-        
-        countrys["云深路"] = ["626870061","626870093","626870058", "626870057"];
-        countrys["五渠路"] = ["626870038", "626870033", "626870040"];
-        countrys["渔乐路"] = ["626870043", "626870050", "626870052"];
-        countrys["黄浦江路"] = ["626870107"];
-        countrys["福茂路"] = ["626870054", "626870103" ,"626870098","626870102"];
-        countrys["福盛路"] = ["626870032", "626870110", "626870027"];
-        countrys["福兴路"] = ["626870025", "626870022", "626870021"];
-        countrys["湖山路"] = ["626870116", "626870117", "626870120","626870122"];
+        // countrys["云深路"] = ["626870061","626870093","626870058", "626870057"];
+        // countrys["五渠路"] = ["626870038", "626870033", "626870040"];
+        // countrys["渔乐路"] = ["626870043", "626870050", "626870052"];
+        // countrys["黄浦江路"] = ["626870107"];
+        // countrys["福茂路"] = ["626870054", "626870103" ,"626870098","626870102"];
+        // countrys["福盛路"] = ["626870032", "626870110", "626870027"];
+        // countrys["福兴路"] = ["626870025", "626870022", "626870021"];
+        // countrys["湖山路"] = ["626870116", "626870117", "626870120","626870122"];
 
         var value = slecctS[0].value;
 
@@ -100,51 +171,99 @@
 
 </script>
 <body>
-    <div style="float: left; height: 100%; width: 75%;">
+    <div style="float: left; height: 100%; width: 70%;">
         <div style="float: left; ">
                 <form id="myForm" action="js_form_action.asp" method="get">
                     <!-- ID: <input type="text" name="id" size="20"><br /> -->
                     <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
                     <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
-                    <h3>道路名称</h3><select name="name" class="select"  onChange="changeProvince()" >
-                        <option>--请选择道路--</option>
-                        <option>消防通道</option>
-                        <option>园区东路</option>
-                        <option>园区南路</option>
-                        <option>园区西路</option>
-                        <option>园区北路</option>
-                        <option>园区中路</option>
-                        <option>地下停车场入口</option>
-                        <option>内部道路出口</option>
-                        <option>内部道路入口</option>
-                        <option>云深路</option>
-                        <option>五渠路</option>
-                        <option>渔乐路</option>
-                        <option>黄浦江路</option>
-                        <option>福茂路</option>
-                        <option>福盛路</option>
-                        <option>福兴路</option>
-                        <option>湖山路</option>
-
+                    <h3>道路名称</h3><select name="wayid" class="form-control" onChange="changeProvince()" >
+                        <option>--请选择道路序号--</option>
+                        <option value="62687008000">1-消防通道</option>
+                        <option value="62687008001">2-消防通道</option>
+                        <option value="62687008200">3-园区北路</option>
+                        <option value="62687008201">4-园区北路</option>
+                        <option value="62687008300">5-园区东路</option>
+                        <option value="62687008301">6-园区东路</option>
+                        <option value="62687008400">7-园区南路</option>
+                        <option value="62687008401">8-园区南路</option>
+                        <option value="62687008500">9-地下停车场入口</option>
+                        <option value="62687008501">10-地下停车场入口</option>
+                        <option value="62687008100">11-园区南路</option>
+                        <option value="62687008101">12-园区南路</option>
+                        <option value="62687008700">13-园区南路</option>
+                        <option value="62687008701">14-园区南路</option>
+                        <option value="62687008600">15-内部道路出口</option>
+                        <option value="62687008800">16-内部道路入口</option>
+                        <option value="62687008900">17-园区西路</option>
+                        <option value="62687008901">18-园区西路</option>
+                        <option value="62687009100">19-园区西路</option>
+                        <option value="62687009101">20-园区西路</option>
+                        <option value="62687009200">21-园区中路</option>
+                        <option value="62687009201">22-园区中路</option>
+                        <option value="62687006100">23-云深路</option>
+                        <option value="62687006101">24-云深路</option>
+                        <option value="62687009300">25-云深路</option>
+                        <option value="62687009301">26-云深路</option>
+                        <option value="62687005800">27-云深路</option>
+                        <option value="62687005801">28-云深路</option>
+                        <option value="62687005700">29-云深路</option>
+                        <option value="62687005701">30-云深路</option>
+                        <option value="62687003800">31-五渠路</option>
+                        <option value="62687003801">32-五渠路</option>
+                        <option value="62687003300">33-五渠路</option>
+                        <option value="62687003301">34-五渠路</option>
+                        <option value="62687004000">35-五渠路</option>
+                        <option value="62687004001">36-五渠路</option>
+                        <option value="62687004300">37-渔乐路</option>
+                        <option value="62687004301">38-渔乐路</option>
+                        <option value="62687005000">39-渔乐路</option>
+                        <option value="62687005001">40-渔乐路</option>
+                        <option value="62687005200">41-渔乐路</option>
+                        <option value="62687005201">42-渔乐路</option>
+                        <option value="62687010700">43-黄浦江路</option>
+                        <option value="62687005400">44-福茂路</option>
+                        <option value="62687005401">45-福茂路</option>
+                        <option value="62687010300">46-福茂路</option>
+                        <option value="62687010301">47-福茂路</option>
+                        <option value="62687009800">48-福茂路</option>
+                        <option value="62687009801">49-福茂路</option>
+                        <option value="62687010200">50-福茂路</option>
+                        <option value="62687010201">51-福茂路</option>
+                        <option value="62687003200">52-福盛路</option>
+                        <option value="62687003201">53-福盛路</option>
+                        <option value="62687011000">54-福盛路</option>
+                        <option value="62687011001">55-福盛路</option>
+                        <option value="62687002700">56-福盛路</option>
+                        <option value="62687002701">57-福盛路</option>
+                        <option value="62687002500">58-福兴路</option>
+                        <option value="62687002501">59-福兴路</option>
+                        <option value="62687002200">60-福兴路</option>
+                        <option value="62687002201">61-福兴路</option>
+                        <option value="62687002100">62-福兴路</option>
+                        <option value="62687002101">63-福兴路</option>
+                        <option value="62687011600">64-湖山路</option>
+                        <option value="62687011700">65-湖山路</option>
+                        <option value="62687012000">66-湖山路</option>
+                        <option value="62687012200">67-湖山路</option>
                     </select>
                     
                         <br/><br />
                     <!-- Section: <input type="text" name="section" size="20"><br /> -->
-                    <h3>道路id</h3><select name="wayid" class="select">
+                    <select name="name" class="form-control" style="display: none;">
                         <option>--道路id--</option>
                     </select>
                     <br /><br />
                     <!-- Timestamp: <input type="text" name="timestamp" size="20"><br /> -->
                     <!-- State: <input type="text" name="state" size="20"><br /> -->
-                    <h3>方向</h3><select name="direction" >
+                    <!-- <h3>方向</h3><select name="direction" >
                         <option value="0">0-正向</option>
                         <option value="1">1-反向</option>
-                    </select>
-                    <br /><br />
-                    <h3>状态</h3><select name="state" >
-                        <option value="0">畅通</option>
-                        <option value="1">缓慢</option>
-                        <option value="2">拥堵</option>
+                    </select> -->
+                    <h3>状态</h3><select name="state" class="form-control">
+                        <option value="0">0-畅通</option>
+                        <option value="1">1-缓慢</option>
+                        <option value="2">2-拥堵</option>
                     </select>
                     <!-- Reason: <input type="text" name="reason" size="20"><br /> -->
                     <br /><br />
@@ -211,7 +330,7 @@
 
         
 
-        // if(sessionStorage.length == 0){
+        if(sessionStorage.length == 0){
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var xmlDoc = xhr.responseXML;
@@ -400,8 +519,8 @@
         }
 
         xhr.send(null);
-    // }
-    // else{
+    }
+    else{
 
 
         var xhr2 = createXhr();
@@ -542,7 +661,7 @@
                 
             }
 
-        // }
+        }
         
     }
     </script>

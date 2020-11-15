@@ -49,8 +49,8 @@ arrStack = {
     // 9
     "6268700880": { "wayID": "626870088", "Name": "内部道路入口", "Direction": "0", "State": "0" },
     // 10
-    "6268700890": { "wayID": "626870089", "Name": "小区环路", "Direction": "0", "State": "0" },
-    "6268700891": { "wayID": "626870089", "Name": "小区环路", "Direction": "1", "State": "0" },
+    "6268700890": { "wayID": "626870089", "Name": "园区西路", "Direction": "0", "State": "0" },
+    "6268700891": { "wayID": "626870089", "Name": "园区西路", "Direction": "1", "State": "0" },
     // 11
     "6268700910": { "wayID": "626870091", "Name": "园区西路", "Direction": "0", "State": "0" },
     "6268700911": { "wayID": "626870091", "Name": "园区西路", "Direction": "1", "State": "0" },
@@ -159,24 +159,33 @@ server.on('request', function (request, response) {
             response.setHeader('Content-Type', 'text/html;charset=utf-8');
             var newhtmls = '';
             newhtmls += html_data;
-            newhtmls += '<div style="float: right;" >';
-            newhtmls += '<table border="1">';
-            newhtmls += '<tr><th>序号</th><th>ID</th><th>Name</th><th>Direction</th><th>State</th></tr>';
+            newhtmls += '<div style="float: right; width:450px; height:700px; overflow-y:scroll;">';
+            newhtmls += '<table class="table table-striped" width="450px" height="700px" >';
+            newhtmls += '<tr><th>序号</th><th>Name</th><th>ID</th><th>Direction</th><th>State</th></tr>';
             var count = 0;
             for (key in arrStack) {
                 count++;
                 // if (arrStack[key] != undefined) {
-                newhtmls += '<tr><td>';
+                var state = arrStack[key].State;
+                if (state == "1") {
+                    newhtmls += '<tr class="warning"><td>';
+                }
+                else if (state == "2") {
+                    newhtmls += '<tr class="danger"><td>';
+                }
+                else if (state == "0") {
+                    newhtmls += '<tr><td>';
+                }
                 var strCount = String(count);
                 newhtmls += strCount;
                 newhtmls += '</td><td>';
-                newhtmls += arrStack[key].wayID;
-                newhtmls += '</td><td>';
                 newhtmls += arrStack[key].Name;
+                newhtmls += '</td><td>';
+                newhtmls += arrStack[key].wayID;
                 newhtmls += '</td><td>';
                 newhtmls += arrStack[key].Direction;
                 newhtmls += '</td><td>';
-                newhtmls += arrStack[key].State;
+                newhtmls += state;
                 newhtmls += '</td></tr>'
                 // }
             }
@@ -218,12 +227,12 @@ server.on('request', function (request, response) {
         let result = url.parse(urls, true);
         if (result.query.id != '') {
             // trafficInfo['ID'] = result.query.id;
-            trafficInfo['wayID'] = result.query.wayid;
+            trafficInfo['wayID'] = result.query.wayid.substring(0,9);
             // trafficInfo['Section'] = result.query.section;
             trafficInfo['Name'] = result.query.name;
             // trafficInfo['Timestamp'] = result.query.timestamp;
             trafficInfo['State'] = result.query.state;
-            trafficInfo['Direction'] = result.query.direction;
+            trafficInfo['Direction'] = result.query.wayid.charAt(10);
             // trafficInfo['Reason'] = result.query.reason;
 
             // 更改拥堵信息
@@ -267,26 +276,33 @@ server.on('request', function (request, response) {
                 response.setHeader('Content-Type', 'text/html;charset=utf-8');
                 var newhtmls = '';
                 newhtmls += html_data;
-                newhtmls += '<div style="float: right;" >';
-                newhtmls += '<table border="1">';
-                newhtmls += '<tr><th>序号</th><th>ID</th><th>Name</th><th>Direction</th><th>State</th></tr>';
+                newhtmls += '<div style="float: right; width:450px; height:700px; overflow-y:scroll;">';
+                newhtmls += '<table class="table table-striped" width="450px" height="700px" >';
+                newhtmls += '<tr><th>序号</th><th>Name</th><th>ID</th><th>Direction</th><th>State</th></tr>';
                 var count = 0;
                 for (key in arrStack) {
                     count++;
-                    // if (arrStack[key] != undefined) {
-                    newhtmls += '<tr><td>';
+                    var state = arrStack[key].State;
+                    if (state == "1") {
+                        newhtmls += '<tr class="warning"><td>';
+                    }
+                    else if (state == "2") {
+                        newhtmls += '<tr class="danger"><td>';
+                    }
+                    else if(state=="0"){
+                        newhtmls += '<tr><td>';
+                    }
                     var strCount = String(count);
                     newhtmls += strCount;
                     newhtmls += '</td><td>';
-                    newhtmls += arrStack[key].wayID;
-                    newhtmls += '</td><td>';
                     newhtmls += arrStack[key].Name;
+                    newhtmls += '</td><td>';
+                    newhtmls += arrStack[key].wayID;
                     newhtmls += '</td><td>';
                     newhtmls += arrStack[key].Direction;
                     newhtmls += '</td><td>';
-                    newhtmls += arrStack[key].State;
-                    newhtmls += '</td></tr>'
-                    // }
+                    newhtmls += state;
+                    newhtmls += '</td></tr>';
                 }
                 newhtmls += '</table>';
                 newhtmls += '</div>';
@@ -301,50 +317,123 @@ server.on('request', function (request, response) {
     }
 });
 
-var arrIP = new Array();
+// var arrIP = new Array();
+var car1 = new Array();
+var car2 = new Array();
+var car3 = new Array();
+var car4 = new Array();
+var car5 = new Array();
+var car6 = new Array();
+var car7 = new Array();
+var car8 = new Array();
+var car9 = new Array();
+var car10 = new Array();
+var car11 = new Array();
+var car12 = new Array();
+var car13 = new Array();
+var car14 = new Array();
+var car15 = new Array();
+var car16 = new Array();
+var car17 = new Array();
+var car18 = new Array();
+var car19 = new Array();
+var car20 = new Array();
+var car21 = new Array();
+var car22 = new Array();
+var arrIP = {
+    '1': car1,
+    '2': car2,
+    '3': car3,
+    '4': car4,
+    '5': car5,
+    '6': car6,
+    '7': car7,
+    '8': car8,
+    '9': car9,
+    '10': car10,
+    '11': car11,
+    '12': car12,
+    '13': car13,
+    '14': car14,
+    '15': car15,
+    '16': car16,
+    '17': car17,
+    '18': car18,
+    '19': car19,
+    '20': car20,
+    '21': car21,
+    '22': car22
+}
 // -----------------------------------
 //接收用户端的地址和端口
 udp_server.on('message', function (msg, rinfo) {
-    var ip = rinfo.address;
-    var port = rinfo.port;
+    var strmsg = msg.toString();
+    const buffer = Buffer.alloc(24);
+    buffer.write(strmsg);
+    console.log(buffer);
+    var headBuf = Buffer.alloc(2);      // 报文头
+    var timeBuf = Buffer.alloc(14);     // 时间
+    var reserveBuf1 = Buffer.alloc(2);   // 保留
+    var carID = Buffer.alloc(4);        // 车辆ID
+    var reserveBuf2 = Buffer.alloc(2);   // 保留
 
+    for (var i = 0; i < 2; i++) {
+        headBuf[i] = buffer[i];
+    }
+    for (var i = 0; i < 14; i++) {
+        timeBuf[i] = buffer[i + 2];
+    }
+    for (var i = 0; i < 2; i++) {
+        reserveBuf1[i] = buffer[i + 16];
+    }
+    for (var i = 0; i < 4; i++) {
+        carID[i] = buffer[i + 18];
+    }
+    for (var i = 0; i < 2; i++) {
+        reserveBuf2[i] = buffer[i + 22];
+    }
+    if (headBuf.toString() == 'FC' && reserveBuf1.toString() == "  "
+        && reserveBuf2.toString() == "  " && carID[3].toString() > '0' && carID[3].toString() <= '22') {
+        var ip = rinfo.address;
+        var port = rinfo.port;
+        var carIDStr = carID[3].toString();
 
-    var i = 0;
-    while (i < arrIP.length) {
-        if (arrIP[i].ip == ip && arrIP[i].port == port) {
-            arrIP[i].time = 60;
-            break;
+        if (arrIP[carIDStr].length < 5) {
+            var i = 0;
+            while (i < arrIP[carIDStr].length) {
+                if (arrIP[carIDStr][i].ip == ip && arrIP[carIDStr][i].port == port) {
+                    arrIP[carIDStr][i].time = 60;
+                    break;
+                }
+            }
+            if (i == arrIP[carIDStr].length) {
+                var obj = {
+                    'ip': ip,
+                    'port': port,
+                    'time': 60
+                }
+                arrIP[carIDStr].push(obj);
+            }
         }
-        i++;
     }
-    if (i == arrIP.length) {
-        var obj = {
-            'ip': ip,
-            'port': port,
-            'time': 60
-        }
-        arrIP.push(obj);
-    }
-    // for(var i = 0; i < arrIP.length; i++)
-    // {
-    //     console.log(arrIP[i].ip);
-    //     console.log(arrIP[i].time);
-    //     console.log('-----------');
-    // }
+
 })
 
 // 每秒向ip列表中所有ip发送消息
 setInterval(function () {
-    var delArr = new Array();
-    for (var i = 0; i < arrIP.length; i++) {
-        (arrIP[i].time)--;
-        if (arrIP[i].time < 0) {
-            delArr.push(i);
+    for (key in arrIP) {
+        var delArr = new Array();
+        for (var i = 0; i < arrIP[key].length; ++i) {
+            (arrIP[key][i].time)--;
+            if (arrIP[key][i].time < 0) {
+                delArr.push(arrIP[key][i]);
+            }
+        }
+        for (var i = 0; i < delArr.length; i++) {
+            arrIP[key].splice(delArr[i], 1);
         }
     }
-    for (var i = 0; i < delArr.length; i++) {
-        arrIP.splice(delArr[i], 1);
-    }
+
 
     // 总共
     const allBuffer = Buffer.alloc(388);
@@ -402,9 +491,18 @@ setInterval(function () {
         }
     }
 
-    for (var i = 0; i < arrIP.length; i++) {
-        udp_server.send(allBuffer, 0, Buffer.byteLength(allBuffer), arrIP[i].port, arrIP[i].ip);
+    for (key in arrIP) {
+        for (var i = 0; i < arrIP[key].length; ++i) {
+            udp_server.send(allBuffer, 0, Buffer.byteLength(allBuffer), arrIP[key][i].port, arrIP[key][i].ip);
+        }
     }
+
+    // 写日志
+    fs.writeFile('./log.txt', JSON.stringify(arrIP), function (err) {
+
+    });
+
+
 }, 1000);
 
 //错误处理
