@@ -343,7 +343,7 @@
                 // var pathArray = new Array();
                 var pathMap = new Map();
                 var wayIdList = new Array();
-                for(var i = 0;i<8;i++){
+                for(var i = 0;i<9;i++){
                     //8个junction
                     var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
                     AMap.convertFrom(point, 'gps', function (status, result) {
@@ -358,7 +358,14 @@
                             // sessionStorage.setItem(i,point);
                             // i++;
 
+                            // var junctionIcon = new AMap.Icon({
+                            //     size: new AMap.Size(30,30),
+                            //     image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
+                            //     imageSize: new AMap.Size(10, 20),
+                            // });
                             m2 = new AMap.Marker({
+                                // icon: junctionIcon,
+                                // offset: new AMap.Pixel(-13, -30),
                                 position: resLnglat,
                             });
                             map.add(m2);
@@ -378,7 +385,7 @@
                         var pointList = new Array();
 
                         if(wayId == "62687005700" || wayId == "62687005701" || wayId == "62687008900" || wayId == "62687008901"
-                            || wayId == "62687008200" || wayId == "62687008201")
+                            || wayId == "62687008200" || wayId == "62687009000")
                         {
                             // 如果是这些6条弯道
                             specialPath.push(wayId);
@@ -452,7 +459,7 @@
                             var path2 = result.locations;
 
                             //75条单一wayid
-                            if(i > 74) i = 0;
+                            if(i > 72) i = 0;
                             var msgInJSON = {
                                 path: path2,
                                 strokeColor: 'green',
@@ -460,7 +467,7 @@
                             };
                             var str = JSON.stringify(msgInJSON);
                             sessionStorage.setItem(wayIdList[i], str);
-                            // console.log(sessionStorage.length);
+                            console.log(i);
                             i++;
                         
                             var polyline = new AMap.Polyline({
@@ -580,9 +587,9 @@
                     special[0] = 10016;
                     special[1] = 2;
                 }
-                else if (userWayId == "62687008901") {
+                else if (userWayId == "62687009000") {
                     special[0] = 10018;
-                    special[1] = 2;
+                    special[1] = 3;
                 }
                 // else{
                 //     special[0] = null;
