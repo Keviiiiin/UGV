@@ -4,8 +4,8 @@ var XMLWriter = require('xml-writer');
 
 const url = require('url');
 var server = http.createServer();
-server.listen(8080, function () {
-    console.log('请访问http://59.110.71.188:8080');
+server.listen(54823, function () {
+    console.log('请访问http://59.110.71.188:54823');
 });
 // ------------------
 var dgram = require('dgram');
@@ -28,7 +28,7 @@ arrStack = {
     "6268700801": { "wayID": "626870080", "Name": "消防通道", "Direction": "1", "State": "0" },
     // 2
     "6268700820": { "wayID": "626870082", "Name": "园区北路", "Direction": "0", "State": "0" },
-    "6268700821": { "wayID": "626870082", "Name": "园区北路", "Direction": "1", "State": "0" },
+    // "6268700821": { "wayID": "626870082", "Name": "园区北路", "Direction": "1", "State": "0" },
     // 3
     "6268700830": { "wayID": "626870083", "Name": "园区东路", "Direction": "0", "State": "0" },
     "6268700831": { "wayID": "626870083", "Name": "园区东路", "Direction": "1", "State": "0" },
@@ -53,10 +53,13 @@ arrStack = {
     "6268700891": { "wayID": "626870089", "Name": "园区西路", "Direction": "1", "State": "0" },
     // 11
     "6268700910": { "wayID": "626870091", "Name": "园区西路", "Direction": "0", "State": "0" },
-    "6268700911": { "wayID": "626870091", "Name": "园区西路", "Direction": "1", "State": "0" },
+    // "6268700911": { "wayID": "626870091", "Name": "园区西路", "Direction": "1", "State": "0" },
     // 12
     "6268700920": { "wayID": "626870092", "Name": "园区中路", "Direction": "0", "State": "0" },
-    "6268700921": { "wayID": "626870092", "Name": "园区中路", "Direction": "1", "State": "0" },
+    // "6268700921": { "wayID": "626870092", "Name": "园区中路", "Direction": "1", "State": "0" },
+    // 13 626870090
+    "6268700900": { "wayID": "626870090", "Name": "迎宾通道", "Direction": "0", "State": "0" },
+
     // 云深路 4条
     // 1
     "6268700610": { "wayID": "626870061", "Name": "云深路", "Direction": "0", "State": "0" },
@@ -227,7 +230,8 @@ server.on('request', function (request, response) {
         let result = url.parse(urls, true);
         if (result.query.id != '') {
             // trafficInfo['ID'] = result.query.id;
-            trafficInfo['wayID'] = result.query.wayid.substring(0,9);
+            console.log(result.query.wayid);
+            trafficInfo['wayID'] = result.query.wayid.substring(0, 9);
             // trafficInfo['Section'] = result.query.section;
             trafficInfo['Name'] = result.query.name;
             // trafficInfo['Timestamp'] = result.query.timestamp;
@@ -289,7 +293,7 @@ server.on('request', function (request, response) {
                     else if (state == "2") {
                         newhtmls += '<tr class="danger"><td>';
                     }
-                    else if(state=="0"){
+                    else if (state == "0") {
                         newhtmls += '<tr><td>';
                     }
                     var strCount = String(count);
@@ -317,53 +321,8 @@ server.on('request', function (request, response) {
     }
 });
 
-// var arrIP = new Array();
-var car1 = new Array();
-var car2 = new Array();
-var car3 = new Array();
-var car4 = new Array();
-var car5 = new Array();
-var car6 = new Array();
-var car7 = new Array();
-var car8 = new Array();
-var car9 = new Array();
-var car10 = new Array();
-var car11 = new Array();
-var car12 = new Array();
-var car13 = new Array();
-var car14 = new Array();
-var car15 = new Array();
-var car16 = new Array();
-var car17 = new Array();
-var car18 = new Array();
-var car19 = new Array();
-var car20 = new Array();
-var car21 = new Array();
-var car22 = new Array();
-var arrIP = {
-    '1': car1,
-    '2': car2,
-    '3': car3,
-    '4': car4,
-    '5': car5,
-    '6': car6,
-    '7': car7,
-    '8': car8,
-    '9': car9,
-    '10': car10,
-    '11': car11,
-    '12': car12,
-    '13': car13,
-    '14': car14,
-    '15': car15,
-    '16': car16,
-    '17': car17,
-    '18': car18,
-    '19': car19,
-    '20': car20,
-    '21': car21,
-    '22': car22
-}
+var arrIP = new Array();
+
 // -----------------------------------
 //接收用户端的地址和端口
 udp_server.on('message', function (msg, rinfo) {
@@ -393,27 +352,25 @@ udp_server.on('message', function (msg, rinfo) {
         reserveBuf2[i] = buffer[i + 22];
     }
     if (headBuf.toString() == 'FC' && reserveBuf1.toString() == "  "
-        && reserveBuf2.toString() == "  " && carID[3].toString() > '0' && carID[3].toString() <= '22') {
+        && reserveBuf2.toString() == "  ") {
         var ip = rinfo.address;
         var port = rinfo.port;
-        var carIDStr = carID[3].toString();
 
-        if (arrIP[carIDStr].length < 5) {
-            var i = 0;
-            while (i < arrIP[carIDStr].length) {
-                if (arrIP[carIDStr][i].ip == ip && arrIP[carIDStr][i].port == port) {
-                    arrIP[carIDStr][i].time = 60;
-                    break;
-                }
+        var i = 0;
+        while (i < arrIP.length) {
+            if (arrIP[i].ip == ip && arrIP[i].port == port) {
+                arrIP[i].time = 60;
+                break;
             }
-            if (i == arrIP[carIDStr].length) {
-                var obj = {
-                    'ip': ip,
-                    'port': port,
-                    'time': 60
-                }
-                arrIP[carIDStr].push(obj);
+            i++;
+        }
+        if (i == arrIP.length) {
+            var obj = {
+                'ip': ip,
+                'port': port,
+                'time': 60
             }
+            arrIP.push(obj);
         }
     }
 
@@ -421,22 +378,20 @@ udp_server.on('message', function (msg, rinfo) {
 
 // 每秒向ip列表中所有ip发送消息
 setInterval(function () {
-    for (key in arrIP) {
-        var delArr = new Array();
-        for (var i = 0; i < arrIP[key].length; ++i) {
-            (arrIP[key][i].time)--;
-            if (arrIP[key][i].time < 0) {
-                delArr.push(arrIP[key][i]);
-            }
+    var delArr = new Array();
+    for (var i = 0; i < arrIP.length; ++i) {
+        (arrIP[i].time)--;
+        if (arrIP[i].time < 0) {
+            delArr.push(arrIP[i]);
         }
-        for (var i = 0; i < delArr.length; i++) {
-            arrIP[key].splice(delArr[i], 1);
-        }
+    }
+    for (var i = 0; i < delArr.length; i++) {
+        arrIP.splice(delArr[i], 1);
     }
 
 
     // 总共
-    const allBuffer = Buffer.alloc(388);
+    const allBuffer = Buffer.alloc(398);
     // 1.报文头 'FC'
     var strFC = 'FC';
     allBuffer.write(strFC, 0);
@@ -451,8 +406,8 @@ setInterval(function () {
     var str3 = '$';
     allBuffer.write(str3, 16);
 
-    // 4.路段数量-37
-    allBuffer.writeUInt8(37, 17);
+    // 4.路段数量-38
+    allBuffer.writeUInt8(38, 17);
 
     // 5.各路段
     var count = 0;
@@ -474,7 +429,9 @@ setInterval(function () {
         if (wayid == 626870086 || wayid == 626870088 ||
             wayid == 626870107 || wayid == 626870116 ||
             wayid == 626870117 || wayid == 626870120 ||
-            wayid == 626870122) {
+            wayid == 626870122 || wayid == 626870082  ||
+            wayid == 626870091 || wayid == 626870092 ||
+            wayid == 626870090) {
 
             allBuffer.writeBigInt64BE(BigInt(wayid), 18 + 10 * count);
             stateInfo += 'B';
@@ -491,11 +448,9 @@ setInterval(function () {
         }
     }
 
-    for (key in arrIP) {
-        for (var i = 0; i < arrIP[key].length; ++i) {
-            udp_server.send(allBuffer, 0, Buffer.byteLength(allBuffer), arrIP[key][i].port, arrIP[key][i].ip);
+        for (var i = 0; i < arrIP.length; ++i) {
+            udp_server.send(allBuffer, 0, Buffer.byteLength(allBuffer), arrIP[i].port, arrIP[i].ip);
         }
-    }
 
     // 写日志
     fs.writeFile('./log.txt', JSON.stringify(arrIP), function (err) {
