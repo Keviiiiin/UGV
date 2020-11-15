@@ -491,15 +491,6 @@
     <tag k='stopline' v='stop' />
     <tag k='width:lanes' v='4.6|4.5' />
   </way>
-  <way id='62687009000' version='2' action='modify' visible='true'>
-    <nd ref='-173415' />
-    <nd ref='-173815' />
-    <nd ref='-173824' />
-    <nd ref='5930511566' />
-    <tag k='highway' v='residential' />
-    <tag k='name' v='迎宾通道' />
-    <tag k='oneway' v='yes' />
-  </way>
   <way id='62687002100' action='modify' timestamp='2018-09-26T06:35:36Z' uid='8712912' user='Zong Liang L' visible='true' version='6' changeset='62935500'>
     <nd ref='5917900918' />
     <nd ref='5919887142' />
