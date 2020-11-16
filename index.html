@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <title>无人车</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <link href="bootstrap.min.css" rel="stylesheet" />
     <script src="jquery-3.5.1.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <style>
-        #container {
+        #map {
             height: 80%;
             width: 80%;
             /* margin-right: 0px; */
@@ -280,43 +288,19 @@
                 </form> 
              </div> -->
         </div>
-
-
-        <div id="container" style="float: right;"></div>
+        <div id='map'></div>
     </div>
-    <script type="text/javascript"
-        src="https://webapi.amap.com/maps?v=1.4.15&key=d100aa3090ed93eb91ef822633442dea"></script>
-
-    <script type="text/javascript">
-        // 创建地图实例
-        var map = new AMap.Map("container", {
-            zoom: 16,
-            zooms: [16, 20],
-            center: [120.782382, 31.589128],
-            resizeEnable: true,
-            // expandZoomRange:true,
-            // rotation: 32,
-            features: 'road'
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaWNja2V2aW4iLCJhIjoiY2toazRmNzgwMTltdzJ3bnFraWRpanBzbiJ9.ZwqB2LRGXjkO8QQ5jJMH7w';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v10', // stylesheet location
+            center: [120.777093, 31.590903], // starting position [lng, lat]
+            zoom: 15, // starting zoom
+            minZoom: 15,
+            maxZoom: 18,
         });
-
-        var bounds = new AMap.Bounds([120.771966, 31.566868], [120.793333, 31.608579]);
-        map.setLimitBounds(bounds);
-
-        var canvasDir = document.createElement('canvas')
-        var width = 24;
-        canvasDir.width = width;
-        canvasDir.height = width;
-        var context = canvasDir.getContext('2d');
-        context.strokeStyle = 'white';
-        context.lineJoin = 'round';
-        context.lineWidth = 8;
-        context.moveTo(-4, width - 4);
-        context.lineTo(width / 2, 6);
-        context.lineTo(width + 4, width - 4);
-        context.stroke();
-
-        map.setFitView();
-
+        map.setMaxBounds([[120.7704, 31.5866], [120.787957, 31.595805]]);
         function createXhr() {
             if (window.XMLHttpRequest) {
                 return new XMLHttpRequest();
@@ -326,6 +310,9 @@
         }
         var xhr = createXhr();
         xhr.open("post", "map.xml", false);
+
+
+
         // if(sessionStorage.length == 0){
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -339,57 +326,35 @@
                 // var pathArray = new Array();
                 var pathMap = new Map();
                 var wayIdList = new Array();
-                for (var ix = 0; ix < 9; ix++) {
-                    //8个junction
-                    var point = [nodeList[ix].getAttribute("lon"), nodeList[ix].getAttribute("lat")];
-                    AMap.convertFrom(point, 'gps', function (status, result0) {
-                        if (result0.info === 'ok') {
-                            var resLnglat = result0.locations[0];
-
-                            var m2 = new AMap.Marker({
-                                    map:map,
-                            //         icon: startIcon,
-                            //         // offset: new AMap.Pixel(-13, -30),
-                                    position: resLnglat,
-                                });
-                            // if (ix > 8) ix = 0;
-                            
-                            // var startIcon = new AMap.Icon({
-                            //     // 图标尺寸
-                            //     size: new AMap.Size(25, 34),
-                            //     // 图标的取图地址
-                            //     image: '//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png',
-                            //     // 图标所用图片大小
-                            //     imageSize: new AMap.Size(135, 40),
-                            //     // 图标取图偏移量
-                            //     imageOffset: new AMap.Pixel(-9, -3)
-                            // });
-                            // var endIcon = new AMap.Icon({
-                            //     size: new AMap.Size(25, 34),
-                            //     image: '//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png',
-                            //     imageSize: new AMap.Size(135, 40),
-                            //     imageOffset: new AMap.Pixel(-95, -3)
-                            // });
-                            // if (ix < 5) {
-                            //     var m2 = new AMap.Marker({
-                            //         map:map,
-                            //         icon: startIcon,
-                            //         // offset: new AMap.Pixel(-13, -30),
-                            //         position: resLnglat,
-                            //     });
-                            // }
-                            // else {
-                            //     var m2 = new AMap.Marker({
-                            //         map:map,
-                            //         icon: endIcon,
-                            //         // offset: new AMap.Pixel(-13, -30),
-                            //         position: resLnglat,
-                            //     });
-                            // }
-                            // ix++;
-                        }
-                    });
-                }
+                //                for(var i = 0;i<9;i++){
+                //                    //8个junction
+                //                    var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
+                //                    AMap.convertFrom(point, 'gps', function (status, result) {
+                //                        if (result.info === 'ok') {
+                //                            var resLnglat = result.locations[0];
+                //
+                //                            // if(i>7) i = 0;
+                //                            // var pointInJSON = {
+                //                            //     position: resLnglat
+                //                            // };
+                //                            // var point = JSON.stringify(pointInJSON);
+                //                            // sessionStorage.setItem(i,point);
+                //                            // i++;
+                //
+                //                            // var junctionIcon = new AMap.Icon({
+                //                            //     size: new AMap.Size(30,30),
+                //                            //     image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
+                //                            //     imageSize: new AMap.Size(10, 20),
+                //                            // });
+                //                            m2 = new AMap.Marker({
+                //                                // icon: junctionIcon,
+                //                                // offset: new AMap.Pixel(-13, -30),
+                //                                position: resLnglat,
+                //                            });
+                //                            map.add(m2);
+                //                        }
+                //                    });
+                //                }
                 // var index = 0;
                 for (var i = 0; i < wayList.length; i++) {
                     if (wayList[i].getAttribute("action") != "delete") {
@@ -469,76 +434,89 @@
                 }
                 // console.log(pathList.length);
                 // console.log(index);
+                var featureArray = [];
                 for (var i = 0; i < pathList.length; i++) {
-                    // console.log(wayIdList[i],pathList[i]);
-                    AMap.convertFrom(pathList[i], 'gps', function (status, result) {
-                        if (result.info === 'ok') {
-                            var path2 = result.locations;
-
-                            //75条单一wayid
-                            if (i > 72) i = 0;
-                            var msgInJSON = {
-                                path: path2,
-                                strokeColor: 'green',
-                                extData: 0 // 0-畅通,1-拥堵
-                            };
-                            var str = JSON.stringify(msgInJSON);
-                            sessionStorage.setItem(wayIdList[i], str);
-                            // console.log(i);
-                            i++;
-
-                            var polyline = new AMap.Polyline({
-                                map: map,
-                                path: path2,
-                                showDir: true,
-                                dirImg: canvasDir,
-                                borderWeight: 2, // 线条宽度，默认为 1
-                                strokeColor: 'green', // 线条颜色
-                                lineJoin: 'round', // 折线拐点连接处样式
-                                strokeWeight: 8,           // 线宽
-                            });
+                    featureArray.push({
+                        'type': 'Feature',
+                        'properties': {
+                            'color': 'green'
+                        },
+                        'geometry': {
+                            'type': 'LineString',
+                            'coordinates': pathList[i]
                         }
                     });
+
+                    var msgInJSON = {
+                        path: pathList[i],
+                        strokeColor: 'green'
+                    };
+                    var str = JSON.stringify(msgInJSON);
+                    sessionStorage.setItem(wayIdList[i], str);
                 }
+
+                map.on('load', function () {
+                    map.addLayer({
+                        'id': 'lines',
+                        'type': 'line',
+                        'source': {
+                            'type': 'geojson',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                'features': featureArray
+                            }
+                        },
+                        'paint': {
+                            'line-width': 8,
+                            'line-color': ['get', 'color']
+                        }
+                    });
+                });
+                // }
                 // {"wayid":[路径1,路径2,路径3];"wayid":[a,b,c]}
 
-                for (var k = 0; k < specialPath.length; k++) {
+                var specialFeatureArray = [];
+                for (var k = 0, x = 10000; k < specialPath.length; k++) {
                     var specialArray = pathMap.get(specialPath[k]);
                     // if(specialArray.length == 3)
                     // console.log(specialPath[k]);
-                    for (var j = 0; j < specialArray.length; j++) {
-                        var x = 10000;
-                        var s = specialPath[k];
-                        // console.log(s);
-                        AMap.convertFrom(specialArray[j], 'gps', function (status, result) {
-                            if (result.info === 'ok') {
-                                var path2 = result.locations;
-                                var msgInJSON = {
-                                    path: path2,
-                                    strokeColor: 'green',
-                                    extData: 0 // 0-畅通,1-拥堵
-                                };
-                                var str = JSON.stringify(msgInJSON);
-                                sessionStorage.setItem(x, str);
-                                // console.log(x);
-                                x++;
-                                // console.log(s);
-
-
-                                var polyline = new AMap.Polyline({
-                                    map: map,
-                                    path: path2,
-                                    showDir: true,
-                                    dirImg: canvasDir,
-                                    borderWeight: 2, // 线条宽度，默认为 1
-                                    strokeColor: 'green', // 线条颜色
-                                    lineJoin: 'round', // 折线拐点连接处样式
-                                    strokeWeight: 8,           // 线宽
-                                });
+                    for (var j = 0; j < specialArray.length; j++, x++) {
+                        specialFeatureArray.push({
+                            'type': 'Feature',
+                            'properties': {
+                                'color': 'green'
+                            },
+                            'geometry': {
+                                'type': 'LineString',
+                                'coordinates': specialArray[j]
                             }
                         });
+                        var msgInJSON = {
+                            path: specialArray[j],
+                            strokeColor: 'green'
+                        };
+                        var str = JSON.stringify(msgInJSON);
+                        sessionStorage.setItem(x, str);
                     }
                 }
+
+                map.on('load', function () {
+                    map.addLayer({
+                        'id': 'specialLines',
+                        'type': 'line',
+                        'source': {
+                            'type': 'geojson',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                'features': specialFeatureArray
+                            }
+                        },
+                        'paint': {
+                            'line-width': 8,
+                            'line-color': ['get', 'color']
+                        }
+                    });
+                });
             }
         }
 
@@ -570,6 +548,8 @@
             var xmlDoc = xhr2.responseXML;
             var userWayIdList = xmlDoc.getElementsByTagName("way");
             // console.log(userWayIdList);
+            var userSpecialFeatureArray = [];
+            var userFeatureArray = [];
             for (var i = 0; i < userWayIdList.length; i++) {
 
                 var userWayId = userWayIdList[i].getAttribute("id") + "0" + userWayIdList[i].getAttribute("dir");
@@ -619,28 +599,21 @@
 
                 if (special[0] != null) {
                     userWayId = special[0];
-
                     for (var j = 0; j < special[1]; userWayId++, j++) {
                         ses = JSON.parse(sessionStorage.getItem(userWayId));
-                        // if (ses == null)
-                        //     console.log(userWayId);
-                        // console.log(ses);
-                        var newPolyline = new AMap.Polyline({
-                            map: map,
-                            path: ses.path,
-                            showDir: true,
-                            dirImg: canvasDir,
-                            borderWeight: 2, // 线条宽度，默认为 1
-                            strokeColor: color, // 线条颜色
-                            lineJoin: 'round', // 折线拐点连接处样式
-                            strokeWeight: 8,           // 线宽
+                        userSpecialFeatureArray.push({
+                            'type': 'Feature',
+                            'properties': {
+                                'color': color
+                            },
+                            'geometry': {
+                                'type': 'LineString',
+                                'coordinates': ses.path
+                            }
                         });
-                        // if (color == "red")
-                        //     console.log(path);
                         var msgInJSON = {
                             path: ses.path,
                             strokeColor: color,
-                            extData: state
                         }
                         var str = JSON.stringify(msgInJSON);
                         sessionStorage.setItem(userWayId, str);
@@ -652,43 +625,69 @@
                     var data = sessionStorage.getItem(userWayId);
                     ses = JSON.parse(data);
 
-                    // console.log(ses);
-
                     if (data == null)
                         console.log(userWayId);
                     var path = ses.path;
-
-                    // if(color == "yellow")
-                    // console.log(userWayId,path);
-
-                    var newPolyline = new AMap.Polyline({
-                        map: map,
-                        path: path,
-                        showDir: true,
-                        dirImg: canvasDir,
-                        borderWeight: 2, // 线条宽度，默认为 1
-                        strokeColor: color, // 线条颜色
-                        lineJoin: 'round', // 折线拐点连接处样式
-                        strokeWeight: 8,           // 线宽
+                    userFeatureArray.push({
+                        'type': 'Feature',
+                        'properties': {
+                            'color': color
+                        },
+                        'geometry': {
+                            'type': 'LineString',
+                            'coordinates': path
+                        }
                     });
-
+                    
                     var msgInJSON = {
                         path: path,
-                        strokeColor: color,
-                        extData: state
+                        strokeColor: color
                     }
                     var str = JSON.stringify(msgInJSON);
                     sessionStorage.setItem(userWayId, str);
-
-                    // map.add(newPolyline);
                 }
 
             }
-
+            map.on('load', function () {
+                map.addLayer({
+                    'id': 'userSpecialLines',
+                    'type': 'line',
+                    'source': {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': userSpecialFeatureArray
+                        }
+                    },
+                    'paint': {
+                        'line-width': 8,
+                        'line-color': ['get', 'color']
+                    }
+                });
+            });
+            map.on('load', function () {
+                map.addLayer({
+                    'id': 'userLines',
+                    'type': 'line',
+                    'source': {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': userFeatureArray
+                        }
+                    },
+                    'paint': {
+                        'line-width': 8,
+                        'line-color': ['get', 'color']
+                    }
+                });
+            });
         }
 
-    // }
+
     </script>
+
+
 </body>
 
 </html>
