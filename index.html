@@ -64,7 +64,7 @@
         countrys["62687006100"] = ["云深路"];
         countrys["62687006101"] = ["云深路"];
         countrys["62687009300"] = ["云深路"];
-        countrys["62687009300"] = ["云深路"];
+        countrys["62687009301"] = ["云深路"];
         countrys["62687005800"] = ["云深路"];
         countrys["62687005801"] = ["云深路"];
         countrys["62687005700"] = ["云深路"];
@@ -120,7 +120,7 @@
         // countrys["地下停车场入口"] = ["626870085"];
         // countrys["内部道路出口"] = ["626870086"];
         // countrys["内部道路入口"] = ["626870088"];
-        
+
         // countrys["云深路"] = ["626870061","626870093","626870058", "626870057"];
         // countrys["五渠路"] = ["626870038", "626870033", "626870040"];
         // countrys["渔乐路"] = ["626870043", "626870050", "626870052"];
@@ -171,104 +171,104 @@
     }
 
 </script>
+
 <body>
     <div style="float: left; height: 100%; width: 70%;">
         <div style="float: left; ">
-                <form id="myForm" action="js_form_action.asp" method="get">
-                    <!-- ID: <input type="text" name="id" size="20"><br /> -->
-                    <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
-                    <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
-                    <h3>道路名称</h3><select name="wayid" class="form-control" onChange="changeProvince()" >
-                        <option>--请选择道路序号--</option>
-                        <option value="62687008000">1-消防通道</option>
-                        <option value="62687008001">2-消防通道</option>
-                        <option value="62687008200">3-园区北路</option>
-                        <option value="62687008300">4-园区东路</option>
-                        <option value="62687008301">5-园区东路</option>
-                        <option value="62687008400">6-园区南路</option>
-                        <option value="62687008401">7-园区南路</option>
-                        <option value="62687008500">8-地下停车场入口</option>
-                        <option value="62687008501">9-地下停车场入口</option>
-                        <option value="62687008100">10-园区南路</option>
-                        <option value="62687008101">11-园区南路</option>
-                        <option value="62687008700">12-园区南路</option>
-                        <option value="62687008701">13-园区南路</option>
-                        <option value="62687008600">14-内部道路出口</option>
-                        <option value="62687008800">15-内部道路入口</option>
-                        <option value="62687008900">16-园区西路</option>
-                        <option value="62687008901">17-园区西路</option>
-                        <option value="62687009100">18-园区西路</option>
-                        <option value="62687009200">19-园区中路</option>
-                        <option value="62687009000">20-迎宾通道</option>
-                        <option value="62687006100">21-云深路</option>
-                        <option value="62687006101">22-云深路</option>
-                        <option value="62687009300">23-云深路</option>
-                        <option value="62687009301">24-云深路</option>
-                        <option value="62687005800">25-云深路</option>
-                        <option value="62687005801">26-云深路</option>
-                        <option value="62687005700">27-云深路</option>
-                        <option value="62687005701">28-云深路</option>
-                        <option value="62687003800">29-五渠路</option>
-                        <option value="62687003801">30-五渠路</option>
-                        <option value="62687003300">31-五渠路</option>
-                        <option value="62687003301">32-五渠路</option>
-                        <option value="62687004000">33-五渠路</option>
-                        <option value="62687004001">34-五渠路</option>
-                        <option value="62687004300">35-渔乐路</option>
-                        <option value="62687004301">36-渔乐路</option>
-                        <option value="62687005000">37-渔乐路</option>
-                        <option value="62687005001">38-渔乐路</option>
-                        <option value="62687005200">39-渔乐路</option>
-                        <option value="62687005201">40-渔乐路</option>
-                        <option value="62687010700">41-黄浦江路</option>
-                        <option value="62687005400">42-福茂路</option>
-                        <option value="62687005401">43-福茂路</option>
-                        <option value="62687010300">44-福茂路</option>
-                        <option value="62687010301">45-福茂路</option>
-                        <option value="62687009800">46-福茂路</option>
-                        <option value="62687009801">47-福茂路</option>
-                        <option value="62687010200">48-福茂路</option>
-                        <option value="62687010201">49-福茂路</option>
-                        <option value="62687003200">50-福盛路</option>
-                        <option value="62687003201">51-福盛路</option>
-                        <option value="62687011000">52-福盛路</option>
-                        <option value="62687011001">53-福盛路</option>
-                        <option value="62687002700">54-福盛路</option>
-                        <option value="62687002701">55-福盛路</option>
-                        <option value="62687002500">56-福兴路</option>
-                        <option value="62687002501">57-福兴路</option>
-                        <option value="62687002200">58-福兴路</option>
-                        <option value="62687002201">59-福兴路</option>
-                        <option value="62687002100">60-福兴路</option>
-                        <option value="62687002101">61-福兴路</option>
-                        <option value="62687011600">62-湖山路</option>
-                        <option value="62687011700">63-湖山路</option>
-                        <option value="62687012000">64-湖山路</option>
-                        <option value="62687012200">65-湖山路</option>
-                    </select>
-                    
-                        <br/><br />
-                    <!-- Section: <input type="text" name="section" size="20"><br /> -->
-                    <select name="name" class="form-control" style="display: none;">
-                        <option>--道路id--</option>
-                    </select>
-                    <br /><br />
-                    <!-- Timestamp: <input type="text" name="timestamp" size="20"><br /> -->
-                    <!-- State: <input type="text" name="state" size="20"><br /> -->
-                    <!-- <h3>方向</h3><select name="direction" >
+            <form id="myForm" action="js_form_action.asp" method="get" style=" margin-left: 20px;">
+                <!-- ID: <input type="text" name="id" size="20"><br /> -->
+                <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
+                <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
+                <h3>道路名称</h3><select name="wayid" class="form-control" onChange="changeProvince()">
+                    <option>--请选择道路序号--</option>
+                    <option value="62687008000">1-消防通道</option>
+                    <option value="62687008001">2-消防通道</option>
+                    <option value="62687008200">3-园区北路</option>
+                    <option value="62687008300">4-园区东路</option>
+                    <option value="62687008301">5-园区东路</option>
+                    <option value="62687008400">6-园区南路</option>
+                    <option value="62687008401">7-园区南路</option>
+                    <option value="62687008500">8-地下停车场入口</option>
+                    <option value="62687008501">9-地下停车场入口</option>
+                    <option value="62687008100">10-园区南路</option>
+                    <option value="62687008101">11-园区南路</option>
+                    <option value="62687008700">12-园区南路</option>
+                    <option value="62687008701">13-园区南路</option>
+                    <option value="62687008600">14-内部道路出口</option>
+                    <option value="62687008800">15-内部道路入口</option>
+                    <option value="62687008900">16-园区西路</option>
+                    <option value="62687008901">17-园区西路</option>
+                    <option value="62687009100">18-园区西路</option>
+                    <option value="62687009200">19-园区中路</option>
+                    <option value="62687009000">20-迎宾通道</option>
+                    <option value="62687006100">21-云深路</option>
+                    <option value="62687006101">22-云深路</option>
+                    <option value="62687009300">23-云深路</option>
+                    <option value="62687009301">24-云深路</option>
+                    <option value="62687005800">25-云深路</option>
+                    <option value="62687005801">26-云深路</option>
+                    <option value="62687005700">27-云深路</option>
+                    <option value="62687005701">28-云深路</option>
+                    <option value="62687003800">29-五渠路</option>
+                    <option value="62687003801">30-五渠路</option>
+                    <option value="62687003300">31-五渠路</option>
+                    <option value="62687003301">32-五渠路</option>
+                    <option value="62687004000">33-五渠路</option>
+                    <option value="62687004001">34-五渠路</option>
+                    <option value="62687004300">35-渔乐路</option>
+                    <option value="62687004301">36-渔乐路</option>
+                    <option value="62687005000">37-渔乐路</option>
+                    <option value="62687005001">38-渔乐路</option>
+                    <option value="62687005200">39-渔乐路</option>
+                    <option value="62687005201">40-渔乐路</option>
+                    <option value="62687010700">41-黄浦江路</option>
+                    <option value="62687005400">42-福茂路</option>
+                    <option value="62687005401">43-福茂路</option>
+                    <option value="62687010300">44-福茂路</option>
+                    <option value="62687010301">45-福茂路</option>
+                    <option value="62687009800">46-福茂路</option>
+                    <option value="62687009801">47-福茂路</option>
+                    <option value="62687010200">48-福茂路</option>
+                    <option value="62687010201">49-福茂路</option>
+                    <option value="62687003200">50-福盛路</option>
+                    <option value="62687003201">51-福盛路</option>
+                    <option value="62687011000">52-福盛路</option>
+                    <option value="62687011001">53-福盛路</option>
+                    <option value="62687002700">54-福盛路</option>
+                    <option value="62687002701">55-福盛路</option>
+                    <option value="62687002500">56-福兴路</option>
+                    <option value="62687002501">57-福兴路</option>
+                    <option value="62687002200">58-福兴路</option>
+                    <option value="62687002201">59-福兴路</option>
+                    <option value="62687002100">60-福兴路</option>
+                    <option value="62687002101">61-福兴路</option>
+                    <option value="62687011600">62-湖山路</option>
+                    <option value="62687011700">63-湖山路</option>
+                    <option value="62687012000">64-湖山路</option>
+                    <option value="62687012200">65-湖山路</option>
+                </select>
+
+                <br /><br />
+                <!-- Section: <input type="text" name="section" size="20"><br /> -->
+                <select name="name" class="form-control" style="display: none;">
+                    <option>--道路id--</option>
+                </select>
+                <!-- Timestamp: <input type="text" name="timestamp" size="20"><br /> -->
+                <!-- State: <input type="text" name="state" size="20"><br /> -->
+                <!-- <h3>方向</h3><select name="direction" >
                         <option value="0">0-正向</option>
                         <option value="1">1-反向</option>
                     </select> -->
-                    <h3>状态</h3><select name="state" class="form-control">
-                        <option value="0">0-畅通</option>
-                        <option value="1">1-缓慢</option>
-                        <option value="2">2-拥堵</option>
-                    </select>
-                    <!-- Reason: <input type="text" name="reason" size="20"><br /> -->
-                    <br /><br />
+                <h3>状态</h3><select name="state" class="form-control">
+                    <option value="0">0-畅通</option>
+                    <option value="1">1-缓慢</option>
+                    <option value="2">2-拥堵</option>
+                </select>
+                <!-- Reason: <input type="text" name="reason" size="20"><br /> -->
+                <br /><br />
 
-                    <input type="button" onclick="formSubmit();" value="更改拥堵信息"> <br /><br />
-                </form>
+                <button type="submit" class="btn btn-primary" onclick="formSubmit();">更改拥堵信息</button> <br /><br />
+            </form>
 
 
 
@@ -284,7 +284,7 @@
 
         <div id="container" style="float: right;"></div>
     </div>
-    <script type="text/javascript" 
+    <script type="text/javascript"
         src="https://webapi.amap.com/maps?v=1.4.15&key=d100aa3090ed93eb91ef822633442dea"></script>
 
     <script type="text/javascript">
@@ -326,9 +326,6 @@
         }
         var xhr = createXhr();
         xhr.open("post", "map.xml", false);
-
-        
-
         // if(sessionStorage.length == 0){
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -342,50 +339,71 @@
                 // var pathArray = new Array();
                 var pathMap = new Map();
                 var wayIdList = new Array();
-                for(var i = 0;i<9;i++){
+                for (var ix = 0; ix < 9; ix++) {
                     //8个junction
-                    var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
-                    AMap.convertFrom(point, 'gps', function (status, result) {
-                        if (result.info === 'ok') {
-                            var resLnglat = result.locations[0];
+                    var point = [nodeList[ix].getAttribute("lon"), nodeList[ix].getAttribute("lat")];
+                    AMap.convertFrom(point, 'gps', function (status, result0) {
+                        if (result0.info === 'ok') {
+                            var resLnglat = result0.locations[0];
 
-                            // if(i>7) i = 0;
-                            // var pointInJSON = {
-                            //     position: resLnglat
-                            // };
-                            // var point = JSON.stringify(pointInJSON);
-                            // sessionStorage.setItem(i,point);
-                            // i++;
-
-                            // var junctionIcon = new AMap.Icon({
-                            //     size: new AMap.Size(30,30),
-                            //     image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
-                            //     imageSize: new AMap.Size(10, 20),
+                            var m2 = new AMap.Marker({
+                                    map:map,
+                            //         icon: startIcon,
+                            //         // offset: new AMap.Pixel(-13, -30),
+                                    position: resLnglat,
+                                });
+                            // if (ix > 8) ix = 0;
+                            
+                            // var startIcon = new AMap.Icon({
+                            //     // 图标尺寸
+                            //     size: new AMap.Size(25, 34),
+                            //     // 图标的取图地址
+                            //     image: '//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png',
+                            //     // 图标所用图片大小
+                            //     imageSize: new AMap.Size(135, 40),
+                            //     // 图标取图偏移量
+                            //     imageOffset: new AMap.Pixel(-9, -3)
                             // });
-                            m2 = new AMap.Marker({
-                                // icon: junctionIcon,
-                                // offset: new AMap.Pixel(-13, -30),
-                                position: resLnglat,
-                            });
-                            map.add(m2);
+                            // var endIcon = new AMap.Icon({
+                            //     size: new AMap.Size(25, 34),
+                            //     image: '//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png',
+                            //     imageSize: new AMap.Size(135, 40),
+                            //     imageOffset: new AMap.Pixel(-95, -3)
+                            // });
+                            // if (ix < 5) {
+                            //     var m2 = new AMap.Marker({
+                            //         map:map,
+                            //         icon: startIcon,
+                            //         // offset: new AMap.Pixel(-13, -30),
+                            //         position: resLnglat,
+                            //     });
+                            // }
+                            // else {
+                            //     var m2 = new AMap.Marker({
+                            //         map:map,
+                            //         icon: endIcon,
+                            //         // offset: new AMap.Pixel(-13, -30),
+                            //         position: resLnglat,
+                            //     });
+                            // }
+                            // ix++;
                         }
                     });
                 }
-// var index = 0;
+                // var index = 0;
                 for (var i = 0; i < wayList.length; i++) {
-                    if(wayList[i].getAttribute("action") != "delete"){
+                    if (wayList[i].getAttribute("action") != "delete") {
                         //共80条
                         // index++;
                         // <way>中的id
                         var wayId = wayList[i].getAttribute("id");
-                        
+
                         // <way>的子标签
                         var subList = wayList[i].children;
                         var pointList = new Array();
 
-                        if(wayId == "62687005700" || wayId == "62687005701" || wayId == "62687008900" || wayId == "62687008901"
-                            || wayId == "62687008200" || wayId == "62687009000")
-                        {
+                        if (wayId == "62687005700" || wayId == "62687005701" || wayId == "62687008900" || wayId == "62687008901"
+                            || wayId == "62687008200" || wayId == "62687009000") {
                             // 如果是这些6条弯道
                             specialPath.push(wayId);
                             // console.log(specialPath);
@@ -409,16 +427,16 @@
                                 }
                             }
                             var pathArray = new Array();
-                            for(var n = 0;n<pointList.length;n+=2){
+                            for (var n = 0; n < pointList.length; n += 2) {
                                 var onePath = [];
                                 onePath.push(pointList[n]);
-                                onePath.push(pointList[n+1]);
+                                onePath.push(pointList[n + 1]);
                                 pathArray.push(onePath);
                             }
-                            pathMap.set(wayId,pathArray);
+                            pathMap.set(wayId, pathArray);
                         }
-                        
-                        else{
+
+                        else {
                             wayIdList.push(wayId);
                             var nodeIdList = new Array();
                             var startNodeId = subList[0].getAttribute("ref");
@@ -458,7 +476,7 @@
                             var path2 = result.locations;
 
                             //75条单一wayid
-                            if(i > 72) i = 0;
+                            if (i > 72) i = 0;
                             var msgInJSON = {
                                 path: path2,
                                 strokeColor: 'green',
@@ -468,9 +486,9 @@
                             sessionStorage.setItem(wayIdList[i], str);
                             // console.log(i);
                             i++;
-                        
+
                             var polyline = new AMap.Polyline({
-                                map:map,
+                                map: map,
                                 path: path2,
                                 showDir: true,
                                 dirImg: canvasDir,
@@ -483,29 +501,29 @@
                     });
                 }
                 // {"wayid":[路径1,路径2,路径3];"wayid":[a,b,c]}
-                
-                for(var k = 0;k<specialPath.length;k++){                
+
+                for (var k = 0; k < specialPath.length; k++) {
                     var specialArray = pathMap.get(specialPath[k]);
                     // if(specialArray.length == 3)
-                        // console.log(specialPath[k]);
-                    for(var j = 0;j<specialArray.length;j++){
+                    // console.log(specialPath[k]);
+                    for (var j = 0; j < specialArray.length; j++) {
                         var x = 10000;
                         var s = specialPath[k];
                         // console.log(s);
                         AMap.convertFrom(specialArray[j], 'gps', function (status, result) {
                             if (result.info === 'ok') {
                                 var path2 = result.locations;
-                                    var msgInJSON = {
-                                        path: path2,
-                                        strokeColor: 'green',
-                                        extData: 0 // 0-畅通,1-拥堵
-                                    };
-                                    var str = JSON.stringify(msgInJSON);
-                                    sessionStorage.setItem(x, str);
-                                    // console.log(x);
-                                    x++;
+                                var msgInJSON = {
+                                    path: path2,
+                                    strokeColor: 'green',
+                                    extData: 0 // 0-畅通,1-拥堵
+                                };
+                                var str = JSON.stringify(msgInJSON);
+                                sessionStorage.setItem(x, str);
+                                // console.log(x);
+                                x++;
                                 // console.log(s);
-                                
+
 
                                 var polyline = new AMap.Polyline({
                                     map: map,
@@ -525,8 +543,8 @@
         }
 
         xhr.send(null);
-    // }
-    // else{
+        // }
+        // else{
 
 
         var xhr2 = createXhr();
@@ -539,7 +557,7 @@
             }
         }
         xhr2.send(null);
-        
+
         window.onload = function () {
             // for(var i = 0;i<8;i++){
             //     // console.log(JSON.parse(sessionStorage.getItem(i)));
@@ -548,23 +566,23 @@
             //     });
             //     map.add(m);
             // }
-            
+
             var xmlDoc = xhr2.responseXML;
             var userWayIdList = xmlDoc.getElementsByTagName("way");
             // console.log(userWayIdList);
-            for(var i = 0;i<userWayIdList.length;i++){
-                
+            for (var i = 0; i < userWayIdList.length; i++) {
+
                 var userWayId = userWayIdList[i].getAttribute("id") + "0" + userWayIdList[i].getAttribute("dir");
                 // console.log(userWayId);
                 var special = new Array(2);
-                
+
                 if (userWayId == "62687005700") {
-                    special[0]=10000;
-                    special[1]=6;
+                    special[0] = 10000;
+                    special[1] = 6;
                 }
                 else if (userWayId == "62687005701") {
-                    special[0]=10006;
-                    special[1]=6;
+                    special[0] = 10006;
+                    special[1] = 6;
                 }
                 // else if (userWayId == "62687008300") {
                 //     special[0]=10004;
@@ -575,12 +593,12 @@
                 //     special[1]=2;
                 // }
                 else if (userWayId == "62687008200") {
-                    special[0]=10012;
-                    special[1]=2;
+                    special[0] = 10012;
+                    special[1] = 2;
                 }
                 else if (userWayId == "62687008900") {
-                    special[0]=10014;
-                    special[1]=2;
+                    special[0] = 10014;
+                    special[1] = 2;
                 }
                 else if (userWayId == "62687008901") {
                     special[0] = 10016;
@@ -594,21 +612,21 @@
                 //     special[0] = null;
                 // }
                 var state = userWayIdList[i].getAttribute("state");
-                var color = "";
-                if (state == "0") {color = "green";}
-                else if (state == "1") {color = "yellow";}
-                else if (state == "2") {color = "red";}
+                // var color = "";
+                if (state == "0") { color = "green"; }
+                else if (state == "1") { color = "yellow"; }
+                else if (state == "2") { color = "red"; }
 
-                if(special[0] != null){
+                if (special[0] != null) {
                     userWayId = special[0];
 
-                    for(var j = 0;j<special[1];userWayId++,j++){
+                    for (var j = 0; j < special[1]; userWayId++, j++) {
                         ses = JSON.parse(sessionStorage.getItem(userWayId));
                         // if (ses == null)
                         //     console.log(userWayId);
                         // console.log(ses);
                         var newPolyline = new AMap.Polyline({
-                            map:map,
+                            map: map,
                             path: ses.path,
                             showDir: true,
                             dirImg: canvasDir,
@@ -630,13 +648,13 @@
                         // map.add(newPolyline);
                     }
                 }
-                else{
+                else {
                     var data = sessionStorage.getItem(userWayId);
                     ses = JSON.parse(data);
 
                     // console.log(ses);
 
-                    if(data == null)
+                    if (data == null)
                         console.log(userWayId);
                     var path = ses.path;
 
@@ -644,7 +662,7 @@
                     // console.log(userWayId,path);
 
                     var newPolyline = new AMap.Polyline({
-                        map:map,
+                        map: map,
                         path: path,
                         showDir: true,
                         dirImg: canvasDir,
@@ -664,11 +682,11 @@
 
                     // map.add(newPolyline);
                 }
-                
+
             }
 
         }
-        
+
     // }
     </script>
 </body>
