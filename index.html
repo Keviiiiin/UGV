@@ -7,13 +7,6 @@
     <title>无人车</title>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
     <link href="bootstrap.min.css" rel="stylesheet" />
     <script src="jquery-3.5.1.min.js"></script>
     <script src="bootstrap.min.js"></script>
@@ -183,7 +176,7 @@
 <body>
     <div style="float: left; height: 100%; width: 70%;">
         <div style="float: left; ">
-            <form id="myForm" action="js_form_action.asp" method="get" style=" margin-left: 20px;">
+            <form id="myForm" action="js_form_action.asp" method="get" style=" margin-left: 10px;">
                 <!-- ID: <input type="text" name="id" size="20"><br /> -->
                 <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
                 <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
@@ -288,7 +281,7 @@
                 </form> 
              </div> -->
         </div>
-        <div id='map'></div>
+        <div id='map' style="float: right;"></div>
     </div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiaWNja2V2aW4iLCJhIjoiY2toazRmNzgwMTltdzJ3bnFraWRpanBzbiJ9.ZwqB2LRGXjkO8QQ5jJMH7w';
@@ -301,6 +294,9 @@
             maxZoom: 18,
         });
         map.setMaxBounds([[120.7704, 31.5866], [120.787957, 31.595805]]);
+        map.dragRotate.disable();
+        map.touchZoomRotate.disableRotation();
+        
         function createXhr() {
             if (window.XMLHttpRequest) {
                 return new XMLHttpRequest();
@@ -316,6 +312,13 @@
         // if(sessionStorage.length == 0){
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
+                // //创建xml
+                // var doc = new ActiveXObject("Microsoft.XMLDOM");
+                // //创建一个根节点，并添加到xml
+                // var Root = doc.createElement("path");
+                // doc.appendChild(Root);
+                
+
                 var xmlDoc = xhr.responseXML;
                 // 所有的<way>
                 var wayList = xmlDoc.getElementsByTagName("way");
@@ -453,6 +456,15 @@
                     };
                     var str = JSON.stringify(msgInJSON);
                     sessionStorage.setItem(wayIdList[i], str);
+                    console.log(wayIdList[i], pathList[i]);
+                    // var way = doc.createElement("way");
+                    // Root.appendChild(way);
+                    // //向根节点添加属性，setAttribute(key , value);
+                    // way.setAttribute("id", wayIdList[i]);
+                    // way.setAttribute("startLon", pathList[i][0][0]);
+                    // way.setAttribute("startLat", pathList[i][0][1]);
+                    // way.setAttribute("endLon", pathList[i][1][0]);
+                    // way.setAttribute("endLat", pathList[i][1][1]);
                 }
 
                 map.on('load', function () {
@@ -465,6 +477,10 @@
                                 'type': 'FeatureCollection',
                                 'features': featureArray
                             }
+                        },
+                        "layout": {
+                            "line-join": "round",
+                            "line-cap": "round"
                         },
                         'paint': {
                             'line-width': 8,
@@ -497,6 +513,14 @@
                         };
                         var str = JSON.stringify(msgInJSON);
                         sessionStorage.setItem(x, str);
+                        console.log(x,specialArray[j]);
+                        // Root.appendChild(way);
+                        // //向根节点添加属性，setAttribute(key , value);
+                        // way.setAttribute("id", x);
+                        // way.setAttribute("startLon", specialArray[j][0][0]);
+                        // way.setAttribute("startLat", specialArray[j][0][1]);
+                        // way.setAttribute("endLon", specialArray[j][1][0]);
+                        // way.setAttribute("endLat", specialArray[j][1][1]);
                     }
                 }
 
@@ -510,6 +534,10 @@
                                 'type': 'FeatureCollection',
                                 'features': specialFeatureArray
                             }
+                        },
+                        "layout": {
+                            "line-join": "round",
+                            "line-cap": "round"
                         },
                         'paint': {
                             'line-width': 8,
@@ -659,6 +687,10 @@
                             'features': userSpecialFeatureArray
                         }
                     },
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
                     'paint': {
                         'line-width': 8,
                         'line-color': ['get', 'color']
@@ -675,6 +707,10 @@
                             'type': 'FeatureCollection',
                             'features': userFeatureArray
                         }
+                    },
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
                     },
                     'paint': {
                         'line-width': 8,
