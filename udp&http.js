@@ -1,9 +1,13 @@
 var http = require('http');
 var fs = require('fs');
 var XMLWriter = require('xml-writer');
+var querystring = require('querystring');
 
 const url = require('url');
 var server = http.createServer();
+// server.listen(47692, function () {
+//     console.log('请访问http://59.110.71.188:47692');
+// });
 server.listen(54823, function () {
     console.log('请访问http://59.110.71.188:54823');
 });
@@ -149,6 +153,7 @@ server.on('request', function (request, response) {
 
     var urls = request.url;
     console.log(request.url);
+    console.log(request.method);
 
     var trafficInfo = {    // 单条拥堵信息
         "wayID": "",
@@ -226,93 +231,106 @@ server.on('request', function (request, response) {
 
 
     }
-    else if (urls.indexOf('js_form_action') > 0) {
-        let result = url.parse(urls, true);
-        if (result.query.id != '') {
-            // trafficInfo['ID'] = result.query.id;
-            console.log(result.query.wayid);
-            trafficInfo['wayID'] = result.query.wayid.substring(0, 9);
-            // trafficInfo['Section'] = result.query.section;
-            trafficInfo['Name'] = result.query.name;
-            // trafficInfo['Timestamp'] = result.query.timestamp;
-            trafficInfo['State'] = result.query.state;
-            trafficInfo['Direction'] = result.query.wayid.charAt(10);
-            // trafficInfo['Reason'] = result.query.reason;
+    // else if (urls.indexOf('js_form_action') > 0) {
+    else if (urls == '/js_form_action.asp' && request.method == 'POST') {
 
-            // 更改拥堵信息
-            var strID = "";
-            strID += trafficInfo['wayID'];
-            strID += trafficInfo['Direction'];
-            // arrStack[strID].state = trafficInfo['State'];
-            arrStack[strID] = trafficInfo;
-            console.log(strID);
-            console.log(arrStack[strID]);
-            // var addid = result.query.wayid;
-            // arrStack[addid] = trafficInfo;
-            // 打印信息数组对象
-            // console.log(arrStack);
+        var data = "";
+        request.on('data', function(chunk){
+            data += chunk;
+        });
+        request.on('end', function(){
+            data = decodeURI(data);
+            var dataObject = querystring.parse(data);
+            console.log(dataObject);
+            console.log(dataObject['wayid']);  // string
 
-            // +++++++++++++写xml文件上+++++++++++++++++++++
-            var xw = new XMLWriter;
-            xw.startDocument('1.0', 'UTF-8');
-            xw.startElement('car');
-
-            for (key in arrStack) {
-                var strWayID = arrStack[key].wayID;
-                var strDirection = arrStack[key].Direction;
-                var strState = arrStack[key].State;
-                xw.startElement('way');
-                xw.writeAttribute('id', strWayID);
-                // xw.endAttribute();
-                xw.writeAttribute('dir', strDirection);
-                // xw.endAttribute();
-                xw.writeAttribute('state', strState);
-                xw.endAttribute();
-                xw.endElement();
-            }
-            xw.endDocument()
-
-            fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
-                console.log("更改一条拥堵信息");
-            })
-            // +++++++++++++写xml文件下+++++++++++++++++++++
-            fs.readFile("./index.html", function (error, html_data) {
-                response.setHeader('Content-Type', 'text/html;charset=utf-8');
-                var newhtmls = '';
-                newhtmls += html_data;
-                newhtmls += '<div style="float: right; width:450px; height:700px; overflow-y:scroll;">';
-                newhtmls += '<table class="table table-striped" width="450px" height="700px" >';
-                newhtmls += '<tr><th>序号</th><th>Name</th><th>ID</th><th>Direction</th><th>State</th></tr>';
-                var count = 0;
+            if (dataObject['wayid'] != '--请选择道路序号--') {
+                // trafficInfo['ID'] = result.query.id;
+                // trafficInfo['wayID'] = result.query.wayid.substring(0, 9);
+                trafficInfo['wayID'] = dataObject['wayid'].substring(0, 9);
+                // trafficInfo['Section'] = result.query.section;
+                trafficInfo['Name'] = dataObject['name'];
+                // trafficInfo['Timestamp'] = result.query.timestamp;
+                trafficInfo['State'] = dataObject['state'];
+                trafficInfo['Direction'] = dataObject['wayid'].charAt(10);
+                // trafficInfo['Reason'] = result.query.reason;
+    
+                // 更改拥堵信息
+                var strID = "";
+                strID += trafficInfo['wayID'];
+                strID += trafficInfo['Direction'];
+                // arrStack[strID].state = trafficInfo['State'];
+                arrStack[strID] = trafficInfo;
+                // console.log(strID);
+                // console.log(arrStack[strID]);
+                // var addid = result.query.wayid;
+                // arrStack[addid] = trafficInfo;
+                // 打印信息数组对象
+                // console.log(arrStack);
+    
+                // +++++++++++++写xml文件上+++++++++++++++++++++
+                var xw = new XMLWriter;
+                xw.startDocument('1.0', 'UTF-8');
+                xw.startElement('car');
+    
                 for (key in arrStack) {
-                    count++;
-                    var state = arrStack[key].State;
-                    if (state == "1") {
-                        newhtmls += '<tr class="warning"><td>';
-                    }
-                    else if (state == "2") {
-                        newhtmls += '<tr class="danger"><td>';
-                    }
-                    else if (state == "0") {
-                        newhtmls += '<tr><td>';
-                    }
-                    var strCount = String(count);
-                    newhtmls += strCount;
-                    newhtmls += '</td><td>';
-                    newhtmls += arrStack[key].Name;
-                    newhtmls += '</td><td>';
-                    newhtmls += arrStack[key].wayID;
-                    newhtmls += '</td><td>';
-                    newhtmls += arrStack[key].Direction;
-                    newhtmls += '</td><td>';
-                    newhtmls += state;
-                    newhtmls += '</td></tr>';
+                    var strWayID = arrStack[key].wayID;
+                    var strDirection = arrStack[key].Direction;
+                    var strState = arrStack[key].State;
+                    xw.startElement('way');
+                    xw.writeAttribute('id', strWayID);
+                    // xw.endAttribute();
+                    xw.writeAttribute('dir', strDirection);
+                    // xw.endAttribute();
+                    xw.writeAttribute('state', strState);
+                    xw.endAttribute();
+                    xw.endElement();
                 }
-                newhtmls += '</table>';
-                newhtmls += '</div>';
-                response.end(newhtmls);
-            });
-        }
+                xw.endDocument()
+    
+                fs.writeFile("./testInfo.xml", xw.toString(), function (err) {
+                    console.log("更改一条拥堵信息");
+                })
+                // +++++++++++++写xml文件下+++++++++++++++++++++
+                fs.readFile("./index.html", function (error, html_data) {
+                    response.setHeader('Content-Type', 'text/html;charset=utf-8');
+                    var newhtmls = '';
+                    newhtmls += html_data;
+                    newhtmls += '<div style="float: right; width:450px; height:700px; overflow-y:scroll;">';
+                    newhtmls += '<table class="table table-striped" width="450px" height="700px" >';
+                    newhtmls += '<tr><th>序号</th><th>Name</th><th>ID</th><th>Direction</th><th>State</th></tr>';
+                    var count = 0;
+                    for (key in arrStack) {
+                        count++;
+                        var state = arrStack[key].State;
+                        if (state == "1") {
+                            newhtmls += '<tr class="warning"><td>';
+                        }
+                        else if (state == "2") {
+                            newhtmls += '<tr class="danger"><td>';
+                        }
+                        else if (state == "0") {
+                            newhtmls += '<tr><td>';
+                        }
+                        var strCount = String(count);
+                        newhtmls += strCount;
+                        newhtmls += '</td><td>';
+                        newhtmls += arrStack[key].Name;
+                        newhtmls += '</td><td>';
+                        newhtmls += arrStack[key].wayID;
+                        newhtmls += '</td><td>';
+                        newhtmls += arrStack[key].Direction;
+                        newhtmls += '</td><td>';
+                        newhtmls += state;
+                        newhtmls += '</td></tr>';
+                    }
+                    newhtmls += '</table>';
+                    newhtmls += '</div>';
+                    response.end(newhtmls);
+                });
+            }
+        });
+
     }
     else {
         fs.readFile('.' + urls, function (error, data) {
@@ -326,10 +344,10 @@ var arrIP = new Array();
 // -----------------------------------
 //接收用户端的地址和端口
 udp_server.on('message', function (msg, rinfo) {
-    var strmsg = msg.toString();
-    const buffer = Buffer.alloc(24);
-    buffer.write(strmsg);
-    console.log(buffer);
+    const buffer = Buffer.from(msg);
+    // const buffer = Buffer.alloc(24);
+    // buffer.write(strmsg);
+    // console.log(buffer);
     var headBuf = Buffer.alloc(2);      // 报文头
     var timeBuf = Buffer.alloc(14);     // 时间
     var reserveBuf1 = Buffer.alloc(2);   // 保留
@@ -351,6 +369,13 @@ udp_server.on('message', function (msg, rinfo) {
     for (var i = 0; i < 2; i++) {
         reserveBuf2[i] = buffer[i + 22];
     }
+    // console.log('-----------------');
+    // console.log(carID);
+    var carIDInt = carID.readUInt32BE(0);
+    var carIDStr = carIDInt.toString();
+    // console.log(carIDStr);
+    // console.log(carIDInt);
+    // console.log('-----------------');
     if (headBuf.toString() == 'FC' && reserveBuf1.toString() == "  "
         && reserveBuf2.toString() == "  ") {
         var ip = rinfo.address;
@@ -366,6 +391,7 @@ udp_server.on('message', function (msg, rinfo) {
         }
         if (i == arrIP.length) {
             var obj = {
+                '车辆ID': carIDStr,
                 'ip': ip,
                 'port': port,
                 'time': 60
@@ -381,7 +407,7 @@ setInterval(function () {
     var delArr = new Array();
     for (var i = 0; i < arrIP.length; ++i) {
         (arrIP[i].time)--;
-        if (arrIP[i].time < 0) {
+        if (arrIP[i].time <= 0) {
             delArr.push(arrIP[i]);
         }
     }
