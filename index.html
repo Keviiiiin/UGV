@@ -176,11 +176,11 @@
 <body>
     <div style="float: left; height: 100%; width: 70%;">
         <div style="float: left; ">
-            <form id="myForm" action="js_form_action.asp" method="get" style=" margin-left: 10px;">
+            <form id="myForm" action="js_form_action.asp" method="post" style=" margin-left: 10px;">
                 <!-- ID: <input type="text" name="id" size="20"><br /> -->
                 <!-- refPOS: <input type="text" name="refpos" size="20"><br /> -->
                 <!-- Radius: <input type="text" name="radius" size="20"><br /> -->
-                <h3>道路名称</h3><select name="wayid" class="form-control" onChange="changeProvince()">
+                <h3>道路名称</h3><select id="way" name="wayid" class="form-control" onChange="changeProvince()">
                     <option>--请选择道路序号--</option>
                     <option value="62687008000">1-消防通道</option>
                     <option value="62687008001">2-消防通道</option>
@@ -270,16 +270,6 @@
 
                 <button type="submit" class="btn btn-primary" onclick="formSubmit();">更改拥堵信息</button> <br /><br />
             </form>
-
-
-
-            <!-- <div>
-                <form id='myForm2' action="js_form2_action.php" method="get">
-                    wayID: <input type="text" name="delId" size="20"><br /><br>
-
-                    <input type="button" onclick="formSubmit2()" value="删除拥堵信息"> <br>
-                </form> 
-             </div> -->
         </div>
         <div id='map' style="float: right;"></div>
     </div>
@@ -291,7 +281,7 @@
             center: [120.777093, 31.590903], // starting position [lng, lat]
             zoom: 15, // starting zoom
             minZoom: 15,
-            maxZoom: 18,
+            maxZoom: 19,
         });
         map.setMaxBounds([[120.7704, 31.5866], [120.787957, 31.595805]]);
         map.dragRotate.disable();
@@ -312,13 +302,6 @@
         // if(sessionStorage.length == 0){
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                // //创建xml
-                // var doc = new ActiveXObject("Microsoft.XMLDOM");
-                // //创建一个根节点，并添加到xml
-                // var Root = doc.createElement("path");
-                // doc.appendChild(Root);
-                
-
                 var xmlDoc = xhr.responseXML;
                 // 所有的<way>
                 var wayList = xmlDoc.getElementsByTagName("way");
@@ -329,35 +312,34 @@
                 // var pathArray = new Array();
                 var pathMap = new Map();
                 var wayIdList = new Array();
-                //                for(var i = 0;i<9;i++){
-                //                    //8个junction
-                //                    var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
-                //                    AMap.convertFrom(point, 'gps', function (status, result) {
-                //                        if (result.info === 'ok') {
-                //                            var resLnglat = result.locations[0];
-                //
-                //                            // if(i>7) i = 0;
-                //                            // var pointInJSON = {
-                //                            //     position: resLnglat
-                //                            // };
-                //                            // var point = JSON.stringify(pointInJSON);
-                //                            // sessionStorage.setItem(i,point);
-                //                            // i++;
-                //
-                //                            // var junctionIcon = new AMap.Icon({
-                //                            //     size: new AMap.Size(30,30),
-                //                            //     image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
-                //                            //     imageSize: new AMap.Size(10, 20),
-                //                            // });
-                //                            m2 = new AMap.Marker({
-                //                                // icon: junctionIcon,
-                //                                // offset: new AMap.Pixel(-13, -30),
-                //                                position: resLnglat,
-                //                            });
-                //                            map.add(m2);
-                //                        }
-                //                    });
-                //                }
+                // for(var i = 0;i<9;i++){
+                //     //8个junction
+                //     var point = [nodeList[i].getAttribute("lon"), nodeList[i].getAttribute("lat")];
+                //     AMap.convertFrom(point, 'gps', function (status, result) {
+                //         if (result.info === 'ok') {
+                //             var resLnglat = result.locations[0];
+                //             // if(i>7) i = 0;
+                //             // var pointInJSON = {
+                //             //     position: resLnglat
+                //             // };
+                //             // var point = JSON.stringify(pointInJSON);
+                //             // sessionStorage.setItem(i,point);
+                //             // i++;
+
+                //             // var junctionIcon = new AMap.Icon({
+                //             //     size: new AMap.Size(30,30),
+                //             //     image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
+                //             //     imageSize: new AMap.Size(10, 20),
+                //             // });
+                //             m2 = new AMap.Marker({
+                //                 // icon: junctionIcon,
+                //                 // offset: new AMap.Pixel(-13, -30),
+                //                 position: resLnglat,
+                //             });
+                //             map.add(m2);
+                //         }
+                //     });
+                // }
                 // var index = 0;
                 for (var i = 0; i < wayList.length; i++) {
                     if (wayList[i].getAttribute("action") != "delete") {
@@ -442,6 +424,7 @@
                     featureArray.push({
                         'type': 'Feature',
                         'properties': {
+                            "description": $("#way option[value=" + wayIdList[i] + "]").text(),
                             'color': 'green'
                         },
                         'geometry': {
@@ -456,7 +439,7 @@
                     };
                     var str = JSON.stringify(msgInJSON);
                     sessionStorage.setItem(wayIdList[i], str);
-                    console.log(wayIdList[i], pathList[i]);
+                    // console.log(wayIdList[i], pathList[i]);
                     // var way = doc.createElement("way");
                     // Root.appendChild(way);
                     // //向根节点添加属性，setAttribute(key , value);
@@ -500,6 +483,7 @@
                         specialFeatureArray.push({
                             'type': 'Feature',
                             'properties': {
+                                "description": $("#way option[value=" + specialPath[k] + "]").text(),
                                 'color': 'green'
                             },
                             'geometry': {
@@ -513,7 +497,7 @@
                         };
                         var str = JSON.stringify(msgInJSON);
                         sessionStorage.setItem(x, str);
-                        console.log(x,specialArray[j]);
+                        // console.log(x,specialArray[j]);
                         // Root.appendChild(way);
                         // //向根节点添加属性，setAttribute(key , value);
                         // way.setAttribute("id", x);
@@ -717,6 +701,66 @@
                         'line-color': ['get', 'color']
                     }
                 });
+            });
+            var popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false
+            });
+            map.on('mouseenter', 'lines', function (e) {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                var description = e.features[0].properties.description;
+
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+            //    console.log(e.lngLat);
+
+                // var popPointX = (coordinates[0][0] + coordinates[1][0])/2;
+                // var popPointY = (coordinates[0][1] + coordinates[1][1]) / 2;
+                // var popPoint = [popPointX,popPointY];
+
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup.setLngLat(e.lngLat).setHTML(description)
+                    .addTo(map);
+            });
+            map.on('mouseenter', 'specialLines', function (e) {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                var description = e.features[0].properties.description;
+
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+                //    console.log(e.lngLat);
+
+                // var popPointX = (coordinates[0][0] + coordinates[1][0])/2;
+                // var popPointY = (coordinates[0][1] + coordinates[1][1]) / 2;
+                // var popPoint = [popPointX,popPointY];
+
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup.setLngLat(e.lngLat).setHTML(description)
+                    .addTo(map);
+            });
+            map.on('mouseleave', 'lines', function () {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
+            });
+            map.on('mouseleave', 'specialLines', function () {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
             });
         }
 
