@@ -167,8 +167,8 @@ server.on('request', function (request, response) {
             response.setHeader('Content-Type', 'text/html;charset=utf-8');
             var newhtmls = '';
             newhtmls += html_data;
-            newhtmls += '<div style="float: right; width:450px; height:700px; overflow-y:scroll;">';
-            newhtmls += '<table class="table table-striped" width="450px" height="700px" >';
+            newhtmls += '<div style="float: right; width:30%; height:100%; overflow-y:scroll;">';
+            newhtmls += '<table class="table table-striped">';
             newhtmls += '<tr><th>序号</th><th>Name</th><th>ID</th><th>Direction</th><th>State</th></tr>';
             var count = 0;
             for (key in arrStack) {
